@@ -1,0 +1,60 @@
+{
+  "name": "ism-business-english",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "release:check": "node scripts/release-check.mjs && node scripts/staging-static-check.mjs && node scripts/audio-check.mjs || test $? -eq 2",
+    "release:staging": "npm run release:check && npm run staging:check && npm run typecheck && npm run build",
+    "staging:check": "node scripts/staging-static-check.mjs",
+    "audio:check": "node scripts/audio-check.mjs",
+    "product:qa": "node scripts/product-qa-check.mjs",
+    "functional:qa": "node scripts/functional-flow-check.mjs",
+    "exercise:qa": "node scripts/exercise-scoring-check.mjs",
+    "progression:qa": "node scripts/progression-achievement-check.mjs",
+    "sync:qa": "node scripts/progress-sync-check.mjs",
+    "release:static-final": "node scripts/final-release-static-check.mjs",
+    "env:check": "node scripts/env-check.mjs",
+    "migration:check": "node scripts/migration-check.mjs",
+    "release:gate": "node scripts/release-gate.mjs",
+    "build:clean": "node scripts/clean-build.mjs && next build",
+    "build:certify": "node scripts/build-certify.mjs",
+    "dependency:qa": "node scripts/dependency-freeze-check.mjs",
+    "next16:qa": "node scripts/next16-compat-check.mjs",
+    "prebuild:qa": "node scripts/prebuild-blocker-check.mjs",
+    "tsc:signal": "node scripts/global-tsc-signal-check.mjs",
+    "modules:qa": "node scripts/local-module-check.mjs",
+    "lockfile:qa": "node scripts/lockfile-check.mjs",
+    "repo:qa": "node scripts/repository-bootstrap-check.mjs",
+    "client-boundary:qa": "node scripts/client-boundary-check.mjs",
+    "prerender:qa": "node scripts/prerender-risk-check.mjs",
+    "supabase-ssr:qa": "node scripts/supabase-ssr-compat-check.mjs",
+    "scripts:qa": "node scripts/script-reference-check.mjs",
+    "certification:qa": "node scripts/certification-parity-check.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.6",
+    "@supabase/supabase-js": "2.115.0",
+    "lucide-react": "1.41.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.1",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.7",
+    "postcss": "8.5.28",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22 <23",
+    "npm": ">=10 <12"
+  },
+  "packageManager": "npm@10.9.2"
+}
