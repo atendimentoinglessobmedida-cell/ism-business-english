@@ -14,7 +14,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Expand certified source bundle
-        run: tar -xzf .ci/ism-business-cert-source-v14.tar.gz
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, gzip, io, tarfile, zipfile
+          p=Path('.ci/ism-business-cert-source-v14.tar.gz')
+          data=p.read_bytes()
+          print('bundle bytes:', len(data), 'magic:', data[:4].hex())
+          # tolerate a base64-text transport layer if one is ever introduced
+          if not (data.startswith(b'\x1f\x8b') or data.startswith(b'PK')):
+              try:
+                  decoded=base64.b64decode(data, validate=True)
+                  if decoded.startswith((b'\x1f\x8b', b'PK')):
+                      data=decoded
+                      print('decoded base64 transport layer')
+              except Exception:
+                  pass
+          if data.startswith(b'PK'):
+              with zipfile.ZipFile(io.BytesIO(data)) as z:
+                  z.extractall('.')
+          elif data.startswith(b'\x1f\x8b'):
+              raw=gzip.decompress(data)
+              if raw.startswith(b'PK'):
+                  with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                      z.extractall('.')
+              else:
+                  with tarfile.open(fileobj=io.BytesIO(data), mode='r:gz') as t:
+                      t.extractall('.')
+          else:
+              raise SystemExit('Unsupported source bundle format')
+          print('source bundle expanded')
+          PY
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -45,7 +75,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Expand certified source bundle
-        run: tar -xzf .ci/ism-business-cert-source-v14.tar.gz
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64, gzip, io, tarfile, zipfile
+          p=Path('.ci/ism-business-cert-source-v14.tar.gz')
+          data=p.read_bytes()
+          print('bundle bytes:', len(data), 'magic:', data[:4].hex())
+          if not (data.startswith(b'\x1f\x8b') or data.startswith(b'PK')):
+              try:
+                  decoded=base64.b64decode(data, validate=True)
+                  if decoded.startswith((b'\x1f\x8b', b'PK')):
+                      data=decoded
+                      print('decoded base64 transport layer')
+              except Exception:
+                  pass
+          if data.startswith(b'PK'):
+              with zipfile.ZipFile(io.BytesIO(data)) as z:
+                  z.extractall('.')
+          elif data.startswith(b'\x1f\x8b'):
+              raw=gzip.decompress(data)
+              if raw.startswith(b'PK'):
+                  with zipfile.ZipFile(io.BytesIO(raw)) as z:
+                      z.extractall('.')
+              else:
+                  with tarfile.open(fileobj=io.BytesIO(data), mode='r:gz') as t:
+                      t.extractall('.')
+          else:
+              raise SystemExit('Unsupported source bundle format')
+          print('source bundle expanded')
+          PY
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
