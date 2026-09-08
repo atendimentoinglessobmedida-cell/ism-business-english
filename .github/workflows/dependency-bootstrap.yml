@@ -1,0 +1,37 @@
+name: ISM Dependency Bootstrap
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - package.json
+      - .npmrc
+      - .github/workflows/dependency-bootstrap.yml
+
+jobs:
+  install:
+    name: Install frozen dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Show toolchain
+        run: |
+          node --version
+          npm --version
+      - name: Install dependencies and generate lockfile
+        run: npm install --no-audit --no-fund
+      - name: Verify top-level dependency tree
+        run: npm ls --depth=0
+      - name: Verify lockfile exists
+        run: test -f package-lock.json
+      - name: Upload generated lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: ism-package-lock
+          path: package-lock.json
+          if-no-files-found: error
+          retention-days: 14
