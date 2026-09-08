@@ -8,23 +8,44 @@ on:
 
 jobs:
   static:
+    name: Static QA
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - name: Expand certified source bundle
+        run: tar -xzf .ci/ism-business-cert-source-v14.tar.gz
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - name: Verify source package is present
         run: |
-          test -f package.json || { echo "Business English source package has not been imported yet"; exit 1; }
+          test -f package.json || { echo "Business English source package was not expanded"; exit 1; }
       - name: Source-level release QA
         run: npm run release:static-final
+      - name: Audio readiness
+        run: |
+          set +e
+          npm run audio:check
+          code=$?
+          if [ "$code" -eq 1 ]; then
+            echo "Audio structural QA failed."
+            exit 1
+          fi
+          if [ "$code" -eq 2 ]; then
+            echo "Audio production incomplete; staging may continue with browser fallback."
+            exit 0
+          fi
 
   build:
+    name: Install, Typecheck & Build
     needs: static
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+      - name: Expand certified source bundle
+        run: tar -xzf .ci/ism-business-cert-source-v14.tar.gz
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
@@ -65,4 +86,5 @@ jobs:
         with:
           name: ism-package-lock
           path: package-lock.json
+          if-no-files-found: error
           retention-days: 14
