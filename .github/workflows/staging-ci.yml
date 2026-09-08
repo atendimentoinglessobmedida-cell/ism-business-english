@@ -1,0 +1,68 @@
+name: ISM Staging CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify source package is present
+        run: |
+          test -f package.json || { echo "Business English source package has not been imported yet"; exit 1; }
+      - name: Source-level release QA
+        run: npm run release:static-final
+
+  build:
+    needs: static
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install dependencies and generate first lockfile
+        run: npm install --no-audit --no-fund
+      - name: Lockfile QA
+        run: npm run lockfile:qa
+      - name: Dependency freeze QA
+        run: npm run dependency:qa
+      - name: Script reference QA
+        run: npm run scripts:qa
+      - name: Repository bootstrap QA
+        run: npm run repo:qa
+      - name: Client boundary QA
+        run: npm run client-boundary:qa
+      - name: Prerender risk QA
+        run: npm run prerender:qa
+      - name: Supabase SSR compatibility QA
+        run: npm run supabase-ssr:qa
+      - name: Local module QA
+        run: npm run modules:qa
+      - name: TypeScript signal QA
+        run: npm run tsc:signal
+      - name: Prebuild QA
+        run: npm run prebuild:qa
+      - name: Next.js 16 compatibility QA
+        run: npm run next16:qa
+      - name: Full static release QA
+        run: npm run release:static-final
+      - name: Migration QA
+        run: npm run migration:check
+      - name: Dependency-aware typecheck
+        run: npm run typecheck
+      - name: Clean production build
+        run: npm run build:clean
+      - name: Upload generated lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: ism-package-lock
+          path: package-lock.json
+          retention-days: 14
