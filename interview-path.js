@@ -30,7 +30,7 @@ function stageProgress(id) {
   if(id===4){current=storyCount();total=5;unit='histórias completas';}
   if([5,6,7].includes(id)){current=lessonCount([id+10]);total=6;unit='lições';}
   if(id===8){current=guided.filter(simComplete).length;total=4;unit='conversas completas';}
-  if(id===9){current=st.mock.completed?1:0;unit='entrevista';}
+  if(id===9){current=st.mock.completed&&Array.from({length:11},(_,i)=>st.mock[i]).every(textFilled)?1:0;unit='entrevista';}
   if(id===10){current=st.action.completed&&['answers','language','next'].every(k=>textFilled(st.action[k]))?1:0;unit='plano';}
   current=Math.min(current,total);
   return {current,total,unit,percent:Math.round(current/total*100)};
