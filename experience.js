@@ -1,7 +1,7 @@
 /* Shared navigation and explanatory pages. Does not write learning state. */
 (()=>{
  const nav=document.createElement('nav');nav.className='utility-nav';nav.setAttribute('aria-label','Sobre o curso');
- nav.innerHTML='<a href="professor.html">Professor</a><a href="professor.html#contato">Contato</a><a href="professor.html#conquistas">Como ganhar estrelas</a>';
+ nav.innerHTML='<a href="planos.html">Planos e preços</a><a href="professor.html">Professor</a><a href="professor.html#contato">Contato</a><a href="professor.html#conquistas">Como ganhar estrelas</a>';
  document.querySelector('.top').insertAdjacentElement('afterend',nav);
  // Keep the study home focused on its main action; tools remain one tap away.
  const mode=document.querySelector('#home > .mode');
