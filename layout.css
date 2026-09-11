@@ -1,0 +1,60 @@
+/* Shared reading scale and responsive alignment for Core, Premium and professor. */
+html{font-size:16px;-webkit-text-size-adjust:100%;scroll-padding-bottom:100px}
+body{font-family:Arial,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+*,*::before,*::after{box-sizing:border-box}
+.app{margin-inline:auto;padding-bottom:100px}
+.main{padding:24px 32px 32px;min-width:0}
+button,input,textarea,select{font-family:inherit;font-size:16px;line-height:1.5}
+button,a,summary{-webkit-tap-highlight-color:transparent}
+button{white-space:normal;overflow-wrap:anywhere}
+input:not([type=checkbox]):not([type=radio]),textarea,select{max-width:100%;min-width:0;font-size:16px}
+p{line-height:1.65}h1,h2,h3,h4{line-height:1.25;overflow-wrap:normal;word-break:normal}
+h2{font-size:30px}h3{font-size:24px}h4{font-size:21px}
+.muted,.pt,.status-note{font-size:16px;line-height:1.6}
+small,.ey,.badge,.chip,.pill,.stage,.stage-status,.title span{font-size:14px;line-height:1.5}
+.ey,.badge{font-size:12px;letter-spacing:.08em}.ey{margin-bottom:10px}
+.brand{min-width:0}.brand b{font-size:20px}.brand small{font-size:14px;line-height:1.5}.logo{flex-shrink:0}
+.stats{min-width:240px;gap:8px}.stat{padding:0 12px}.stat small{font-size:13px;letter-spacing:0}.stat b{font-size:23px}
+.utility-nav{gap:8px 24px}.utility-nav a{font-size:14px;min-height:44px}
+.btn,.btn.gold,.brand-hero .btn,.rec .btn,.stickyBack .btn,.audio-buttons .btn{font-size:15px;letter-spacing:.015em;min-height:48px;padding:12px 18px;line-height:1.5}
+.mini,.audio,.tab,.mode button{font-size:15px;min-height:44px;padding:10px 14px;line-height:1.5}
+.audio-settings{margin-bottom:20px}.audio-settings summary,.audio-controls label{font-size:16px}.audio-controls p,.audio-status{font-size:14px}
+.card,.tool,.hero{padding:24px}.card>:first-child{margin-top:0}.card>:last-child{margin-bottom:0}
+.title{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:space-between}.title h3{margin:0}.title span{font-size:14px}
+#home.on{display:flex;flex-direction:column;gap:0}
+#home>.premium{display:block;position:relative;padding:28px;min-height:280px}
+#home>.premium .premium-cover{width:48%;float:right;margin:0 0 16px 28px}
+#home>.premium::after{content:"";display:table;clear:both}
+#home>.premium h3{font-size:26px;max-width:none;margin:16px 0 12px}
+#home>.premium .btn{margin-top:12px}#home>.quick-tools{width:100%}
+.brand-hero{padding:32px;min-height:0}.hero-copy{max-width:70%}.brand-hero h2{font-size:clamp(32px,4vw,50px);line-height:1.08}
+.brand-hero .muted,.hero-tagline{font-size:17px;max-width:560px}.author-signature{font-size:12px;line-height:1.6;letter-spacing:.08em;margin-top:24px}
+.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.summary div{display:flex;flex-wrap:wrap;gap:8px 16px;padding:20px}.summary small{font-size:15px}.summary b{font-size:24px;white-space:nowrap}
+#homePhases,#journeyPhases{align-items:start;gap:0 20px}.phase-clean>summary{min-height:128px;padding:20px;gap:14px}.phase-label strong{font-size:19px;line-height:1.4}.phase-label .ey{font-size:12px}.phase-label small{font-size:14px}.phase-label .stars{display:inline-block;margin-left:8px}.phase-number{flex-shrink:0}
+.mod{padding:16px 12px;min-height:110px}.mod small{font-size:14px}.lessonRow,.lessonBtn,.moduleBtn{gap:14px;padding:18px;min-width:0}.lessonRow b,.lessonBtn b,.moduleBtn b{font-size:18px;line-height:1.4}.lessonRow small,.lessonBtn small,.moduleBtn small{font-size:15px;line-height:1.5}.circle,.num{flex-shrink:0}
+.en{font-size:20px;line-height:1.5}.phrase{padding:22px 0}.choice{font-size:17px;line-height:1.6;text-align:left}.rec{gap:12px}.rec .btn{flex:1 1 180px}
+.tools,.premiumGrid{align-items:stretch}.tool{margin:0}.premiumTrack b{font-size:21px;line-height:1.4}.premiumTrack small{font-size:15px;line-height:1.5}
+.stepHead{gap:16px;min-width:0}.stepHead>div:last-child{min-width:0}.stepHead h3{font-size:23px;margin-top:0}.stepHead p{font-size:16px}.step .num{width:44px;height:44px;flex-basis:44px;display:grid;place-items:center}.step>.btn{width:100%}.stage-status{font-size:14px;flex-wrap:wrap;gap:8px}.stickyBack{flex-wrap:wrap}.stickyBack .btn{flex:1 1 200px}.score div{padding:16px;font-size:15px}
+.bottom{padding-top:6px;padding-bottom:calc(6px + env(safe-area-inset-bottom))}.nav{font-size:13px;line-height:1.4;min-height:62px}.nav i{font-size:22px}
+.brand-footer{font-size:12px;letter-spacing:.08em;line-height:1.8;padding-top:24px}.brand-footer small{font-size:12px;letter-spacing:.04em}
+.teacher-page .star-guide p{font-size:16px}.teacher-page .app{margin-inline:auto}.teacher-page .main{padding-bottom:32px}
+.tabs{display:flex;flex-wrap:wrap;overflow:visible;gap:8px;margin-bottom:18px}.tab{flex:0 1 auto}
+#lesson>.btn:first-child,#module>.btn:first-child,#premium>.btn:first-child{margin-bottom:18px}
+label small{display:block;margin-bottom:8px}textarea{display:block;width:100%}
+@media(max-width:799px){
+ .top{padding:20px}.main{padding:20px}.stats{min-width:0;margin-top:18px}.brand small{font-size:14px}
+ .utility-nav{padding:6px 16px;gap:4px 20px}.utility-nav a{font-size:14px}
+ #home>.premium .premium-cover{width:100%;float:none;margin:0 0 20px}#home>.premium{padding:22px}
+ .brand-hero{padding:28px}.hero-copy{max-width:80%}.brand-hero h2{font-size:36px}
+ .tools{grid-template-columns:1fr}.teacher-page .star-guide{grid-template-columns:1fr}
+ .teacher-page .star-guide>div{display:flex;align-items:center;gap:20px}.teacher-page .star-guide b{min-width:80px}.teacher-page .star-guide p{margin:0}
+}
+@media(max-width:480px){
+ .main{padding:16px 12px 28px}.top{padding:16px}.brand b{font-size:18px}.brand small{font-size:13px}.stat small{font-size:13px}.utility-nav{gap:4px 14px}.utility-nav a{font-size:13px}
+ .card,.tool,.hero:not(.brand-hero){padding:20px 16px}h2{font-size:27px}h3{font-size:23px}
+ .brand-hero{padding:24px 18px}.brand-hero .ey{font-size:12px;min-height:88px;max-width:55%;line-height:1.6}.hero-copy{max-width:100%}.cover-portrait{height:180px}.brand-hero h2{font-size:clamp(27px,7.5vw,36px);margin-top:14px}.brand-hero .muted,.hero-tagline{font-size:16px;max-width:none}.author-signature{font-size:12px}
+ .summary{gap:10px}.summary div{display:block;padding:16px 12px}.summary small{font-size:14px}.summary b{display:block;font-size:22px;margin-top:6px}
+ .phase-clean>summary{padding:18px 14px;gap:10px}.phase-label strong{font-size:18px}.phase-label .ey{font-size:12px}.phase-label small{font-size:14px}.phase-label .stars{margin-left:0;margin-right:6px}.phase-number{min-width:38px;height:42px;font-size:20px}.phase-clean .mods{padding:0 14px 18px}.mods{grid-template-columns:1fr}
+ .nav{font-size:12px;padding-inline:2px;margin:0 1px}.stepHead{gap:12px}.stepHead h3{font-size:21px}.step .num{width:38px;height:38px;flex-basis:38px}.lessonRow{padding:16px 12px}
+ .teacher-page .contact-actions .btn{justify-content:center;width:100%}.teacher-page .intro{font-size:17px}
+}
