@@ -32,15 +32,17 @@
    }
    if(part)result.push(part);return result;
  }
- function speak(text,rate=.95){
+ function speak(text,rate=.95,regional=null){
    if(!supported){refresh();return;}
    const clean=String(text??'').trim();if(!clean)return;
    stop(null);refresh();
    const available=synth.getVoices();
-   if(available.length&&!voices.length){panel.open=true;tell('Nenhuma voz em inglês disponível. Instale ou ative inglês nas configurações de texto para fala do Android e teste novamente.');return;}
-   const voice=voices.find(v=>v.voiceURI===selected)||voices.find(v=>/^en-US$/i.test(v.lang)&&v.localService)||voices.find(v=>/^en-US$/i.test(v.lang))||voices[0]||null;
+   if(!regional&&available.length&&!voices.length){panel.open=true;tell('Nenhuma voz em inglês disponível. Instale ou ative inglês nas configurações de texto para fala do Android e teste novamente.');return;}
+   const matches=regional?voices.filter(v=>v.lang.replace(/_/g,'-').toLowerCase()===regional.lang.toLowerCase()):voices;
+   if(regional&&!matches.length){last=null;repeat.disabled=true;panel.open=true;tell('Áudio regional indisponível: '+regional.label+'. Nenhuma voz compatível foi encontrada neste navegador. Use a transcrição ou o botão de voz geral, que não representa o sotaque solicitado.');return;}
+   const voice=matches.find(v=>v.voiceURI===selected)||(regional?matches.find(v=>v.localService)||matches[0]:voices.find(v=>/^en-US$/i.test(v.lang)&&v.localService)||voices.find(v=>/^en-US$/i.test(v.lang))||voices[0])||null;
    const speed=Number.isFinite(Number(rate))?Math.max(.5,Math.min(1.3,Number(rate))):.95;
-   last={text:clean,rate:speed};repeat.disabled=false;const token=run,parts=chunks(clean);let index=0;
+   last={text:clean,rate:speed,regional};repeat.disabled=false;const token=run,parts=chunks(clean);let index=0;
    stopButton.disabled=false;
    function next(){
      if(token!==run)return;
@@ -48,7 +50,7 @@
      const u=new SpeechSynthesisUtterance(parts[index++]);current=u;u.lang=voice?.lang||'en-US';if(voice)u.voice=voice;u.rate=speed;u.pitch=1;u.volume=1;
      tell('Preparando áudio em inglês…');
      timer=setTimeout(()=>{if(token===run){stop(null);panel.open=true;tell('A voz não iniciou. Verifique o volume de mídia, a voz em inglês e a conexão; depois toque em TESTAR ÁUDIO.');}},12000);
-     u.onstart=()=>{if(token!==run)return;clearTimeout(timer);tell('Reproduzindo em inglês'+(speed<.85?' · lento':'')+' · trecho '+index+'/'+parts.length);};
+     u.onstart=()=>{if(token!==run)return;clearTimeout(timer);tell('Reproduzindo '+(regional?regional.label+' · '+voice.name:'em inglês')+(speed<.85?' · lento':'')+' · trecho '+index+'/'+parts.length);};
      u.onend=()=>{if(token!==run)return;clearTimeout(timer);next();};
      u.onerror=e=>{if(token!==run)return;stop(null);panel.open=true;const messages={'not-allowed':'Toque novamente em Ouvir para permitir a reprodução.','language-unavailable':'A voz em inglês não está instalada. Verifique as configurações de texto para fala do Android.','voice-unavailable':'Esta voz não está disponível. Selecione outra voz e teste novamente.','network':'A voz precisa de conexão. Verifique a internet ou escolha uma voz instalada no aparelho.','audio-busy':'O áudio está ocupado por outro aplicativo. Tente novamente.','audio-hardware':'Não foi possível acessar a saída de áudio. Verifique o aparelho e tente novamente.'};tell(messages[e.error]||'Não foi possível reproduzir. Verifique o volume de mídia e teste outra voz em inglês.');};
      try{synth.speak(u);}catch{stop(null);panel.open=true;tell('Não foi possível iniciar a voz. Toque em TESTAR ÁUDIO para tentar novamente.');}
@@ -56,7 +58,7 @@
    next();
  }
  panel.querySelector('#ismTest').onclick=()=>speak('Welcome to Business English. Let’s practice clear and confident communication.');
- repeat.onclick=()=>{if(last)speak(last.text,last.rate);};stopButton.onclick=()=>stop();
+ repeat.onclick=()=>{if(last)speak(last.text,last.rate,last.regional);};stopButton.onclick=()=>stop();
  if(supported)synth.addEventListener('voiceschanged',refresh);
  document.addEventListener('visibilitychange',()=>{if(document.hidden&&current)stop();});
  window.addEventListener('pagehide',()=>stop(null));
