@@ -3,3 +3,5 @@
 h1[tabindex="-1"]:focus{outline:none}
 
 .comparison-table{max-width:100%;overflow-x:auto}.comparison-table table{width:100%;border-collapse:collapse;font-size:16px}.comparison-table th,.comparison-table td{padding:10px;text-align:left;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.comparison-table caption{text-align:left;color:var(--muted);margin-bottom:10px}
+
+.authentic-video{display:block;width:100%;aspect-ratio:16/9;min-height:200px;border:0;border-radius:10px;background:#00162c}#authentic-listening textarea{min-height:150px}

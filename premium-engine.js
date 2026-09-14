@@ -1,7 +1,7 @@
 /* State and route helpers shared by the renderer and regression checks. */
 window.ISMPremiumEngine=(()=>{
  const obj=v=>v&&typeof v==='object'&&!Array.isArray(v)?v:{};
- function record(v){v=obj(v);return {done:v.done===true,listening:Number.isInteger(v.listening)?v.listening:null,listeningCorrect:v.listeningCorrect===true,choice:Number.isInteger(v.choice)?v.choice:null,choiceCorrect:v.choiceCorrect===true,gap:typeof v.gap==='string'?v.gap:'',gapCorrect:v.gapCorrect===true,draft:typeof v.draft==='string'?v.draft:'',model:v.model===true,criteria:Array.isArray(v.criteria)?v.criteria.map(x=>x===true):[],oral:v.oral===true};}
+ function record(v){v=obj(v);return {done:v.done===true,authenticNotes:typeof v.authenticNotes==="string"?v.authenticNotes:"",listening:Number.isInteger(v.listening)?v.listening:null,listeningCorrect:v.listeningCorrect===true,choice:Number.isInteger(v.choice)?v.choice:null,choiceCorrect:v.choiceCorrect===true,gap:typeof v.gap==='string'?v.gap:'',gapCorrect:v.gapCorrect===true,draft:typeof v.draft==='string'?v.draft:'',model:v.model===true,criteria:Array.isArray(v.criteria)?v.criteria.map(x=>x===true):[],oral:v.oral===true};}
  const key=id=>'ismbe:premium:'+id.toLowerCase()+':v1';
  const lessonId=(c,i)=>c.id+'.'+(i+1);
  const count=(c,s)=>c.lessons.filter((_,i)=>obj(s[lessonId(c,i)]).done===true).length;
