@@ -9,3 +9,13 @@
 
 /* Premium artwork stays complete at every viewport width. */
 .premium-cover{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;border-radius:9px;margin:0 0 20px}.premium .premium-cover{align-self:stretch}#premium>.premium{padding:0;overflow:hidden}#premium>.premium>.premium-cover{border-radius:0;margin-bottom:22px}#premium>.premium>.badge,#premium>.premium>h2,#premium>.premium>p{margin-left:24px;margin-right:24px}#premium>.premium>p{margin-bottom:24px}
+
+/* Quick-access menu: clearer touch targets on the home screen. */
+.utility-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px 16px 16px;background:#00162c;border-bottom:1px solid #15394e}
+.utility-nav a{min-height:74px;padding:12px 8px;border:1px solid #1d506c;border-radius:15px;background:linear-gradient(145deg,#062b43,#08233a);color:#e7f5ff;text-decoration:none!important;font-size:13px;font-weight:750;line-height:1.2;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:7px;box-shadow:0 7px 18px #00000018;transition:transform .16s ease,border-color .16s ease,background .16s ease}
+.utility-nav a::before{font-size:22px;line-height:1;color:#22d5d5}
+.utility-nav a:nth-child(1)::before{content:'◇'}.utility-nav a:nth-child(2)::before{content:'♙'}.utility-nav a:nth-child(3)::before{content:'✉'}.utility-nav a:nth-child(4)::before{content:'★';color:#f4d089}.utility-nav a:nth-child(5)::before{content:'▥'}
+.utility-nav a:hover,.utility-nav a:focus-visible{color:#fff;border-color:#22d5d5;background:#083651}.utility-nav a:active{transform:scale(.98)}
+.utility-nav a:nth-child(4),.utility-nav a:nth-child(5){min-height:62px}
+@media(min-width:481px){.utility-nav{grid-template-columns:repeat(5,minmax(0,1fr));max-width:520px;margin:auto}.utility-nav a:nth-child(4),.utility-nav a:nth-child(5){min-height:74px}}
+@media(max-width:480px){.utility-nav{grid-template-columns:repeat(6,1fr);gap:9px}.utility-nav a:nth-child(1),.utility-nav a:nth-child(2),.utility-nav a:nth-child(3){grid-column:span 2}.utility-nav a:nth-child(4),.utility-nav a:nth-child(5){grid-column:span 3;font-size:12px}}
