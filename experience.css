@@ -63,3 +63,5 @@ html[data-theme="light"] .ey{color:#47747d}html[data-theme="light"] .badge{backg
 
 /* Iconography 2.0 — semantic line icons instead of mixed emoji/glyph styles. */
 .ui-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;vertical-align:-4px;flex:0 0 auto}.badge{display:inline-flex;align-items:center;gap:6px}.badge .ui-icon{width:15px;height:15px}.mode button{display:flex;align-items:center;justify-content:center;gap:7px}.mode button .ui-icon{width:17px;height:17px}
+
+.practice-option>span .ui-icon{width:21px;height:21px}.audio .ui-icon,.mini .ui-icon,.rec .ui-icon{width:17px;height:17px}.audio,.mini,.rec .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px}
