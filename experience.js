@@ -7,5 +7,9 @@
  const mode=document.querySelector('#home > .mode');
  if(mode){const details=document.createElement('details');details.className='quick-tools';const summary=document.createElement('summary');summary.textContent='Preciso falar agora · expressões rápidas';mode.before(details);details.append(summary,mode);}
  const home=document.getElementById('home');
+// Progressive disclosure keeps the first screen focused on learning, while preserving the existing course cover and tools.
+ const premium=home&&home.querySelector('.premium');
+ if(premium){const d=document.createElement('details');d.className='home-more premium-more';const s=document.createElement('summary');s.innerHTML='<span>👑 Conteúdo Premium</span><small>8 trilhas · 86 lições</small>';premium.before(d);d.append(s,premium);}
+
  if(home){const heading=home.querySelector('.title h3');if(heading)heading.textContent='Suas 4 fases';}
 })();
