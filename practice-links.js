@@ -1,6 +1,5 @@
 /* Presentation-only links to optional practice; no learning-state writes. */
 (()=>{
- const nav=document.querySelector('.utility-nav');if(nav){const a=document.createElement('a');a.href='practice-more.html';a.textContent='Praticar mais';nav.append(a);}
  const add=(root,id)=>{if(!root||root.querySelector('.extra-practice-link'))return;let target=id;
  if(/^(7|8|9|10)\./.test(id))target='data-trends';if(/^11\./.test(id))target='data-proposal';
  if(!/^(1\.[1-8]|13\.6|14\.6|15\.6|data-trends|data-proposal)$/.test(target))return;
