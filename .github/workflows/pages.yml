@@ -55,6 +55,9 @@ jobs:
           test -s sw.js
           grep -q "ism-business-backup-v1" storage-guard.js
           grep -q "github-pages-preview" .github/workflows/pages.yml
+          grep -q "function applyRoute" index.html
+          grep -q "history.pushState" index.html
+          grep -q "detail:'m'" index.html
 
   deploy:
     name: Deploy
