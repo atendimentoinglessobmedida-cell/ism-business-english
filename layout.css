@@ -72,3 +72,7 @@ label small{display:block;margin-bottom:8px}textarea{display:block;width:100%}
 
 /* Mobile/PWA closeout: safe areas, fixed navigation clearance and compact standalone chrome. */
 body{min-height:100dvh;padding-top:env(safe-area-inset-top)}.app{min-height:100dvh;padding-bottom:calc(96px + env(safe-area-inset-bottom))}.top{top:env(safe-area-inset-top)}.main{padding-bottom:calc(32px + env(safe-area-inset-bottom))}.bottom{bottom:0;padding-bottom:max(6px,env(safe-area-inset-bottom));box-shadow:0 -8px 24px #00162c12}textarea,input,select{scroll-margin-bottom:120px}@media(display-mode:standalone){.app{padding-bottom:calc(94px + env(safe-area-inset-bottom))}.top{border-radius:0 0 18px 18px}}@media(max-width:480px){.bottom{min-height:calc(66px + env(safe-area-inset-bottom))}.main{padding-bottom:calc(30px + env(safe-area-inset-bottom))}}
+
+/* Preserve the full course-cover portrait instead of cropping it. */
+.cover-portrait{display:flex;align-items:flex-start;justify-content:flex-end;overflow:visible}.cover-portrait img{width:100%;height:100%;object-fit:contain!important;object-position:right top!important}
+@media(max-width:480px){.cover-portrait{height:210px!important;width:58%!important;right:0;top:0}.cover-portrait img{object-fit:contain!important;object-position:right top!important}}
