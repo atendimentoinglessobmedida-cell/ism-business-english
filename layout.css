@@ -69,3 +69,6 @@ label small{display:block;margin-bottom:8px}textarea{display:block;width:100%}
  .bottom{padding-top:4px;padding-bottom:calc(4px + env(safe-area-inset-bottom))}
  .nav{min-height:48px;display:flex;align-items:center;justify-content:center;gap:10px}.nav i{margin:0;font-size:20px}
 }
+
+/* Mobile/PWA closeout: safe areas, fixed navigation clearance and compact standalone chrome. */
+body{min-height:100dvh;padding-top:env(safe-area-inset-top)}.app{min-height:100dvh;padding-bottom:calc(96px + env(safe-area-inset-bottom))}.top{top:env(safe-area-inset-top)}.main{padding-bottom:calc(32px + env(safe-area-inset-bottom))}.bottom{bottom:0;padding-bottom:max(6px,env(safe-area-inset-bottom));box-shadow:0 -8px 24px #00162c12}textarea,input,select{scroll-margin-bottom:120px}@media(display-mode:standalone){.app{padding-bottom:calc(94px + env(safe-area-inset-bottom))}.top{border-radius:0 0 18px 18px}}@media(max-width:480px){.bottom{min-height:calc(66px + env(safe-area-inset-bottom))}.main{padding-bottom:calc(30px + env(safe-area-inset-bottom))}}
