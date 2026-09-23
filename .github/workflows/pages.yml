@@ -15,7 +15,50 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  qa:
+    name: Published App QA
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate manifest
+        run: node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest','utf8')); console.log('manifest ok')"
+      - name: Check JavaScript syntax
+        run: |
+          set -e
+          for f in *.js; do node --check "$f"; done
+      - name: Check referenced local assets
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+          missing=[]
+          for p in Path('.').glob('*.html'):
+              text=p.read_text(encoding='utf-8')
+              for ref in re.findall(r'(?:src|href)=["\']([^"\'#?]+)', text):
+                  if ref.startswith(('http://','https://','mailto:','tel:')): continue
+                  target=(p.parent/ref).resolve()
+                  if not target.exists(): missing.append(f'{p}: {ref}')
+          if missing:
+              print('\n'.join(missing)); sys.exit(1)
+          print('local references ok')
+          PY
+      - name: Validate critical published files
+        run: |
+          test -s index.html
+          test -s storage-guard.js
+          test -s experience.js
+          test -s audio-player.js
+          test -s sw.js
+          grep -q "ism-business-backup-v1" storage-guard.js
+          grep -q "github-pages-preview" .github/workflows/pages.yml
+
   deploy:
+    name: Deploy
+    needs: qa
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
