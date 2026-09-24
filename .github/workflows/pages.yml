@@ -52,6 +52,11 @@ jobs:
         run: |
           test -s index.html
           test -s scripts/published-functional-check.mjs
+          test -s planos.html
+          test -s planos.css
+          test -s planos.js
+          grep -q "CONFIRMAR DISPONIBILIDADE" planos.html
+          grep -q "MELHOR VALOR NO CORE" planos.html
           test -s storage-guard.js
           test -s experience.js
           test -s audio-player.js
