@@ -30,6 +30,8 @@ jobs:
         run: |
           set -e
           for f in *.js; do node --check "$f"; done
+      - name: Check published functional contracts
+        run: node scripts/published-functional-check.mjs
       - name: Check referenced local assets
         run: |
           python - <<'PY'
@@ -49,6 +51,7 @@ jobs:
       - name: Validate critical published files
         run: |
           test -s index.html
+          test -s scripts/published-functional-check.mjs
           test -s storage-guard.js
           test -s experience.js
           test -s audio-player.js
