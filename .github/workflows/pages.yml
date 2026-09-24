@@ -61,6 +61,11 @@ jobs:
           grep -q "180:40999" planos.js
           grep -q "CONVERSAR PELO WHATSAPP" professor.html
           if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
+          grep -q "teacher-cover-wrap" professor.html
+          grep -q "Vertical-scroll release" layout.css
+          grep -q "object-fit:contain!important" layout.css
+          grep -q "AO FINAL, VOCÊ SERÁ CAPAZ DE" index.html
+          grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
           test -s audio-player.js
