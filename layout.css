@@ -80,3 +80,10 @@ body{min-height:100dvh;padding-top:env(safe-area-inset-top)}.app{min-height:100d
 /* Production safe-area correction: avoid counting the top inset twice. */
 body{padding-top:0}.top{top:0}.bottom{padding-bottom:calc(6px + env(safe-area-inset-bottom))}
 @media(display-mode:standalone){.top{padding-top:calc(14px + env(safe-area-inset-top))}}
+
+/* Course cover v2: show the complete approved artwork without clipping. */
+.brand-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,46%);align-items:center;min-height:0!important;overflow:hidden}
+.brand-hero .cover-portrait{position:relative!important;inset:auto!important;z-index:0!important;width:100%!important;height:auto!important;min-height:280px;order:2;mask-image:none!important;-webkit-mask-image:none!important;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.brand-hero .cover-portrait img{display:block;width:100%!important;height:auto!important;max-height:390px;object-fit:contain!important;object-position:center!important}
+.brand-hero .hero-copy{order:1;max-width:none!important}
+@media(max-width:700px){.brand-hero{grid-template-columns:1fr;padding-bottom:0!important}.brand-hero .hero-copy{padding-bottom:8px}.brand-hero .cover-portrait{width:100%!important;height:auto!important;min-height:0!important;max-height:none!important;justify-content:center}.brand-hero .cover-portrait img{width:min(100%,520px)!important;height:auto!important;max-height:none!important;object-fit:contain!important}.brand-hero .ey{min-height:0!important;max-width:none!important}}
