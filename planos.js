@@ -1,5 +1,5 @@
 (()=>{'use strict';
- const prices={core:{30:5899,180:32999,365:58999},premium:{30:7999,180:44999,365:79999}};
+ const prices={core:{30:5899,180:40999,365:58999},premium:{30:7999,180:44999,365:79999}};
  const names={core:'Business English Core',premium:'Core + Job Interviews'},periods={30:'Mensal',180:'Semestral',365:'Anual'},months={30:1,180:6,365:12};
  const money=cents=>new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'}).format(cents/100);
  function update(){const pack=document.querySelector('[name=package]:checked').value,days=document.querySelector('[name=period]:checked').value;
