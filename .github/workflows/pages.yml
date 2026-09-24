@@ -73,6 +73,9 @@ jobs:
           grep -q "ETAPA " index.html
           grep -q "Core Flow v2" experience.css
           grep -q "screen-context" experience.css
+          grep -q "buildReviewExercises" index.html
+          grep -q "screen-revise" index.html
+          grep -q "Core Review v1" experience.css
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
