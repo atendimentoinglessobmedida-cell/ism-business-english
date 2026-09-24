@@ -120,4 +120,4 @@ html[data-theme="professional"] #home .btn-secondary{background:#0e4557;color:#f
 @media(prefers-reduced-motion:reduce){.lesson-screen{animation:none}.lesson-flow-progress i{transition:none}}
 
 /* Core Review v1 — mixed retrieval practice before Master. */
-.screen-revise .screen-identity>span{background:#f6a96b}.stage-revise.on span{background:#f6a96b;color:#031d29}.screen-revise .review-intro{border-left:3px solid #f6a96b}.screen-revise .review-intro p{margin:0;line-height:1.55}.screen-revise .exercise{border-color:color-mix(in srgb,var(--surface-border) 78%,#f6a96b)}
+.screen-revise .screen-identity>span{background:#f6a96b}.stage-revise.on span{background:#f6a96b;color:#031d29}.screen-revise .review-intro{border-left:3px solid #f6a96b}.screen-revise .review-intro p{margin:0;line-height:1.55}.screen-revise .exercise{border-color:#9a684d}
