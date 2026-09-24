@@ -80,6 +80,10 @@ jobs:
           grep -q "BUSINESS MODE" index.html
           grep -q "learnerSupport" index.html
           grep -q "Travel-inspired learner utilities" experience.css
+          test -f core-shell.css
+          test -f learner-features.js
+          grep -q "learner-features.js?v=1" index.html
+          grep -q "storage-guard.js?v=5" index.html
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
