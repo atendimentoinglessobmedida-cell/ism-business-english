@@ -5,10 +5,10 @@
  const supported=!!synth&&typeof window.SpeechSynthesisUtterance==='function';
  let voices=[],selected='',current=null,run=0,timer=null,last=null;const playback={text:'',rate:.95,started:0};
  try{selected=JSON.parse(localStorage.getItem('ismbe:audio:v1')||'{}').voice||'';}catch{}
- const panel=document.createElement('details');panel.className='audio-settings';
+ const panel=document.createElement('details');panel.className='audio-settings learner-support-setting';
  panel.innerHTML='<summary>Áudio · voz e teste</summary><div class="audio-controls"><label for="ismVoice">Voz em inglês</label><select id="ismVoice" aria-describedby="ismAudioHelp"></select><div class="audio-buttons"><button type="button" id="ismTest" class="btn soft">TESTAR ÁUDIO</button><button type="button" id="ismRepeat" class="btn soft" disabled>REPETIR</button><button type="button" id="ismStop" class="btn soft" disabled>PARAR</button></div><p id="ismAudioHelp">No Android, use uma voz em inglês do aparelho. O áudio começa ao tocar em Ouvir. Se necessário, ative ou instale inglês nas configurações de texto para fala do Android.</p></div>';
  const status=document.createElement('p');status.id='ismAudioStatus';status.className='audio-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
- const main=document.querySelector('main');main.prepend(status);main.prepend(panel);
+ const main=document.querySelector('main');const support=document.getElementById('learnerSupport');main.prepend(status);(support||main).append(panel);
  const select=panel.querySelector('select'),stopButton=panel.querySelector('#ismStop'),repeat=panel.querySelector('#ismRepeat');
  function tell(message){status.textContent=message;}
  function refresh(){
