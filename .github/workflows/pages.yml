@@ -69,6 +69,10 @@ jobs:
           grep -q "Vertical-scroll release" layout.css
           grep -q "object-fit:contain!important" layout.css
           grep -q "AO FINAL, VOCÊ SERÁ CAPAZ DE" index.html
+          grep -q "function lessonStageNav" index.html
+          grep -q "ETAPA " index.html
+          grep -q "Core Flow v2" experience.css
+          grep -q "screen-context" experience.css
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
