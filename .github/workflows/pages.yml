@@ -57,6 +57,10 @@ jobs:
           test -s planos.js
           grep -q "CONFIRMAR DISPONIBILIDADE" planos.html
           grep -q "MELHOR VALOR NO CORE" planos.html
+          grep -q "R$ 409,99" planos.html
+          grep -q "180:40999" planos.js
+          grep -q "CONVERSAR PELO WHATSAPP" professor.html
+          if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
           test -s storage-guard.js
           test -s experience.js
           test -s audio-player.js
