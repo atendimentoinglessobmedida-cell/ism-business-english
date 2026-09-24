@@ -58,6 +58,8 @@ jobs:
           grep -q "function applyRoute" index.html
           grep -q "history.pushState" index.html
           grep -q "detail:'m'" index.html
+          test -s shared-learning-ui.css
+          for f in interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html premium.html practice-more.html; do grep -q "shared-learning-ui.css" "$f"; done
 
   deploy:
     name: Deploy
