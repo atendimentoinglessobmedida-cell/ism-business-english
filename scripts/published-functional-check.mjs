@@ -10,6 +10,6 @@ assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLast
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
 assert(premium.includes('premium-shell.js')&&premium.includes('premium-study.js'),'Premium shared runtime missing');
 for(const file of ['premium.html','interview.html','emails.html','networking.html','global-teams.html','negotiation.html','difficult-conversations.html','leadership.html','career-growth.html']){const h=read(file);assert(h.includes('premium-shell.css')&&h.includes('premium-shell.js'),'Premium shell missing: '+file);assert(h.includes('storage-guard.js'),'Storage guard missing: '+file);}
-assert(sw.includes("const CACHE='ism-business-v43'"),'Expected current PWA cache version');
+assert(sw.includes("const CACHE='ism-business-v44'"),'Expected current PWA cache version');
 assert(sw.includes('API_CACHE')&&sw.includes('caches.match(req)'),'Offline API fallback missing');
 console.log('functional contracts ok');
