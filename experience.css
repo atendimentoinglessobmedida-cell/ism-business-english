@@ -94,3 +94,6 @@ html[data-theme="professional"] #home .btn-secondary{background:#0e4557;color:#f
 
 /* Home/Journey phase repair: hidden Home duplicate stays hidden; Journey owns the phase view. */
 #homePhases[hidden]{display:none!important}#journeyPhases{display:grid;grid-template-columns:1fr;gap:12px}#journeyPhases .phase-clean{margin:0;width:100%}#journeyPhases .phase-clean>summary{box-sizing:border-box;width:100%;align-items:center}#journeyPhases .phase-clean .mods{box-sizing:border-box}
+
+/* Release-quality learning feedback shared by Core. */
+.learning-rubric{margin:12px 0;padding:13px 14px;border:1px solid var(--surface-border);border-radius:12px;background:var(--surface-soft);color:var(--surface-text)}.learning-rubric strong{display:block;color:var(--ds-accent-strong);margin-bottom:7px}.learning-rubric ul{margin:0;padding-left:20px}.learning-rubric li{margin:5px 0;line-height:1.45}
