@@ -73,6 +73,8 @@ jobs:
           grep -q "não representam uma certificação de proficiência" index.html
           grep -q "Skill progress: evidence" experience.css
           test -s premium-shell.css
+          grep -q "function capability" audio-player.js
+          grep -q "não é uma nota de pronúncia" index.html
           test -s premium-shell.js
           for f in premium.html interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html; do grep -q "premium-shell.css" "$f"; grep -q "premium-shell.js" "$f"; done
           for f in interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html premium.html practice-more.html; do grep -q "shared-learning-ui.css" "$f"; done
