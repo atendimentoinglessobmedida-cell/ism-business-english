@@ -89,6 +89,11 @@ jobs:
           grep -q "reviewPriority" learner-features.js
           grep -q "rateReview" learner-features.js
           grep -q "Learning Engine v2" experience.css
+          grep -q "home-action-grid" index.html
+          grep -q "lesson-stage-compact" index.html
+          grep -q "UX Package 3" experience.css
+          grep -q "Preciso negociar um prazo" learner-features.js
+          grep -q "learner-features.js?v=3" index.html
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
