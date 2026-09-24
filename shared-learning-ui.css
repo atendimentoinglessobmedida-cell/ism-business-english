@@ -11,3 +11,6 @@ input,textarea,select{background:#00182c!important;color:var(--ui-text)!importan
 .sticky{position:sticky;top:0;z-index:6;padding:8px 0;background:linear-gradient(#00162cf5,#00162cdd,transparent);align-items:center}.sticky .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
 :focus-visible{outline:3px solid var(--ui-accent)!important;outline-offset:2px!important}
 @media(max-width:600px){.top{padding:14px 16px!important}.main{padding:14px!important}.sticky{gap:7px}.sticky .btn{font-size:11px;padding-inline:9px}.card,.hero{padding:16px!important}}
+
+.learning-rubric{margin:12px 0;padding:13px 14px;border:1px solid #276880;border-radius:10px;background:#04283f;color:var(--ui-text,#f5f8fc)}.learning-rubric strong{display:block;color:var(--ui-accent,#08c9eb);margin-bottom:7px}.learning-rubric ul{margin:0;padding-left:19px}.learning-rubric li{margin:5px 0;line-height:1.4}
+.offline-status{position:fixed;left:12px;bottom:calc(82px + env(safe-area-inset-bottom));z-index:31;padding:7px 10px;border-radius:9px;background:#5b3c18;color:#fff;font:700 12px/1.3 system-ui;box-shadow:0 5px 16px #00162c33}.offline-status[hidden]{display:none}
