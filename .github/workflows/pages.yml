@@ -76,6 +76,10 @@ jobs:
           grep -q "buildReviewExercises" index.html
           grep -q "screen-revise" index.html
           grep -q "Core Review v1" experience.css
+          grep -q "SMART REVIEW" index.html
+          grep -q "BUSINESS MODE" index.html
+          grep -q "learnerSupport" index.html
+          grep -q "Travel-inspired learner utilities" experience.css
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
