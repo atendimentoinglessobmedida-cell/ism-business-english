@@ -83,7 +83,12 @@ jobs:
           test -f core-shell.css
           test -f learner-features.js
           grep -q "learner-features.js?v=1" index.html
-          grep -q "storage-guard.js?v=5" index.html
+          grep -q "storage-guard.js?v=6" index.html
+          grep -q "learner-features.js?v=2" index.html
+          grep -q "reviewHistory" index.html
+          grep -q "reviewPriority" learner-features.js
+          grep -q "rateReview" learner-features.js
+          grep -q "Learning Engine v2" experience.css
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
