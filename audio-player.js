@@ -3,7 +3,7 @@
  'use strict';
  const synth=window.speechSynthesis;
  const supported=!!synth&&typeof window.SpeechSynthesisUtterance==='function';
- let voices=[],selected='',current=null,run=0,timer=null,last=null;
+ let voices=[],selected='',current=null,run=0,timer=null,last=null;const playback={text:'',rate:.95,started:0};
  try{selected=JSON.parse(localStorage.getItem('ismbe:audio:v1')||'{}').voice||'';}catch{}
  const panel=document.createElement('details');panel.className='audio-settings';
  panel.innerHTML='<summary>Áudio · voz e teste</summary><div class="audio-controls"><label for="ismVoice">Voz em inglês</label><select id="ismVoice" aria-describedby="ismAudioHelp"></select><div class="audio-buttons"><button type="button" id="ismTest" class="btn soft">TESTAR ÁUDIO</button><button type="button" id="ismRepeat" class="btn soft" disabled>REPETIR</button><button type="button" id="ismStop" class="btn soft" disabled>PARAR</button></div><p id="ismAudioHelp">No Android, use uma voz em inglês do aparelho. O áudio começa ao tocar em Ouvir. Se necessário, ative ou instale inglês nas configurações de texto para fala do Android.</p></div>';
@@ -42,7 +42,7 @@
    if(regional&&!matches.length){last=null;repeat.disabled=true;panel.open=true;tell('Áudio regional indisponível: '+regional.label+'. Nenhuma voz compatível foi encontrada neste navegador. Use a transcrição ou o botão de voz geral, que não representa o sotaque solicitado.');return;}
    const voice=matches.find(v=>v.voiceURI===selected)||(regional?matches.find(v=>v.localService)||matches[0]:voices.find(v=>/^en-US$/i.test(v.lang)&&v.localService)||voices.find(v=>/^en-US$/i.test(v.lang))||voices[0])||null;
    const speed=Number.isFinite(Number(rate))?Math.max(.5,Math.min(1.3,Number(rate))):.95;
-   last={text:clean,rate:speed,regional};repeat.disabled=false;const token=run,parts=chunks(clean);let index=0;
+   last={text:clean,rate:speed,regional};playback.text=clean;playback.rate=speed;playback.started=Date.now();repeat.disabled=false;const token=run,parts=chunks(clean);let index=0;
    stopButton.disabled=false;
    function next(){
      if(token!==run)return;
@@ -65,5 +65,6 @@
  // Prevent speech continuing after leaving an activity, including dynamic Premium views.
  const view=document.getElementById('view');if(view)new MutationObserver(()=>{if(current)stop();}).observe(view,{childList:true});
  document.querySelectorAll('.panel').forEach(p=>new MutationObserver(()=>{if(current)stop();}).observe(p,{attributes:true,attributeFilter:['class']}));
- window.ISMAudio={speak,stop};refresh();
+ function capability(){return {supported,englishVoices:voices.length,selected:selected||'auto',lastText:playback.text,lastRate:playback.rate};}
+ window.ISMAudio={speak,stop,capability};refresh();
 })();
