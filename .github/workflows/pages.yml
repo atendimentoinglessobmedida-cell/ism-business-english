@@ -60,6 +60,10 @@ jobs:
           grep -q "R$ 409,99" planos.html
           grep -q "180:40999" planos.js
           grep -q "CONVERSAR PELO WHATSAPP" professor.html
+          grep -q "ASSINE JÁ" index.html
+          grep -q "FALE POR WHATSAPP" index.html
+          grep -q "CONHEÇA O PROFESSOR" index.html
+          grep -q "Conversion footer" layout.css
           if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
           grep -q "teacher-cover-wrap" professor.html
           grep -q "Vertical-scroll release" layout.css
