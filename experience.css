@@ -118,3 +118,6 @@ html[data-theme="professional"] #home .btn-secondary{background:#0e4557;color:#f
 @media(max-width:600px){.lesson-stage-nav{grid-template-columns:repeat(4,1fr)}.lesson-stage{min-height:56px}.lesson-stage b{font-size:8px}.lesson-screen{min-height:260px}}
 @media(max-width:380px){.lesson-stage-nav{grid-template-columns:repeat(3,1fr)}.lesson-step-actions{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.lesson-screen{animation:none}.lesson-flow-progress i{transition:none}}
+
+/* Core Review v1 — mixed retrieval practice before Master. */
+.screen-revise .screen-identity>span{background:#f6a96b}.stage-revise.on span{background:#f6a96b;color:#031d29}.screen-revise .review-intro{border-left:3px solid #f6a96b}.screen-revise .review-intro p{margin:0;line-height:1.55}.screen-revise .exercise{border-color:color-mix(in srgb,var(--surface-border) 78%,#f6a96b)}
