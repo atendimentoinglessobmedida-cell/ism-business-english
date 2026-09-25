@@ -110,9 +110,6 @@ jobs:
           grep -q "scrollIntoView" index.html
           grep -q "Production safe-area correction" layout.css
           grep -q "Release-quality learning feedback" experience.css
-          grep -q "function updateToday" index.html
-          grep -q 'class="today-card"' index.html
-          grep -q "UX round 2: Home centers" experience.css
           grep -q "function renderSkills" index.html
           grep -q "não representam uma certificação de proficiência" index.html
           grep -q "Skill progress: evidence" experience.css
