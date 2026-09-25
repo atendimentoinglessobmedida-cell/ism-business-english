@@ -87,7 +87,7 @@ jobs:
           grep -q "reviewPriority" learner-features.js
           grep -q "reviewDue" learner-features.js
           grep -q "pagehide" index.html
-          grep -q "ism-business-v56" sw.js
+          grep -q "ism-business-v57" sw.js
           grep -q "rateReview" learner-features.js
           grep -q "Learning Engine v2" experience.css
           grep -q "home-action-grid" index.html
@@ -126,6 +126,8 @@ jobs:
           grep -q "premium-shell.css?v=2" premium.html
           grep -q "ESCOLHA PELO SEU OBJETIVO" premium-study.js
           grep -q "Premium goals v3" premium-shell.css
+          grep -q "8 trilhas · 88 lições" experience.js
+          grep -q "try{localStorage.removeItem" experience.js
           grep -q "EXPLORAR GLOBAL CAREER PACK" index.html
           grep -q "88 lições" index.html
           grep -q "premium-path-summary" premium-study.js
