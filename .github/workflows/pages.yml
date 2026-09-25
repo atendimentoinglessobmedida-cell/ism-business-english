@@ -82,12 +82,12 @@ jobs:
           grep -q "Travel-inspired learner utilities" experience.css
           test -f core-shell.css
           test -f learner-features.js
-          grep -q "storage-guard.js?v=8" index.html
+          grep -q "storage-guard.js?v=9" index.html
           grep -q "reviewHistory" index.html
           grep -q "reviewPriority" learner-features.js
           grep -q "reviewDue" learner-features.js
           grep -q "pagehide" index.html
-          grep -q "ism-business-v58" sw.js
+          grep -q "ism-business-v59" sw.js
           grep -q "rateReview" learner-features.js
           grep -q "Learning Engine v2" experience.css
           grep -q "home-action-grid" index.html
@@ -130,6 +130,8 @@ jobs:
           grep -q "try{localStorage.removeItem" experience.js
           grep -q "indexedDB.open" storage-guard.js
           grep -q "ISMStorage.dbGet" index.html
+          grep -q "recoverDeviceProgress" index.html
+          grep -q "storageAvailable===false||storageAvailable===\x27indexeddb\x27" storage-guard.js
           grep -q "EXPLORAR GLOBAL CAREER PACK" index.html
           grep -q "88 lições" index.html
           grep -q "premium-path-summary" premium-study.js
