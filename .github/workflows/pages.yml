@@ -116,6 +116,9 @@ jobs:
           grep -q "listeningDone" index.html
           grep -q "0,8×" index.html
           grep -q "Listening Lab v2" experience.css
+          grep -q "simulationStage" index.html
+          grep -q "FAZER SEGUNDA TENTATIVA" index.html
+          grep -q "Professional Simulations v3" experience.css
           grep -q "SIMULAÇÃO PROFISSIONAL" index.html
           grep -q "PLANEJE SUA RESPOSTA" index.html
           grep -q "REFLITA E REPITA" index.html
