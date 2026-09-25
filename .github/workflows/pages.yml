@@ -130,6 +130,7 @@ jobs:
           grep -q "try{localStorage.removeItem" experience.js
           grep -q "storageAvailable=\x27indexeddb\x27" storage-guard.js
           grep -q "Mudando para armazenamento seguro" storage-guard.js
+          grep -q "Progresso recuperado e salvo no aparelho" storage-guard.js
           grep -q "indexedDB.open" storage-guard.js
           grep -q "ISMStorage.dbGet" index.html
           grep -q "recoverDeviceProgress" index.html
