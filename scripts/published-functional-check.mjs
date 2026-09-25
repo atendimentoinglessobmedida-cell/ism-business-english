@@ -13,3 +13,4 @@ for(const file of ['premium.html','interview.html','emails.html','networking.htm
 assert(sw.includes("const CACHE='ism-business-v56'"),'Expected current PWA cache version');
 assert(sw.includes('API_CACHE')&&sw.includes('caches.match(req)'),'Offline API fallback missing');
 console.log('functional contracts ok');
+const premium=fs.readFileSync('premium.html','utf8'),premiumStudy=fs.readFileSync('premium-study.js','utf8');assert(premium.includes('premium-study.js?v=6')&&premium.includes('premium-shell.css?v=2'),'Premium asset versions missing');assert(premiumStudy.includes('ESCOLHA PELO SEU OBJETIVO')&&premiumStudy.includes('trackIntent')&&premiumStudy.includes('Conseguir uma vaga global'),'Premium goal-led navigation missing');
