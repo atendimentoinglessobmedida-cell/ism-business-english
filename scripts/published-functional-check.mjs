@@ -10,7 +10,7 @@ assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLast
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
 assert(premium.includes('premium-shell.js')&&premium.includes('premium-study.js'),'Premium shared runtime missing');
 for(const file of ['premium.html','interview.html','emails.html','networking.html','global-teams.html','negotiation.html','difficult-conversations.html','leadership.html','career-growth.html']){const h=read(file);assert(h.includes('premium-shell.css')&&h.includes('premium-shell.js'),'Premium shell missing: '+file);assert(h.includes('storage-guard.js'),'Storage guard missing: '+file);}
-assert(sw.includes("const CACHE='ism-business-v56'"),'Expected current PWA cache version');
+assert(sw.includes("const CACHE='ism-business-v57'"),'Expected current PWA cache version');
 assert(sw.includes('API_CACHE')&&sw.includes('caches.match(req)'),'Offline API fallback missing');
-const premiumStudy=fs.readFileSync('premium-study.js','utf8');assert(premium.includes('premium-study.js?v=6')&&premium.includes('premium-shell.css?v=2'),'Premium asset versions missing');assert(premiumStudy.includes('ESCOLHA PELO SEU OBJETIVO')&&premiumStudy.includes('trackIntent')&&premiumStudy.includes('Conseguir uma vaga global'),'Premium goal-led navigation missing');
+const premiumStudy=fs.readFileSync('premium-study.js','utf8');assert(premium.includes('premium-study.js?v=6')&&premium.includes('premium-shell.css?v=2'),'Premium asset versions missing');assert(premiumStudy.includes('ESCOLHA PELO SEU OBJETIVO')&&premiumStudy.includes('trackIntent')&&premiumStudy.includes('Conseguir uma vaga global'),'Premium goal-led navigation missing');assert(read('experience.js').includes("try{localStorage.removeItem('ismbe:theme')}catch{}")&&read('experience.js').includes('8 trilhas · 88 lições'),'Utility shell reliability contract missing');
 console.log('functional contracts ok');
