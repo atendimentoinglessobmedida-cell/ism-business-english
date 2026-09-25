@@ -87,14 +87,16 @@ jobs:
           grep -q "reviewPriority" learner-features.js
           grep -q "reviewDue" learner-features.js
           grep -q "pagehide" index.html
-          grep -q "ism-business-v50" sw.js
+          grep -q "ism-business-v51" sw.js
           grep -q "rateReview" learner-features.js
           grep -q "Learning Engine v2" experience.css
           grep -q "home-action-grid" index.html
           grep -q "lesson-stage-compact" index.html
           grep -q "UX Package 3" experience.css
           grep -q "Preciso negociar um prazo" learner-features.js
-          grep -q "learner-features.js?v=4" index.html
+          grep -q "businessPhrasePacks" learner-features.js
+          grep -q "Would it be possible to extend the deadline to Friday?" learner-features.js
+          grep -q "learner-features.js?v=5" index.html
           grep -q "Pedagogy v2" experience.css
           test -s storage-guard.js
           test -s experience.js
