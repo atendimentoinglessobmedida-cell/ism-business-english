@@ -122,6 +122,10 @@ jobs:
           grep -q "achievementData" index.html
           grep -q "GLOBAL BUSINESS COMMUNICATOR" index.html
           grep -q "Progression & achievements v1" experience.css
+          grep -q "premium-study.js?v=6" premium.html
+          grep -q "premium-shell.css?v=2" premium.html
+          grep -q "ESCOLHA PELO SEU OBJETIVO" premium-study.js
+          grep -q "Premium goals v3" premium-shell.css
           grep -q "EXPLORAR GLOBAL CAREER PACK" index.html
           grep -q "88 lições" index.html
           grep -q "premium-path-summary" premium-study.js
