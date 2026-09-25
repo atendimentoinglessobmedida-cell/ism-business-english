@@ -82,7 +82,7 @@ jobs:
           grep -q "Travel-inspired learner utilities" experience.css
           test -f core-shell.css
           test -f learner-features.js
-          grep -q "storage-guard.js?v=9" index.html
+          grep -q "storage-guard.js?v=12" index.html
           grep -q "reviewHistory" index.html
           grep -q "reviewPriority" learner-features.js
           grep -q "reviewDue" learner-features.js
