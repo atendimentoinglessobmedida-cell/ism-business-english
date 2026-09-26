@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8'),assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
-const html=read('index.html'),premium=read('premium.html'),storage=read('storage-guard.js'),audio=read('audio-player.js'),sw=read('sw.js'),features=read('learner-features.js'),coreCss=read('core-shell.css'),experience=read('experience.js'),coach=read('adaptive-coach.js'),coachCss=read('adaptive-coach.css');
+const html=read('index.html'),premium=read('premium.html'),storage=read('storage-guard.js'),audio=read('audio-player.js'),sw=read('sw.js'),features=read('learner-features.js'),coreCss=read('core-shell.css'),experience=read('experience.js'),coach=read('adaptive-coach.js'),coachCss=read('adaptive-coach.css'),speaking=read('speaking-experience.js'),myEnglish=read('my-business-english.js'),realBusiness=read('real-business.js'),premiumUx=read('premium-ux.css');
 assert(html.includes('core-shell.css?v=1')&&html.includes('learner-features.js?v=5'),'Core modular assets missing');
 assert(features.includes('startSmartReview')&&features.includes('rateReview')&&features.includes('openBusinessMode'),'Learner feature module incomplete');
 assert(features.includes('reviewGoalBoost')&&features.includes('lessonEvidence')&&features.includes('reviewReason'),'Smart Review 2 evidence engine missing');
@@ -15,12 +15,18 @@ assert(html.includes('function applyRoute')&&html.includes("addEventListener('ha
 assert(html.includes('function continueLearning')&&html.includes('function retryExercise'),'Learning continuation/retry missing');
 for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview()"','onclick="openBusinessMode()"','onclick="nav(this)"'])assert(html.includes(handler),'Core action handler missing: '+handler);
 for(const fn of ['function nav(','function show(','function setNav(','function renderSimulation(','function renderToolkit(','function lessonStageNav(','function openLesson('])assert(html.includes(fn),'Core global function missing: '+fn);
-assert(experience.includes("loadScript('adaptive-coach.js?v=1')")&&experience.includes("loadStyle('adaptive-coach.css?v=1')")&&experience.includes("coach.id='ismCoach'"),'Adaptive Coach integration missing');
+assert(experience.includes("loadScript('adaptive-coach.js?v=2')")&&experience.includes("loadStyle('adaptive-coach.css?v=2')")&&experience.includes("coach.id='ismCoach'"),'Adaptive Coach integration missing');
+assert(experience.includes("loadScript('speaking-experience.js?v=1')")&&experience.includes("loadScript('my-business-english.js?v=1')")&&experience.includes("loadScript('real-business.js?v=1')"),'Learning experience modules missing');
+assert(experience.includes("loadStyle('premium-ux.css?v=1')"),'Premium UX integration missing');
 assert(coach.includes('function recommendation()')&&coach.includes('reviewDueCount()')&&coach.includes('lowLesson()')&&coach.includes('window.ISMCoach'),'Adaptive Coach engine incomplete');
 assert(coach.includes('const GOALS=')&&coach.includes('function setGoal(')&&coach.includes('function goalProgress(')&&coach.includes('coach-why'),'Coach goal/explanation layer missing');
 assert(coach.includes('startSmartReview()')&&coach.includes('continueLearning()')&&coach.includes("renderSimulation()"),'Coach next actions incomplete');
 assert(!coach.includes('ISMStorage.ready().then'),'Coach must not encapsulate global Core handlers');
 assert(coachCss.includes('.ism-coach')&&coachCss.includes('.coach-action')&&coachCss.includes('.coach-goals')&&coachCss.includes('.coach-skills'),'Coach visual layer missing');
+assert(speaking.includes('MediaRecorder')&&speaking.includes('speakingEvidence')&&speaking.includes('window.ISMSpeaking'),'Speaking evidence flow missing');
+assert(myEnglish.includes('exerciseResults')&&myEnglish.includes('speakingEvidence')&&myEnglish.includes('reviewHistory')&&myEnglish.includes('window.ISMMyEnglish'),'My Business English evidence hub missing');
+assert(realBusiness.includes('Ouça primeiro')&&realBusiness.includes('realBusiness')&&realBusiness.includes('window.ISMRealBusiness'),'Real Business English flow missing');
+assert(premiumUx.includes('.home-action-grid')&&premiumUx.includes('.bottom')&&premiumUx.includes('prefers-reduced-motion'),'Premium mobile UX contracts missing');
 assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.includes('dbPut')&&storage.includes('dbGet'),'IndexedDB persistence missing');
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
