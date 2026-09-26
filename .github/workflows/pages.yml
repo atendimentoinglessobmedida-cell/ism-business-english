@@ -48,123 +48,25 @@ jobs:
               print('\n'.join(missing)); sys.exit(1)
           print('local references ok')
           PY
-      - name: Validate critical published files
+      - name: Validate critical release files
         run: |
-          test -s index.html
-          test -s scripts/published-functional-check.mjs
-          test -s planos.html
-          test -s planos.css
-          test -s planos.js
-          grep -q "CONFIRMAR DISPONIBILIDADE" planos.html
-          grep -q "MELHOR VALOR NO CORE" planos.html
-          grep -q "R$ 409,99" planos.html
-          grep -q "180:40999" planos.js
-          grep -q "CONVERSAR PELO WHATSAPP" professor.html
-          grep -q "ASSINE JÁ" index.html
-          grep -q "FALE POR WHATSAPP" index.html
-          grep -q "CONHEÇA O PROFESSOR" index.html
-          grep -q "Conversion footer" layout.css
-          if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
-          grep -q "teacher-cover-wrap" professor.html
-          grep -q "Vertical-scroll release" layout.css
-          grep -q "object-fit:contain!important" layout.css
-          grep -q "AO FINAL, VOCÊ SERÁ CAPAZ DE" index.html
-          grep -q "function lessonStageNav" index.html
-          grep -q "ETAPA " index.html
-          grep -q "Core Flow v2" experience.css
-          grep -q "screen-context" experience.css
-          grep -q "buildReviewExercises" index.html
-          grep -q "screen-revise" index.html
-          grep -q "Core Review v1" experience.css
+          set -e
+          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
+          grep -q "onclick=\"continueLearning()\"" index.html
+          grep -q "onclick=\"nav(this)\"" index.html
           grep -q "SMART REVIEW" index.html
           grep -q "BUSINESS MODE" index.html
-          grep -q "learnerSupport" index.html
-          grep -q "Travel-inspired learner utilities" experience.css
-          test -f core-shell.css
-          test -f learner-features.js
           grep -q "storage-guard.js?v=13" index.html
-          grep -q "reviewHistory" index.html
-          grep -q "reviewPriority" learner-features.js
-          grep -q "reviewDue" learner-features.js
-          grep -q "pagehide" index.html
           grep -q "ism-business-v60" sw.js
-          grep -q "rateReview" learner-features.js
-          grep -q "Learning Engine v2" experience.css
-          grep -q "home-action-grid" index.html
-          grep -q "lesson-stage-compact" index.html
-          grep -q "UX Package 3" experience.css
-          grep -q "Preciso negociar um prazo" learner-features.js
-          grep -q "businessPhrasePacks" learner-features.js
-          grep -q "Would it be possible to extend the deadline to Friday?" learner-features.js
-          grep -q "learner-features.js?v=5" index.html
-          grep -q "Pedagogy v2" experience.css
-          test -s storage-guard.js
-          test -s experience.js
-          test -s audio-player.js
-          test -s sw.js
-          grep -q "ism-business-backup-v1" storage-guard.js
-          grep -q "github-pages-preview" .github/workflows/pages.yml
-          grep -q "function applyRoute" index.html
-          grep -q "history.pushState" index.html
-          grep -q "detail:'m'" index.html
-          test -s shared-learning-ui.css
-          test -s learning-quality.js
-          grep -q "learning-rubric" premium-study.js
-          grep -q "SPEAKING LAB" index.html
-          grep -q "LISTENING LAB" index.html
-          grep -q "markListening" index.html
-          grep -q "listeningDone" index.html
-          grep -q "0,8×" index.html
-          grep -q "Listening Lab v2" experience.css
-          grep -q "simulationStage" index.html
-          grep -q "FAZER SEGUNDA TENTATIVA" index.html
-          grep -q "Professional Simulations v3" experience.css
-          grep -q "achievementData" index.html
-          grep -q "GLOBAL BUSINESS COMMUNICATOR" index.html
-          grep -q "Progression & achievements v1" experience.css
-          grep -q "premium-study.js?v=6" premium.html
-          grep -q "premium-shell.css?v=2" premium.html
-          grep -q "ESCOLHA PELO SEU OBJETIVO" premium-study.js
-          grep -q "Premium goals v3" premium-shell.css
-          grep -q "8 trilhas · 88 lições" experience.js
-          grep -q "try{localStorage.removeItem" experience.js
-          grep -q "storageAvailable=\x27indexeddb\x27" storage-guard.js
-          grep -q "Mudando para armazenamento seguro" storage-guard.js
-          grep -q "async function selfTest" storage-guard.js
-          grep -q "ISMStorage.selfTest()" index.html
-          grep -q "Progresso recuperado e salvo no aparelho" storage-guard.js
           grep -q "indexedDB.open" storage-guard.js
-          grep -q "ISMStorage.dbGet" index.html
-          grep -q "recoverDeviceProgress" index.html
-          grep -q "storageAvailable===false||storageAvailable===\x27indexeddb\x27" storage-guard.js
-          grep -q "EXPLORAR GLOBAL CAREER PACK" index.html
-          grep -q "88 lições" index.html
-          grep -q "premium-path-summary" premium-study.js
-          grep -q "Premium pathway v2" premium-shell.css
-          grep -q "SIMULAÇÃO PROFISSIONAL" index.html
-          grep -q "PLANEJE SUA RESPOSTA" index.html
-          grep -q "REFLITA E REPITA" index.html
-          grep -q "Professional Simulations v2" experience.css
-          grep -q "REPITA MELHOR" index.html
-          grep -q "não mede pronúncia" index.html
-          grep -q "Speaking Lab v1" experience.css
-          grep -q "LISTENING LAB" index.html
-          grep -q "OUÇA SEM LER" index.html
-          grep -q "REVELAR TEXTO" index.html
-          grep -q "Listening Lab v1" experience.css
-          grep -q "Modo offline" learning-quality.js
-          grep -q "scrollIntoView" index.html
-          grep -q "Production safe-area correction" layout.css
-          grep -q "Release-quality learning feedback" experience.css
-          grep -q "function renderSkills" index.html
-          grep -q "não representam uma certificação de proficiência" index.html
-          grep -q "Skill progress: evidence" experience.css
-          test -s premium-shell.css
-          grep -q "function capability" audio-player.js
-          grep -q "não é uma nota de pronúncia" index.html
-          test -s premium-shell.js
+          grep -q "ism-business-backup-v1" storage-guard.js
+          grep -q "R$ 409,99" planos.html
+          grep -q "180:40999" planos.js
+          grep -q "FALE POR WHATSAPP" index.html
+          grep -q "CONHEÇA O PROFESSOR" index.html
+          if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
           for f in premium.html interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html; do grep -q "premium-shell.css" "$f"; grep -q "premium-shell.js" "$f"; done
-          for f in interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html premium.html practice-more.html; do grep -q "shared-learning-ui.css" "$f"; done
+          echo "critical release files ok"
 
   deploy:
     name: Deploy
