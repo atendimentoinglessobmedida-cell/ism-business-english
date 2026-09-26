@@ -53,13 +53,17 @@ jobs:
       - name: Validate critical release files
         run: |
           set -e
-          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
+          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
           grep -q 'onclick="continueLearning()"' index.html
           grep -q 'onclick="nav(this)"' index.html
           grep -q 'SMART REVIEW' index.html
           grep -q 'BUSINESS MODE' index.html
           grep -q 'storage-guard.js?v=13' index.html
-          grep -q 'ism-business-v60' sw.js
+          grep -q 'ism-business-v61' sw.js
+          grep -q 'adaptive-coach.js' sw.js
+          grep -q 'speaking-experience.js' sw.js
+          grep -q 'my-business-english.js' sw.js
+          grep -q 'real-business.js' sw.js
           grep -q 'indexedDB.open' storage-guard.js
           grep -q 'ism-business-backup-v1' storage-guard.js
           grep -q 'R$ 409,99' planos.html
