@@ -31,5 +31,6 @@ assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.inclu
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
 assert(premium.includes('premium-shell.js')&&premium.includes('premium-study.js'),'Premium shared runtime missing');
-assert(sw.includes("const CACHE='ism-business-v60'"),'Expected restored PWA cache version');
+assert(sw.includes("const CACHE='ism-business-v61'"),'Expected learning-upgrade PWA cache version');
+for(const asset of ['adaptive-coach.js','speaking-experience.js','my-business-english.js','real-business.js','premium-ux.css'])assert(sw.includes("'./"+asset+"'"),'Offline learning asset missing: '+asset);
 console.log('functional contracts ok');
