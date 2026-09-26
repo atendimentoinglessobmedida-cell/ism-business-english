@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8'),assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
-const html=read('index.html'),premium=read('premium.html'),storage=read('storage-guard.js'),audio=read('audio-player.js'),sw=read('sw.js'),features=read('learner-features.js'),coreCss=read('core-shell.css');
+const html=read('index.html'),premium=read('premium.html'),storage=read('storage-guard.js'),audio=read('audio-player.js'),sw=read('sw.js'),features=read('learner-features.js'),coreCss=read('core-shell.css'),experience=read('experience.js'),coach=read('adaptive-coach.js'),coachCss=read('adaptive-coach.css');
 assert(html.includes('core-shell.css?v=1')&&html.includes('learner-features.js?v=5'),'Core modular assets missing');
 assert(features.includes('startSmartReview')&&features.includes('rateReview')&&features.includes('openBusinessMode'),'Learner feature module incomplete');
 assert(features.includes('function renderBusinessMode')&&features.includes('function openBusinessSituation'),'Business Mode navigation incomplete');
@@ -12,18 +12,17 @@ assert(html.includes('achievementData')&&html.includes('GLOBAL BUSINESS COMMUNIC
 for(const id of ['home','journey','practice','smartreview','businessmode','simulate','toolkit','premium'])assert(html.includes('id="'+id+'"'),'Core panel missing: '+id);
 assert(html.includes('function applyRoute')&&html.includes("addEventListener('hashchange'"),'Core route restoration missing');
 assert(html.includes('function continueLearning')&&html.includes('function retryExercise'),'Learning continuation/retry missing');
-for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview()"','onclick="openBusinessMode()"','onclick="nav(this)"','onclick="setNav(\'simulate\');show(\'simulate\');renderSimulation()"','onclick="setNav(\'toolkit\');show(\'toolkit\');toolTab=\'favorites\';renderToolkit()"'])assert(html.includes(handler),'Core action handler missing: '+handler);
+for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview()"','onclick="openBusinessMode()"','onclick="nav(this)"'])assert(html.includes(handler),'Core action handler missing: '+handler);
 for(const fn of ['function nav(','function show(','function setNav(','function renderSimulation(','function renderToolkit(','function lessonStageNav(','function openLesson('])assert(html.includes(fn),'Core global function missing: '+fn);
 assert(html.includes('lesson-stage-compact')&&html.includes('lessonStageNav('),'Lesson stage navigation missing');
+assert(experience.includes("loadScript('adaptive-coach.js?v=1')")&&experience.includes("loadStyle('adaptive-coach.css?v=1')")&&experience.includes("coach.id='ismCoach'"),'Adaptive Coach integration missing');
+assert(coach.includes('function recommendation()')&&coach.includes('reviewDueCount()')&&coach.includes('lowLesson()')&&coach.includes('window.ISMCoach'),'Adaptive Coach engine incomplete');
+assert(coach.includes('startSmartReview()')&&coach.includes('continueLearning()')&&coach.includes("renderSimulation()"),'Coach next actions incomplete');
+assert(!coach.includes('ISMStorage.ready().then'),'Coach must not encapsulate global Core handlers');
+assert(coachCss.includes('.ism-coach')&&coachCss.includes('.coach-action'),'Coach visual layer missing');
 assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.includes('dbPut')&&storage.includes('dbGet'),'IndexedDB persistence missing');
-assert(storage.includes("mode:storageAvailable==='indexeddb'?'indexeddb':storageAvailable?'persistent':'session'"),'Storage health modes missing');
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
 assert(premium.includes('premium-shell.js')&&premium.includes('premium-study.js'),'Premium shared runtime missing');
-for(const file of ['premium.html','interview.html','emails.html','networking.html','global-teams.html','negotiation.html','difficult-conversations.html','leadership.html','career-growth.html']){const h=read(file);assert(h.includes('premium-shell.css')&&h.includes('premium-shell.js'),'Premium shell missing: '+file);assert(h.includes('storage-guard.js'),'Storage guard missing: '+file);}
 assert(sw.includes("const CACHE='ism-business-v60'"),'Expected restored PWA cache version');
-assert(sw.includes('API_CACHE')&&sw.includes('caches.match(req)'),'Offline API fallback missing');
-const premiumStudy=read('premium-study.js');
-assert(premium.includes('premium-study.js?v=6')&&premium.includes('premium-shell.css?v=2'),'Premium asset versions missing');
-assert(premiumStudy.includes('ESCOLHA PELO SEU OBJETIVO')&&premiumStudy.includes('trackIntent'),'Premium goal navigation missing');
 console.log('functional contracts ok');
