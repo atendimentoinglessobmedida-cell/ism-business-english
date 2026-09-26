@@ -1,0 +1,13 @@
+/* ISM Coach v1 — adaptive next-action layer. Keeps navigation handlers global and independent. */
+(function(){
+  function obj(v){return v&&typeof v==='object'&&!Array.isArray(v)?v:{}}
+  function pct(){const lessons=obj(window.state?.lessons);const done=Object.values(lessons).filter(v=>v==='mastered'||v==='done').length;return Math.min(100,Math.round(done/98*100))}
+  function lowLesson(){const scores=obj(window.state?.lessonScores);return Object.entries(scores).filter(([id])=>/^\d+\.\d+$/.test(id)).sort((a,b)=>(+a[1]||0)-(+b[1]||0))[0]||null}
+  function reviewDueCount(){const meta=obj(window.state?.reviewHistory),now=Date.now();return Object.values(meta).filter(x=>{if(!x?.last)return false;const days=Math.max(1,+x.nextDays||1);return now-Date.parse(x.last)>=days*86400000}).length}
+  function recommendation(){const due=reviewDueCount(),weak=lowLesson(),progress=pct();if(due>0)return{kind:'review',ey:'ISM COACH · REVISÃO',title:`Você tem ${due} ${due===1?'revisão pronta':'revisões prontas'}`,text:'Uma sessão curta agora ajuda a recuperar expressões antes que sejam esquecidas.',time:'≈ 5 min',label:'REVISAR AGORA →',action:'startSmartReview()'};if(weak&&(+weak[1]||0)<70)return{kind:'practice',ey:'ISM COACH · REFORÇO',title:`Vale reforçar a lição ${weak[0]}`,text:'Seu histórico indica que este conteúdo merece mais uma recuperação ativa.',time:'≈ 6 min',label:'CONTINUAR PRÁTICA →',action:'continueLearning()'};if(progress>=75)return{kind:'simulate',ey:'ISM COACH · APLICAÇÃO',title:'Transforme conhecimento em desempenho',text:'Seu avanço no Core já permite priorizar uma situação profissional completa.',time:'≈ 8 min',label:'TREINAR SITUAÇÃO →',action:"setNav('simulate');show('simulate');renderSimulation()"};return{kind:'continue',ey:'ISM COACH · PRÓXIMO PASSO',title:'Continue construindo sua fluência profissional',text:'Retome exatamente do ponto em que parou e avance em uma sessão curta.',time:'≈ 8 min',label:'CONTINUAR →',action:'continueLearning()'}}
+  function greeting(){const h=new Date().getHours();return h<12?'Bom dia':h<18?'Boa tarde':'Boa noite'}
+  function render(){const host=document.getElementById('ismCoach');if(!host)return;const r=recommendation();host.className='ism-coach '+r.kind;host.innerHTML=`<div class="coach-top"><div><span class="ey">${r.ey}</span><h2>${greeting()}. O que vale fazer agora?</h2></div><span class="coach-time">${r.time}</span></div><strong class="coach-title">${r.title}</strong><p>${r.text}</p><button class="btn coach-action" onclick="${r.action}">${r.label}</button>`}
+  window.ISMCoach={render,recommendation};
+  window.addEventListener('load',()=>setTimeout(render,0));
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
+})();
