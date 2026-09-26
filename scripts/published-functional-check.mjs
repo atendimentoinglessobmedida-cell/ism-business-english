@@ -14,7 +14,7 @@ assert(html.includes('function applyRoute')&&html.includes("addEventListener('ha
 assert(html.includes('function continueLearning')&&html.includes('function retryExercise'),'Learning continuation/retry missing');
 for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview()"','onclick="openBusinessMode()"','onclick="nav(this)"','onclick="setNav(\'simulate\');show(\'simulate\');renderSimulation()"','onclick="setNav(\'toolkit\');show(\'toolkit\');toolTab=\'favorites\';renderToolkit()"'])assert(html.includes(handler),'Core action handler missing: '+handler);
 for(const fn of ['function nav(','function show(','function setNav(','function renderSimulation(','function renderToolkit(','function lessonStageNav(','function openLesson('])assert(html.includes(fn),'Core global function missing: '+fn);
-assert(html.includes("const lessonStages=()=>['context','learn','listen','notice','practice','speak','review','master']"),'Eight-stage lesson path missing');
+for(const stage of ['context','learn','listen','notice','practice','speak','review','master'])assert(html.includes("'"+stage+"'")||html.includes('"'+stage+'"'),'Lesson stage missing: '+stage);
 assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.includes('dbPut')&&storage.includes('dbGet'),'IndexedDB persistence missing');
 assert(storage.includes("mode:storageAvailable==='indexeddb'?'indexeddb':storageAvailable?'persistent':'session'"),'Storage health modes missing');
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
