@@ -2,7 +2,7 @@
 (()=>{
  const loadStyle=href=>{if(document.querySelector(`link[href^="${href}"]`))return;const l=document.createElement('link');l.rel='stylesheet';l.href=href;document.head.appendChild(l)};
  const loadScript=src=>{if(document.querySelector(`script[src^="${src}"]`))return;const s=document.createElement('script');s.src=src;document.body.appendChild(s)};
- loadStyle('adaptive-coach.css?v=2');loadStyle('speaking-experience.css?v=1');loadStyle('my-business-english.css?v=1');loadStyle('real-business.css?v=1');
+ loadStyle('adaptive-coach.css?v=2');loadStyle('speaking-experience.css?v=1');loadStyle('my-business-english.css?v=1');loadStyle('real-business.css?v=1');loadStyle('premium-ux.css?v=1');
  const nav=document.createElement('nav');nav.className='utility-nav';nav.setAttribute('aria-label','Sobre o curso');
  nav.innerHTML='<a class="utility-item plans" href="planos.html"><span class="utility-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4z"/><path d="M8 7V5h8v2"/><path d="M4 11h16"/></svg></span><span>Planos e<br>preços</span></a><a class="utility-item professor" href="professor.html"><span class="utility-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-4 3-6 7-6s6.3 2 7 6"/></svg></span><span>Professor</span></a><a class="utility-item contact" href="professor.html#contato"><span class="utility-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span>Contato</span></a>';
  document.querySelector('.top')?.insertAdjacentElement('afterend',nav);
