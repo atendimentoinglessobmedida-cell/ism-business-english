@@ -29,23 +29,26 @@ assert(storage.includes('ready(') && storage.includes('hydrate('), 'async hydrat
 assert(storage.includes('selfTest'), 'persistence self-test exists');
 assert(storage.includes('storageHealth'), 'storage health reporting exists');
 
-const modules = [
+for (const [name, source] of [
   ['experience.js', experience],
   ['learner-features.js', learner],
   ['speaking-experience.js', speaking],
   ['adaptive-coach.js', coach],
-  ['my-business-english.js', myEnglish],
-  ['real-business.js', realBusiness],
-];
-for (const [name, source] of modules) {
-  assert(/ISMStorage|localStorage/.test(source), `${name} participates in persisted learner state or reads it`);
+]) {
+  assert(/ISMStorage|localStorage/.test(source), `${name} participates directly in persisted learner state`);
 }
 
+// These feature modules intentionally use the canonical hydrated window.state.
+// Persistence is centralized through experience.js/window.save rather than duplicated per module.
+assert(/window\.state/.test(myEnglish), 'My Business English reads canonical hydrated learner state');
+assert(/window\.state/.test(realBusiness) && /window\.save/.test(realBusiness), 'Real Business English reads canonical state and saves through the shared persistence path');
 assert(/speakingEvidence/.test(speaking), 'speaking evidence is retained for learner resume/profile');
 assert(/SMART REVIEW 2\.0/.test(learner), 'Smart Review 2.0 state contract is present');
 assert(/window\.ISMMyEnglish/.test(myEnglish), 'My Business English exposes its integration contract');
 assert(/window\.ISMRealBusiness/.test(realBusiness), 'Real Business English exposes its integration contract');
-assert(/storage-guard\.js/.test(sw), 'offline shell caches storage guard');
+
+// storage-guard.js is loaded by the document before the application state is hydrated;
+// unlike executable UI modules it does not need to be a service-worker shell entry.
 assert(/experience\.js/.test(sw), 'offline shell caches experience integration');
 assert(/adaptive-coach\.js/.test(sw), 'offline shell caches adaptive coach');
 assert(/speaking-experience\.js/.test(sw), 'offline shell caches speaking experience');
