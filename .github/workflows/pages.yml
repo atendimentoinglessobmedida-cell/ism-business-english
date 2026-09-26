@@ -52,21 +52,21 @@ jobs:
         run: |
           set -e
           for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
-          grep -q "onclick=\"continueLearning()\"" index.html
-          grep -q "onclick=\"nav(this)\"" index.html
-          grep -q "SMART REVIEW" index.html
-          grep -q "BUSINESS MODE" index.html
-          grep -q "storage-guard.js?v=13" index.html
-          grep -q "ism-business-v60" sw.js
-          grep -q "indexedDB.open" storage-guard.js
-          grep -q "ism-business-backup-v1" storage-guard.js
-          grep -q "R$ 409,99" planos.html
-          grep -q "180:40999" planos.js
-          grep -q "FALE POR WHATSAPP" index.html
-          grep -q "CONHEÇA O PROFESSOR" index.html
-          if grep -q "mailto:" professor.html; then echo "Professor page must use WhatsApp contact"; exit 1; fi
-          for f in premium.html interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html; do grep -q "premium-shell.css" "$f"; grep -q "premium-shell.js" "$f"; done
-          echo "critical release files ok"
+          grep -q 'onclick="continueLearning()"' index.html
+          grep -q 'onclick="nav(this)"' index.html
+          grep -q 'SMART REVIEW' index.html
+          grep -q 'BUSINESS MODE' index.html
+          grep -q 'storage-guard.js?v=13' index.html
+          grep -q 'ism-business-v60' sw.js
+          grep -q 'indexedDB.open' storage-guard.js
+          grep -q 'ism-business-backup-v1' storage-guard.js
+          grep -q 'R$ 409,99' planos.html
+          grep -q '180:40999' planos.js
+          grep -q 'FALE POR WHATSAPP' index.html
+          grep -q 'CONHEÇA O PROFESSOR' index.html
+          if grep -q 'mailto:' professor.html; then echo 'Professor page must use WhatsApp contact'; exit 1; fi
+          for f in premium.html interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html; do grep -q 'premium-shell.css' "$f"; grep -q 'premium-shell.js' "$f"; done
+          echo 'critical release files ok'
 
   deploy:
     name: Deploy
