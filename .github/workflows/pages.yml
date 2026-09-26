@@ -32,6 +32,8 @@ jobs:
           for f in *.js; do node --check "$f"; done
       - name: Check published functional contracts
         run: node scripts/published-functional-check.mjs
+      - name: Check resume and persistence contracts
+        run: node scripts/core-resume-contract-check.mjs
       - name: Check referenced local assets
         run: |
           python - <<'PY'
