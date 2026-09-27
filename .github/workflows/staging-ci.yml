@@ -2,7 +2,7 @@ name: ISM Staging CI
 
 on:
   pull_request:
-    branches: ["github-pages-preview"]
+    branches: ["github-pages-preview", "ux-learning-upgrade"]
   workflow_dispatch:
 
 jobs:
@@ -25,6 +25,8 @@ jobs:
         run: node scripts/published-functional-check.mjs
       - name: Persistence and resume contracts
         run: node scripts/persistence-resume-check.mjs
+      - name: Release journey gate
+        run: node scripts/release-e2e-contract.mjs
       - name: Local asset references
         run: |
           python - <<'PY'
