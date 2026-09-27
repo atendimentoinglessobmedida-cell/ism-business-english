@@ -15,7 +15,7 @@ ok(/Recomendado porque/.test(coach)&&/reviewDueCount/.test(coach)&&/lowLesson/.t
 ok(/SMART REVIEW 2\.0/.test(review)&&/reviewPriority/.test(review),'Smart Review prioritizes learner evidence');
 ok(/pontos a reforçar/.test(mbe)&&/Meu Speaking/.test(mbe)&&/Minhas revisões/.test(mbe),'My Business English exposes learner evidence');
 ok((real.match(/tag:'/g)||[]).length>=8&&/Ouça → entenda → perceba → reaja → fale\./.test(real)&&/PRATICAR MINHA RESPOSTA/.test(real),'Real Business English provides varied professional transfer scenarios');
-ok(/ism-business-v62/.test(sw)&&/completion-hardening\.js/.test(sw),'PWA cache is versioned and includes completion hardening');
+ok(/const CACHE='ism-business-v\d+'/.test(sw)&&/completion-hardening\.js/.test(sw),'PWA cache is versioned and includes completion hardening');
 ok((courses.match(/\['/g)||[]).length>40,'Premium authored learning corpus is substantial');
 ok(/listening:/.test(special)&&/sources:/.test(special),'specialist content includes listening and source-aware material');
 const budget=['completion-hardening.js','completion-hardening.css','experience.js','adaptive-coach.js','speaking-experience.js','my-business-english.js','real-business.js'].reduce((n,f)=>n+fs.statSync(f).size,0);ok(budget<100000,`completion feature JS/CSS budget is ${budget} bytes (<100 KB)`);
