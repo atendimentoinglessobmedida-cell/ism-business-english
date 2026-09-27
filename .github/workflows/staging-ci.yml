@@ -67,5 +67,5 @@ jobs:
           grep -q 'window.ISMMyEnglish' my-business-english.js
           grep -q 'window.ISMRealBusiness' real-business.js
           grep -q 'prefers-reduced-motion' completion-hardening.css
-          grep -q 'ism-business-v62' sw.js
+          grep -Eq "const CACHE='ism-business-v[0-9]+'" sw.js
           echo 'upgrade modules ok'
