@@ -2,7 +2,7 @@ name: Deploy ISM Business English to GitHub Pages
 
 on:
   push:
-    branches: ["github-pages-preview"]
+    branches: ["github-pages-preview", "ux-learning-upgrade"]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
@@ -29,11 +29,13 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           set -e
-          for f in *.js; do node --check "$f"; done
+          for f in *.js scripts/*.mjs; do node --check "$f"; done
       - name: Check published functional contracts
         run: node scripts/published-functional-check.mjs
-      - name: Check resume and persistence contracts
+      - name: Check Core resume contracts
         run: node scripts/core-resume-contract-check.mjs
+      - name: Check learning upgrade persistence contracts
+        run: node scripts/persistence-resume-check.mjs
       - name: Check referenced local assets
         run: |
           python - <<'PY'
@@ -76,6 +78,7 @@ jobs:
 
   deploy:
     name: Deploy
+    if: github.ref == 'refs/heads/github-pages-preview'
     needs: qa
     environment:
       name: github-pages
