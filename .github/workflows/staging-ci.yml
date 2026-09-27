@@ -27,6 +27,14 @@ jobs:
         run: node scripts/persistence-resume-check.mjs
       - name: Release journey gate
         run: node scripts/release-e2e-contract.mjs
+      - name: Product completion gate
+        run: node scripts/product-completion-check.mjs
+      - name: Premium learning schema regression
+        run: node .ci/premium-check.cjs
+      - name: Authentic listening regression
+        run: node .ci/authentic-listening-check.cjs
+      - name: Regional audio regression
+        run: node .ci/regional-audio-check.cjs
       - name: Local asset references
         run: |
           python - <<'PY'
@@ -46,11 +54,13 @@ jobs:
       - name: Upgrade modules present
         run: |
           set -e
-          for f in adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css learner-features.js experience.js storage-guard.js audio-player.js; do test -s "$f"; done
+          for f in adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css learner-features.js experience.js storage-guard.js audio-player.js DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md; do test -s "$f"; done
           grep -q 'adaptive-coach.js?v=2' experience.js
+          grep -q 'completion-hardening.js?v=1' experience.js
           grep -q 'SMART REVIEW 2.0' learner-features.js
           grep -q 'speakingEvidence' speaking-experience.js
           grep -q 'window.ISMMyEnglish' my-business-english.js
           grep -q 'window.ISMRealBusiness' real-business.js
-          grep -q 'prefers-reduced-motion' premium-ux.css
+          grep -q 'prefers-reduced-motion' completion-hardening.css
+          grep -q 'ism-business-v62' sw.js
           echo 'upgrade modules ok'
