@@ -14,7 +14,7 @@ ok(/indexedDB\.open/.test(store)&&/restoreLastGood/.test(store)&&/exportBackup/.
 ok(/Recomendado porque/.test(coach)&&/reviewDueCount/.test(coach)&&/lowLesson/.test(coach),'Coach recommendations are evidence-based and explainable');
 ok(/SMART REVIEW 2\.0/.test(review)&&/reviewPriority/.test(review),'Smart Review prioritizes learner evidence');
 ok(/pontos a reforçar/.test(mbe)&&/Meu Speaking/.test(mbe)&&/Minhas revisões/.test(mbe),'My Business English exposes learner evidence');
-ok((real.match(/tag:'/g)||[]).length>=6&&/Ouça primeiro\. Entenda a intenção\. Reaja\. Depois fale\./.test(real),'Real Business English provides varied professional transfer scenarios');
+ok((real.match(/tag:'/g)||[]).length>=8&&/Ouça → entenda → perceba → reaja → fale\./.test(real)&&/PRATICAR MINHA RESPOSTA/.test(real),'Real Business English provides varied professional transfer scenarios');
 ok(/ism-business-v62/.test(sw)&&/completion-hardening\.js/.test(sw),'PWA cache is versioned and includes completion hardening');
 ok((courses.match(/\['/g)||[]).length>40,'Premium authored learning corpus is substantial');
 ok(/listening:/.test(special)&&/sources:/.test(special),'specialist content includes listening and source-aware material');
