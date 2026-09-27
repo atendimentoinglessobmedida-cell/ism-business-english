@@ -17,7 +17,7 @@ for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview(
 for(const fn of ['function nav(','function show(','function setNav(','function renderSimulation(','function renderToolkit(','function lessonStageNav(','function openLesson('])assert(html.includes(fn),'Core global function missing: '+fn);
 assert(experience.includes("loadScript('adaptive-coach.js?v=2')")&&experience.includes("loadStyle('adaptive-coach.css?v=2')")&&experience.includes("coach.id='ismCoach'"),'Adaptive Coach integration missing');
 assert(experience.includes("loadScript('speaking-experience.js?v=1')")&&experience.includes("loadScript('my-business-english.js?v=1')")&&experience.includes("loadScript('real-business.js?v=1')"),'Learning experience modules missing');
-assert(experience.includes("loadStyle('premium-ux.css?v=1')"),'Premium UX integration missing');
+assert(experience.includes("loadStyle('premium-ux.css?v=1')")&&experience.includes("completion-hardening.js?v=1"),'Completion UX integration missing');
 assert(coach.includes('function recommendation()')&&coach.includes('reviewDueCount()')&&coach.includes('lowLesson()')&&coach.includes('window.ISMCoach'),'Adaptive Coach engine incomplete');
 assert(coach.includes('const GOALS=')&&coach.includes('function setGoal(')&&coach.includes('function goalProgress(')&&coach.includes('coach-why'),'Coach goal/explanation layer missing');
 assert(coach.includes('startSmartReview()')&&coach.includes('continueLearning()')&&coach.includes("renderSimulation()"),'Coach next actions incomplete');
@@ -31,6 +31,6 @@ assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.inclu
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
 assert(audio.includes('function capability')&&audio.includes('window.ISMAudio'),'Audio capability contract missing');
 assert(premium.includes('premium-shell.js')&&premium.includes('premium-study.js'),'Premium shared runtime missing');
-assert(sw.includes("const CACHE='ism-business-v61'"),'Expected learning-upgrade PWA cache version');
-for(const asset of ['adaptive-coach.js','speaking-experience.js','my-business-english.js','real-business.js','premium-ux.css'])assert(sw.includes("'./"+asset+"'"),'Offline learning asset missing: '+asset);
+assert(sw.includes("const CACHE='ism-business-v62'"),'Expected product-completion PWA cache version');
+for(const asset of ['adaptive-coach.js','speaking-experience.js','my-business-english.js','real-business.js','premium-ux.css','completion-hardening.js','completion-hardening.css'])assert(sw.includes("'./"+asset+"'"),'Offline learning asset missing: '+asset);
 console.log('functional contracts ok');
