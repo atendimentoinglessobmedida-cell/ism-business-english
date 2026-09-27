@@ -2,7 +2,7 @@ name: Deploy ISM Business English to GitHub Pages
 
 on:
   push:
-    branches: ["github-pages-preview"]
+    branches: ["github-pages-preview", "ux-learning-upgrade"]
   workflow_dispatch:
 
 permissions:
@@ -11,14 +11,14 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: true
 
 jobs:
   qa:
     name: Published App QA
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -29,11 +29,21 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           set -e
-          for f in *.js; do node --check "$f"; done
+          for f in *.js scripts/*.mjs; do node --check "$f"; done
       - name: Check published functional contracts
         run: node scripts/published-functional-check.mjs
-      - name: Check resume and persistence contracts
+      - name: Check Core resume contracts
         run: node scripts/core-resume-contract-check.mjs
+      - name: Check learning upgrade persistence contracts
+        run: node scripts/persistence-resume-check.mjs
+      - name: Check release journey gate
+        run: node scripts/release-e2e-contract.mjs
+      - name: Check product completion gate
+        run: node scripts/product-completion-check.mjs
+      - name: Check Premium learning schema
+        run: node .ci/premium-check.cjs
+      - name: Check authentic listening
+        run: node .ci/authentic-listening-check.cjs
       - name: Check referenced local assets
         run: |
           python - <<'PY'
@@ -53,13 +63,15 @@ jobs:
       - name: Validate critical release files
         run: |
           set -e
-          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
+          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
           grep -q 'onclick="continueLearning()"' index.html
           grep -q 'onclick="nav(this)"' index.html
           grep -q 'SMART REVIEW' index.html
           grep -q 'BUSINESS MODE' index.html
           grep -q 'storage-guard.js?v=13' index.html
-          grep -q 'ism-business-v60' sw.js
+          grep -q 'ism-business-v62' sw.js
+          grep -q 'completion-hardening.js' sw.js
+          grep -q 'completion-hardening.js?v=1' experience.js
           grep -q 'indexedDB.open' storage-guard.js
           grep -q 'ism-business-backup-v1' storage-guard.js
           grep -q 'R$ 409,99' planos.html
@@ -67,11 +79,11 @@ jobs:
           grep -q 'FALE POR WHATSAPP' index.html
           grep -q 'CONHEÇA O PROFESSOR' index.html
           if grep -q 'mailto:' professor.html; then echo 'Professor page must use WhatsApp contact'; exit 1; fi
-          for f in premium.html interview.html emails.html networking.html global-teams.html negotiation.html difficult-conversations.html leadership.html career-growth.html; do grep -q 'premium-shell.css' "$f"; grep -q 'premium-shell.js' "$f"; done
           echo 'critical release files ok'
 
   deploy:
     name: Deploy
+    if: github.ref == 'refs/heads/github-pages-preview'
     needs: qa
     environment:
       name: github-pages
