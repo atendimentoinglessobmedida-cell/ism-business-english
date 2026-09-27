@@ -25,7 +25,7 @@ assert(!coach.includes('ISMStorage.ready().then'),'Coach must not encapsulate gl
 assert(coachCss.includes('.ism-coach')&&coachCss.includes('.coach-action')&&coachCss.includes('.coach-goals')&&coachCss.includes('.coach-skills'),'Coach visual layer missing');
 assert(speaking.includes('MediaRecorder')&&speaking.includes('speakingEvidence')&&speaking.includes('window.ISMSpeaking'),'Speaking evidence flow missing');
 assert(myEnglish.includes('exerciseResults')&&myEnglish.includes('speakingEvidence')&&myEnglish.includes('reviewHistory')&&myEnglish.includes('window.ISMMyEnglish'),'My Business English evidence hub missing');
-assert(realBusiness.includes('Ouça primeiro')&&realBusiness.includes('realBusiness')&&realBusiness.includes('window.ISMRealBusiness'),'Real Business English flow missing');
+assert(realBusiness.includes('Ouça → entenda → perceba → reaja → fale')&&realBusiness.includes('realBusiness')&&realBusiness.includes('window.ISMRealBusiness'),'Real Business English flow missing');
 assert(premiumUx.includes('.home-action-grid')&&premiumUx.includes('.bottom')&&premiumUx.includes('prefers-reduced-motion'),'Premium mobile UX contracts missing');
 assert(storage.includes("indexedDB.open('ism-business-progress'")&&storage.includes('dbPut')&&storage.includes('dbGet'),'IndexedDB persistence missing');
 assert(storage.includes('ism-business-backup-v1')&&storage.includes('restoreLastGood'),'Backup/recovery contract missing');
