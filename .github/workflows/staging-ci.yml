@@ -31,6 +31,8 @@ jobs:
         run: node scripts/product-completion-check.mjs
       - name: Market benchmark adaptation gate
         run: node scripts/market-benchmark-check.mjs
+      - name: Visual learning gate
+        run: node scripts/visual-learning-check.mjs
       - name: Premium learning schema regression
         run: node .ci/premium-check.cjs
       - name: Authentic listening regression
@@ -56,9 +58,10 @@ jobs:
       - name: Upgrade modules present
         run: |
           set -e
-          for f in adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css learner-features.js experience.js storage-guard.js audio-player.js DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md MARKET-BENCHMARK-IMPROVEMENT-PROMPT.md; do test -s "$f"; done
+          for f in adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css learner-features.js experience.js storage-guard.js audio-player.js visual-learning.js visual-learning.css DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md MARKET-BENCHMARK-IMPROVEMENT-PROMPT.md; do test -s "$f"; done
           grep -q 'adaptive-coach.js?v=2' experience.js
           grep -q 'completion-hardening.js?v=1' experience.js
+          grep -q 'visual-learning.js?v=1' experience.js
           grep -q 'SMART REVIEW 2.0' learner-features.js
           grep -q 'speakingEvidence' speaking-experience.js
           grep -q 'window.ISMMyEnglish' my-business-english.js
