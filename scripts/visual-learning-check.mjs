@@ -5,6 +5,10 @@ const assets=['assets/visual-meetings.svg','assets/visual-presentations.svg','as
 ok(/visual-learning\.css/.test(exp)&&/visual-learning\.js/.test(exp),'visual learning module is loaded');
 for(const a of assets){ok(fs.existsSync(a)&&fs.statSync(a).size>500,`${a} exists and is non-empty`);ok(fs.statSync(a).size<15000,`${a} fits the lightweight visual budget`);ok(!/<script|<foreignObject|https?:\/\/(?!www.w3.org)/i.test(read(a)),`${a} is self-contained`);}
 ok(assets.reduce((n,a)=>n+fs.statSync(a).size,0)<60000,'visual family below 60 KB');
+const photos=['meetings','presentations','negotiation','client-call'].map(id=>'assets/photo-'+id+'.avif');
+for(const file of photos){const bytes=fs.readFileSync(file);ok(bytes.length>1000&&bytes.length<300000,`${file} within photo budget`);ok(bytes.subarray(4,32).toString('ascii').includes('avif'),`${file} has AVIF signature`);ok(read('sw.js').includes(file),`${file} included in offline shell`);}
+ok(photos.reduce((n,f)=>n+fs.statSync(f).size,0)<900000,'photo family below 900 KB');
+ok(read('photo-credits.html').includes('pexels.com/license/')&&read('PHOTO-SOURCES.md').includes('Vitaly Gariev'),'photo credits and provenance recorded');
 ok(/Meetings/.test(js)&&/Presentations/.test(js)&&/Negotiations/.test(js)&&/Client calls/.test(js),'home covers four professional visual contexts');
 ok(/lesson-visual/.test(js)&&/figcaption/.test(js),'lesson visuals provide contextual pedagogical captions');
 ok(/businessmode-visual/.test(js),'Business Mode receives contextual imagery');
