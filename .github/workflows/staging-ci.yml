@@ -17,6 +17,8 @@ jobs:
           node-version: "22"
       - name: Validate manifest
         run: node -e "JSON.parse(require('fs').readFileSync('manifest.webmanifest','utf8')); console.log('manifest ok')"
+      - name: Build and verify Vercel static artifact
+        run: node scripts/build-static.mjs
       - name: JavaScript syntax
         run: |
           set -e
