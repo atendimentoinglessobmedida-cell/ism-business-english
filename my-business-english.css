@@ -7,4 +7,5 @@
 .mbe-summary p,.mbe-row small,.mbe-detail-list small{font-size:14px;line-height:1.5}
 .mbe-metrics{grid-template-columns:repeat(4,minmax(0,1fr))}
 html[data-theme="professional"] .mbe-sheet,html[data-theme="professional"] .mbe-sections article,html[data-theme="professional"] .mbe-detail-list>div{background:var(--surface);color:var(--surface-text);border-color:var(--surface-border)}
+html[data-theme="professional"] .mbe-section-head button,html[data-theme="professional"] .mbe-row b,html[data-theme="professional"] .mbe-detail-list b{color:var(--surface-text)}
 @media(max-width:480px){.mbe-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
