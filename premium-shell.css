@@ -5,3 +5,11 @@
 
 /* Premium goals v3 */
 .premium-goal-head,.premium-track-head{margin:28px 0 12px}.premium-goal-head h2,.premium-track-head h2{margin:4px 0}.premium-goal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.premium-goal{display:block;padding:16px;border-radius:14px;border:1px solid var(--ui-border,#31566b);background:rgba(255,255,255,.055);color:var(--ui-text,#f4f8fc);text-decoration:none}.premium-goal:hover,.premium-goal:focus-visible{border-color:var(--ui-accent,#26d3ed)}.premium-goal b,.premium-goal small{display:block}.premium-goal small{margin-top:4px;opacity:.72}.premium-track-card progress{margin-top:auto}@media(max-width:600px){.premium-goal-grid{grid-template-columns:1fr}.premium-goal{padding:14px}}
+
+/* Navigation labels and progress summaries must fit both Premium shells. */
+.premium-shared-nav{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.premium-shared-nav .premium-nav-action{min-width:0;white-space:normal;text-align:center}
+.premium-path-summary{grid-template-columns:repeat(2,minmax(0,1fr))}
+.premium-path-summary>div,.premium-goal{min-width:0;overflow-wrap:anywhere;text-align:left}
+.premium-overall{grid-template-columns:minmax(0,1fr) auto}
+@media(max-width:600px){.premium-path-summary{grid-template-columns:1fr}.premium-shared-nav .premium-nav-action{font-size:14px!important}}

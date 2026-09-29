@@ -156,3 +156,12 @@ html[data-theme="professional"] #home .btn-secondary{background:#0e4557;color:#f
 
 /* Core × Premium pathway v1 */
 .premium-core-diff,.premium-path-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0}.premium-core-diff>div,.premium-path-summary>div{padding:14px;border-radius:14px;background:var(--surface-soft,#f3f7f8)}.premium-core-diff b,.premium-core-diff span,.premium-core-diff small,.premium-path-summary b,.premium-path-summary span,.premium-path-summary small{display:block}.premium-core-diff span,.premium-path-summary span{font-weight:800;margin:4px 0}.premium-core-diff small,.premium-path-summary small{opacity:.72}.premium-overall{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;margin:14px 0}.premium-overall progress{grid-column:1/-1;width:100%}@media(max-width:560px){.premium-core-diff,.premium-path-summary{grid-template-columns:1fr}}
+
+/* Keep nested learning grids shrinkable without clipping their text. */
+.practice-option{grid-template-columns:42px minmax(0,1fr)}
+.listening-item,.simulation-step{grid-template-columns:38px minmax(0,1fr)}
+.practice-option>div,.listening-item>div,.simulation-step>div,.achievement>div{min-width:0}
+.weekly-head,.achievement-head{flex-wrap:wrap}
+.home-action small{font-size:14px;line-height:1.5}
+html[data-theme="professional"] .home-action{background:var(--surface);color:var(--surface-text)}
+@media(max-width:560px){.listening-item,.simulation-step{grid-template-columns:30px minmax(0,1fr)}}
