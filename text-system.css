@@ -1,0 +1,14 @@
+/* A shared reading axis across static pages and asynchronously rendered lessons. */
+body{text-align:left}
+body :is(h1,h2,h3,h4,h5,h6,p,figcaption,blockquote,li){text-align:left}
+body :is(.en,.pt,.muted,.description,.ey,.hero-copy,.home-photo-copy,.package-title,.quantity,.package-bottom,.summary-detail,.summary-action,.closing,.brand-footer,footer,.lesson-complete,.cta-footer-copy){text-align:left}
+body :is(.title,.section-heading,.stepHead){align-items:flex-start}
+body .title>span{text-align:left}
+body :is(h1,h2,h3,h4,h5,h6){text-wrap:pretty;overflow-wrap:break-word}
+body :is(p,li,figcaption,.en,.pt,.description){line-height:1.6;overflow-wrap:anywhere}
+body :is(ul,ol){padding-inline-start:1.25rem}
+body .lesson-complete .complete-check{margin-inline:0}
+/* Labels and compact numerical controls are not prose. */
+body :is(button,.btn,.button,.tab,.nav,.stat,.score)>:is(p,small,span,b,strong){text-align:inherit}
+body :is(.choice,.lessonRow,.lesson-link,.practice-option,.premiumTrack){text-align:left}
+body :is(.btn,.button,.tab,.nav,.stat,.score){text-align:center}
