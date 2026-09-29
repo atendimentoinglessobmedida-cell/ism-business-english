@@ -84,8 +84,8 @@ jobs:
           grep -q 'action-buttons.css?v=1' experience.js
           grep -q 'indexedDB.open' storage-guard.js
           grep -q 'ism-business-backup-v1' storage-guard.js
-          grep -q 'R$ 409,99' planos.html
-          grep -q '180:40999' planos.js
+          grep -q 'R$ 319,99' planos.html
+          grep -q '180:31999' planos.js
           grep -q 'FALE POR WHATSAPP' index.html
           grep -q 'CONHEÇA O PROFESSOR' index.html
           if grep -q 'mailto:' professor.html; then echo 'Professor page must use WhatsApp contact'; exit 1; fi
@@ -118,3 +118,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
