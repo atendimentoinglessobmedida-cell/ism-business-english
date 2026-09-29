@@ -1,0 +1,66 @@
+{
+  "project": "bfuoykappwybuxdlrbmo",
+  "status": "PREPARED_NOT_DEPLOYED",
+  "functions": [
+    {
+      "name": "ism-premium-content",
+      "version": 3,
+      "sha256": "89b2e3383b0aa451adaec7a63d23e7d0432939c1e3a5cbe5f71554ec769dd78b",
+      "verify_jwt": false,
+      "originalEntry": "/tmp/user_fn_bfuoykappwybuxdlrbmo_d9805171-c035-45d4-b76c-afeabfd44953_3/source/index.ts",
+      "rollbackDirectory": "original/ism-premium-content",
+      "candidateDirectory": "candidate/ism-premium-content",
+      "files": [
+        "index.ts"
+      ]
+    },
+    {
+      "name": "ism-premium-simulations",
+      "version": 1,
+      "sha256": "2ce68fff6e0caf2c1c93bd209b9de0fa8677fefe0fd6260d6665709107cae0bb",
+      "verify_jwt": false,
+      "originalEntry": "/tmp/user_fn_bfuoykappwybuxdlrbmo_f9e52591-0d4a-4291-89c0-8f886191b4e6_1/source/index.ts",
+      "rollbackDirectory": "original/ism-premium-simulations",
+      "candidateDirectory": "candidate/ism-premium-simulations",
+      "files": [
+        "index.ts"
+      ]
+    },
+    {
+      "name": "ism-interview-content",
+      "version": 2,
+      "sha256": "5e113b79f95f6c0df836c0a1534653563f6a25955811027c5b4a9f63c3c9056a",
+      "verify_jwt": false,
+      "originalEntry": "/tmp/user_fn_bfuoykappwybuxdlrbmo_d354eada-888e-4a85-944c-c68407fbd634_2/source/index.ts",
+      "rollbackDirectory": "original/ism-interview-content",
+      "candidateDirectory": "candidate/ism-interview-content",
+      "files": [
+        "index.ts"
+      ]
+    },
+    {
+      "name": "ism-interview-lab",
+      "version": 2,
+      "sha256": "a97befd43bca5c1dee2972fc48e7d190079ef0ec49320a212ec5a1984e2533a4",
+      "verify_jwt": false,
+      "originalEntry": "/tmp/user_fn_bfuoykappwybuxdlrbmo_b1c8fba0-bada-45ad-b9e5-197ac131cebc_2/source/index.ts",
+      "rollbackDirectory": "original/ism-interview-lab",
+      "candidateDirectory": "candidate/ism-interview-lab",
+      "files": [
+        "index.ts"
+      ]
+    },
+    {
+      "name": "ism-interview-pathway",
+      "version": 1,
+      "sha256": "ef32f64d761f1292f2c1ea445514d46d44653af06f24540c7786ffc55c1d19a1",
+      "verify_jwt": false,
+      "originalEntry": "/tmp/user_fn_bfuoykappwybuxdlrbmo_41a3247b-89aa-46e0-b372-9ef686a595bc_1/source/index.ts",
+      "rollbackDirectory": "original/ism-interview-pathway",
+      "candidateDirectory": "candidate/ism-interview-pathway",
+      "files": [
+        "index.ts"
+      ]
+    }
+  ]
+}

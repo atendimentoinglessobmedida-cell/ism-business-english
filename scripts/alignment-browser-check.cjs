@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
   const base = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch({ headless: true, ...(process.env.ISM_BROWSER_CHANNEL ? { channel: process.env.ISM_BROWSER_CHANNEL } : {}) });
   try {
-    for (const width of [320, 390, 768, 1280]) {
+    for (const width of [320, 360, 375, 390, 412, 430, 768, 1280]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, serviceWorkers: 'block' });
       const page = await context.newPage();
       const errors = [];
