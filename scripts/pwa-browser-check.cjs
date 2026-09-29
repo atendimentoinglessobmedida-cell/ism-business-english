@@ -17,7 +17,15 @@ const server=http.createServer((req,res)=>{
  await page.evaluate(()=>localStorage.setItem('ismbe:premium:p3:v1',JSON.stringify({done:{'P3.1':true},drafts:{'P3.1':'My saved answer'}})));
  assert((await page.evaluate(()=>caches.keys())).includes('ism-business-api-v1'));
  legacy=false;
- await page.evaluate(async()=>{const prior=navigator.serviceWorker.controller,reg=await navigator.serviceWorker.getRegistration();const changed=new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));await reg.update();if(navigator.serviceWorker.controller===prior)await changed});
+ await page.evaluate(async()=>{window.beforeUpdateMarker='keep-working';await (await navigator.serviceWorker.getRegistration()).update()});
+ await page.locator('#app-update-notice [data-update]').waitFor();
+ if(process.env.ISM_QA_OUTPUT)await page.locator('#app-update-notice').screenshot({path:path.join(process.env.ISM_QA_OUTPUT,'aviso-atualizacao.png')});
+ assert.equal(await page.evaluate(()=>window.beforeUpdateMarker),'keep-working','no automatic reload');
+ await context.setOffline(true);await page.locator('[data-update]').click();assert((await page.locator('#app-update-notice').innerText()).includes('Conecte-se'));
+ await context.setOffline(false);
+ await page.locator('[data-later]').click();assert.equal(await page.locator('#app-update-notice').count(),0);
+ await page.reload();await page.locator('#app-update-notice [data-update]').waitFor();
+ await Promise.all([page.waitForEvent('load'),page.locator('#app-update-notice [data-update]').click()]);
  await page.waitForFunction(async()=>!(await caches.keys()).includes('ism-business-api-v1'));
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1')).drafts['P3.1']),'My saved answer');
  await page.reload();await page.waitForFunction(()=>window.ISMInstall);

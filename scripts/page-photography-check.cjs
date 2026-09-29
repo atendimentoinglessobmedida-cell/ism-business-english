@@ -25,4 +25,13 @@ for(const route of ['premium','interview','emails','networking','global-teams','
  assert.equal(await page.locator('a[href="photo-credits.html"]').count(),1);await page.close();
 }
 console.log('PASS 9 Premium route fixtures: async overview image, no duplicates, removal on exercises, credits');
+const slow=await browser.newPage({viewport:{width:390,height:844},serviceWorkers:'block'});
+let release;const held=new Promise(resolve=>release=resolve);
+await slow.route('**/*.avif',async route=>{await held;await route.continue()});
+await slow.goto(base,{waitUntil:'domcontentloaded'});await slow.locator('.visual-scene').first().waitFor();
+const before=await slow.locator('.home-photo-cover').evaluate(e=>e.getBoundingClientRect().height);
+await slow.locator('.visual-scene').first().focus();await slow.keyboard.press('Enter');assert.equal(await slow.locator('.panel.on').getAttribute('id'),'journey');
+await slow.evaluate(()=>{setNav('home');show('home')});release();await slow.locator('.home-photo-cover img').evaluate(i=>i.decode());
+const after=await slow.locator('.home-photo-cover').evaluate(e=>e.getBoundingClientRect().height);assert(Math.abs(before-after)<2,'cover reserves space before photo loads');
+await slow.close();console.log('PASS delayed photos: keyboard navigation works before image download and cover height stays stable');
 }finally{await browser.close();server.close()}})().catch(e=>{console.error(e);server.close();process.exitCode=1});

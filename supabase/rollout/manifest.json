@@ -1,6 +1,6 @@
 {
   "project": "bfuoykappwybuxdlrbmo",
-  "status": "PREPARED_NOT_DEPLOYED",
+  "status": "DEPLOYED_VERIFIED",
   "functions": [
     {
       "name": "ism-premium-content",
@@ -62,5 +62,13 @@
         "index.ts"
       ]
     }
-  ]
+  ],
+  "verifiedDate": "2026-09-29",
+  "deployedVersions": {
+    "ism-interview-content": 3,
+    "ism-interview-lab": 3,
+    "ism-interview-pathway": 2,
+    "ism-premium-content": 4,
+    "ism-premium-simulations": 2
+  }
 }

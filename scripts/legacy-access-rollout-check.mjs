@@ -30,4 +30,4 @@ for(const item of manifest.functions){
 }
 assert.equal((await gatewayOnly(new Request('https://example.invalid'),undefined)).status,503);
 assert.equal((await gatewayOnly(new Request('https://example.invalid',{method:'POST',headers:{Authorization:'Bearer '+secret}}),secret)).status,405);
-console.log('Legacy rollout checks passed. Candidates remain undeployed.');
+console.log('Legacy handler regression passed. Remote rollout status is recorded in supabase/rollout/README.md.');

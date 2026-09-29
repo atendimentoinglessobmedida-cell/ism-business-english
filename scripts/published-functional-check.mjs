@@ -16,7 +16,7 @@ assert(html.includes('function continueLearning')&&html.includes('function retry
 for(const handler of ['onclick="continueLearning()"','onclick="startSmartReview()"','onclick="openBusinessMode()"','onclick="nav(this)"'])assert(html.includes(handler),'Core action handler missing: '+handler);
 for(const fn of ['function nav(','function show(','function setNav(','function renderSimulation(','function renderToolkit(','function lessonStageNav(','function openLesson('])assert(html.includes(fn),'Core global function missing: '+fn);
 assert(experience.includes("loadScript('adaptive-coach.js?v=2')")&&experience.includes("loadStyle('adaptive-coach.css?v=2')")&&experience.includes("coach.id='ismCoach'"),'Adaptive Coach integration missing');
-assert(experience.includes("loadScript('speaking-experience.js?v=1')")&&experience.includes("loadScript('my-business-english.js?v=1')")&&experience.includes("loadScript('real-business.js?v=1')"),'Learning experience modules missing');
+for(const name of ['speaking-experience','my-business-english','real-business'])assert(new RegExp("loadScript\\('"+name+"\\.js\\?v=\\d+'\\)").test(experience),'Learning experience module missing: '+name);
 assert(experience.includes("loadStyle('premium-ux.css?v=1')")&&experience.includes("completion-hardening.js?v=1"),'Completion UX integration missing');
 assert(experience.includes("loadStyle('visual-learning.css?v=1')")&&experience.includes("loadScript('visual-learning.js?v=1')"),'Visual learning runtime missing');
 assert(experience.includes("loadStyle('action-buttons.css?v=1')")&&actions.includes('min-height')&&actions.includes('focus-visible'),'Action button UX layer missing');

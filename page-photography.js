@@ -9,6 +9,7 @@
     image.height = 675;
     image.loading = eager ? 'eager' : 'lazy';
     image.decoding = 'async';
+    if(eager) image.fetchPriority='high';
     return image;
   };
   const home = document.getElementById('home');
