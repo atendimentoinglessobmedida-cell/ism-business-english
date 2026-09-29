@@ -47,10 +47,24 @@ for(const width of [390,1280]){
  assert.equal(authored.lessons['P3.2'].draft,updated);assert.equal(authored.lessons['P3.2'].done,true);
  assert.deepEqual(authored.lessons['P3.2'].criteria,[]);assert.equal(authored.lessons['P3.2'].oral,false);
  if(output)await page.locator('#draft').screenshot({path:path.join(output,`progresso-rascunho-${width}.png`)});
+
+ const catalogue=await page.evaluate(()=>window.ISM_PREMIUM_COURSES.map(c=>({id:c.id,total:c.lessons.length})));
+ let audited=0;
+ for(const c of catalogue)for(let i=1;i<=c.total;i++){
+ await page.evaluate(hash=>location.hash=hash,c.id+'/'+i);await page.waitForFunction(id=>document.querySelector('.reading .ey')?.textContent.startsWith(id+' ·'),c.id+'.'+i);
+ assert.equal(await page.locator('#language .en').count(),await page.evaluate(()=>{const route=ISMPremiumEngine.route(location.hash,ISM_PREMIUM_COURSES);return route.course.lessons[route.index][3].length/2}));
+ assert.equal(await page.locator('#oral>.learning-rubric').count(),1);
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ audited++;
+ }
+ assert.equal(audited,57);
+ await page.evaluate(()=>location.hash='P3/1');await page.waitForFunction(()=>document.querySelector('.reading .ey')?.textContent.startsWith('P3.1 ·'));
+ await page.locator('[data-finish]').click();assert((await page.locator('#finish-status').innerText()).includes('Para concluir, falta:'));
+ console.log('PASS '+width+'px: all 57 authored lessons render, bilingual pairing, oral markup, overflow and specific completion guidance');
  await page.goto(base+'/index.html#premium',{waitUntil:'networkidle'});
  assert((await page.locator('#premiumTracks').innerText()).includes('1/88 lições'));
  assert((await page.locator('#premiumTracks').innerText()).includes('trilhas originais concluídas'));
- assert.equal(await page.locator('#premium .premium a.btn').innerText(),'ABRIR PRÁTICA APLICADA →');
+ assert.equal(await page.locator('#premium .premium a.btn').innerText(),'ACESSAR CONTEÚDO PREMIUM →');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(output)await page.screenshot({path:path.join(output,`progresso-original-${width}.png`),fullPage:true});
  assert.deepEqual(errors,[]);console.log(`PASS ${width}px: hub 1/57, original 1/88, migration, draft edit/reload, source intact, no overflow or JS errors`);

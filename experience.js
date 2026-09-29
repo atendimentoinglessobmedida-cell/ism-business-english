@@ -24,7 +24,7 @@
    ['#businessmode > .btn','← VOLTAR AO INÍCIO','Voltar ao início'],
    ['#support > .btn','← VOLTAR AO INÍCIO','Voltar ao início'],
    ['#premium > .btn','← VOLTAR AO INÍCIO','Voltar ao início'],
-   ['#premium .premium a.btn','ABRIR PRÁTICA APLICADA →','Abrir coleção de prática aplicada com progresso separado'],
+   ['#premium .premium a.btn','ACESSAR CONTEÚDO PREMIUM →','Acessar conteúdo Premium: coleção de prática aplicada com progresso separado'],
    ['.cta-footer-actions a[href="planos.html"]','VER PLANOS →','Ver planos e preços'],
    ['.cta-footer-actions a.whatsapp','FALAR COM O PROFESSOR','Falar com o Professor Márcio pelo WhatsApp'],
    ['.cta-footer-actions a[href="professor.html"]','CONHECER O PROFESSOR','Conhecer o Professor Márcio']
