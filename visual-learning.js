@@ -1,1 +1,60 @@
-(()=>{const scenes=[['Meetings','assets/visual-meetings.svg','journey'],['Presentations','assets/visual-presentations.svg','journey'],['Negotiations','assets/visual-negotiation.svg','simulate'],['Client calls','assets/visual-client-call.svg','simulate']];const home=document.getElementById('home');if(home&&!home.querySelector('.visual-learning-strip')){const strip=document.createElement('section');strip.className='visual-learning-strip';strip.setAttribute('aria-label','Situações profissionais');strip.innerHTML=scenes.map(([label,img,target])=>`<button class="visual-scene" type="button" data-target="${target}" aria-label="Explorar ${label}"><img src="${img}" alt="" loading="lazy" width="1200" height="675"><span>${label}</span></button>`).join('');const anchor=home.querySelector('.home-action-grid');anchor?.insertAdjacentElement('afterend',strip);strip.addEventListener('click',e=>{const b=e.target.closest('.visual-scene');if(!b)return;const p=b.dataset.target;if(p==='simulate'){setNav('simulate');show('simulate');renderSimulation()}else{setNav('journey');show('journey')}})}const choose=text=>{text=(text||'').toLowerCase();if(/present|data|result|proposal/.test(text))return ['assets/visual-presentations.svg','Apresentação profissional: observe o contexto antes de produzir sua resposta.'];if(/negoti|deadline|disagree|objection/.test(text))return ['assets/visual-negotiation.svg','Negociação profissional: use o cenário para antecipar intenção e resposta.'];if(/client|call|online|hybrid|video/.test(text))return ['assets/visual-client-call.svg','Interação com cliente: interprete a situação antes de falar.'];return ['assets/visual-meetings.svg','Reunião profissional: conecte linguagem, intenção e contexto.']};const decorateLesson=()=>{const body=document.getElementById('lessonBody');if(!body||!body.textContent.trim()||body.querySelector('.lesson-visual'))return;const [src,caption]=choose(body.textContent);const fig=document.createElement('figure');fig.className='lesson-visual';fig.innerHTML=`<img src="${src}" alt="" loading="lazy" width="1200" height="675"><figcaption>${caption}</figcaption>`;body.prepend(fig)};const lesson=document.getElementById('lessonBody');if(lesson)new MutationObserver(()=>requestAnimationFrame(decorateLesson)).observe(lesson,{childList:true,subtree:true});decorateLesson();const business=document.getElementById('businessmode');if(business&&!business.querySelector('.businessmode-visual')){const wrap=document.createElement('div');wrap.className='businessmode-visual';wrap.innerHTML='<img src="assets/visual-negotiation.svg" alt="Profissionais em uma negociação de trabalho" loading="lazy" width="1200" height="675">';business.querySelector('.muted')?.insertAdjacentElement('afterend',wrap)}})();
+(() => {
+  'use strict';
+  const scenes = [
+    {id:'meetings',en:'Meetings',pt:'Reuniões',action:'Ver módulos',target:'journey',caption:'Observe como a equipe compartilha ideias e escuta diferentes pontos de vista.'},
+    {id:'presentations',en:'Presentations',pt:'Apresentações',action:'Ver módulos',target:'journey',caption:'Organize sua mensagem: contexto, evidência e próximo passo.'},
+    {id:'negotiation',en:'Negotiations',pt:'Negociações',action:'Abrir simulações',target:'simulate',caption:'Identifique interesses em comum antes de propor um acordo.'},
+    {id:'client-call',en:'Client calls',pt:'Conversas com clientes',action:'Abrir simulações',target:'simulate',caption:'Escute o pedido do cliente e confirme o próximo passo com clareza.'}
+  ];
+  const source = scene => 'assets/photo-' + scene.id + '.avif';
+  const home = document.getElementById('home');
+  if (home && !home.querySelector('.visual-learning-strip')) {
+    const section = document.createElement('section');
+    section.className = 'visual-learning-section';
+    section.setAttribute('aria-labelledby','visualLearningTitle');
+    section.innerHTML = '<div class="visual-learning-heading"><span class="ey">INGLÊS EM CONTEXTO</span><h2 id="visualLearningTitle">Pratique para o seu dia a dia</h2><p>Encontre a linguagem para cada situação profissional.</p></div><div class="visual-learning-strip">' + scenes.map(scene => `<button class="visual-scene" type="button" data-target="${scene.target}" aria-label="${scene.pt}: ${scene.action}"><img src="${source(scene)}" alt="" loading="lazy" decoding="async" width="1200" height="675"><span class="visual-scene-copy"><strong lang="en">${scene.en}</strong><small>${scene.pt}</small><span class="visual-scene-action">${scene.action}<i aria-hidden="true">↗</i></span></span></button>`).join('') + '</div><p class="visual-photo-credits"><a href="photo-credits.html">Créditos das fotografias</a></p>';
+    home.querySelector('.home-action-grid')?.insertAdjacentElement('afterend',section);
+    section.addEventListener('click',event => {
+      const button = event.target.closest('.visual-scene');
+      if (!button) return;
+      const target = button.dataset.target;
+      setNav(target); show(target);
+      if (target === 'simulate') renderSimulation();
+      const heading = document.getElementById(target)?.querySelector('h1,h2,h3');
+      if (heading) { heading.tabIndex = -1; heading.focus({preventScroll:true}); }
+    });
+  }
+  function choose(text) {
+    text = text.toLowerCase();
+    if (/negoti|deadline|disagree|objection|prazo|acordo/.test(text)) return scenes[2];
+    if (/client|call|online|hybrid|video|cliente/.test(text)) return scenes[3];
+    if (/present|data|result|proposal|apresent/.test(text)) return scenes[1];
+    return scenes[0];
+  }
+  function decorateLesson() {
+    const body = document.getElementById('lessonBody');
+    if (!body || !body.querySelector('.lesson-flow-head') || body.querySelector('.lesson-visual')) return;
+    // Use the lesson's objective, not unrelated vocabulary inside exercises.
+    const goal = body.querySelector('.lesson-goal');
+    const scene = choose((body.querySelector('.lesson-flow-head h2')?.textContent || '') + ' ' + (goal?.textContent || ''));
+    const figure = document.createElement('figure');
+    figure.className = 'lesson-visual';
+    figure.innerHTML = `<img src="${source(scene)}" alt="" loading="lazy" decoding="async" width="1200" height="675"><figcaption><span>SEU CENÁRIO</span>${scene.caption}</figcaption>`;
+    (goal || body.querySelector('.lesson-flow-head')).insertAdjacentElement('afterend',figure);
+  }
+  const lesson = document.getElementById('lessonBody');
+  let pending = false;
+  if (lesson) new MutationObserver(() => {
+    if (pending) return;
+    pending = true;
+    requestAnimationFrame(() => { pending = false; decorateLesson(); });
+  }).observe(lesson,{childList:true,subtree:true});
+  decorateLesson();
+  const business = document.getElementById('businessmode');
+  if (business && !business.querySelector('.businessmode-visual')) {
+    const figure = document.createElement('figure');
+    figure.className = 'businessmode-visual';
+    figure.innerHTML = '<img src="assets/photo-negotiation.avif" alt="" loading="lazy" decoding="async" width="1200" height="675"><figcaption>Prepare sua mensagem. Encontre um objetivo em comum.</figcaption>';
+    business.querySelector('.muted')?.insertAdjacentElement('afterend',figure);
+  }
+})();
