@@ -30,7 +30,7 @@ const server=http.createServer((req,res)=>{
  const offline=await page.evaluate(async()=>{const core=await fetch('https://bfuoykappwybuxdlrbmo.supabase.co/functions/v1/ism-course-content?lesson=1.1'),premium=await fetch('https://bfuoykappwybuxdlrbmo.supabase.co/functions/v1/ism-premium-gateway/asset?name=premium-courses.js');return {core:await core.json(),premium:premium.status}});
  assert.equal(offline.core.fixture,'core-offline');assert.equal(offline.premium,503);
  await page.reload();assert(await page.locator('h1').isVisible());
- const photos=await page.evaluate(async()=>Promise.all(['meetings','presentations','negotiation','client-call'].map(async id=>{const r=await fetch('assets/photo-'+id+'.avif');return r.ok&&(await r.arrayBuffer()).byteLength>1000})));assert(photos.every(Boolean),'all four licensed photos available offline');
+ const photos=await page.evaluate(async()=>Promise.all(['meetings','presentations','negotiation','client-call','interview','writing','networking'].map(async id=>{const r=await fetch('assets/photo-'+id+'.avif');return r.ok&&(await r.arrayBuffer()).byteLength>1000})));assert(photos.every(Boolean),'all seven licensed photos available offline');
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1')).done['P3.1']),true);
  assert.deepEqual(errors,[]);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  console.log('PASS PWA: legacy cache removed, update preserves progress/drafts, manual and simulated native install flows, offline install shell/Core fixture, Premium denied offline, 390px layout. Physical installation not certified.');

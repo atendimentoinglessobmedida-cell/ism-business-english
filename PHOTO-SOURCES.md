@@ -1,5 +1,17 @@
 # Fotografias — origem e licença
 
+## Expansão da capa e páginas internas
+
+Conferidas em 29/09/2026 sob a mesma licença Pexels:
+
+| Arquivo | Autor | Página original |
+|---|---|---|
+| assets/photo-interview.avif | Tima Miroshnichenko | https://www.pexels.com/photo/candidate-having-an-interview-5439143/ |
+| assets/photo-writing.avif | RDNE Stock project | https://www.pexels.com/photo/woman-in-the-office-writing-on-her-notebook-10375992/ |
+| assets/photo-networking.avif | August de Richelieu | https://www.pexels.com/photo/business-people-taking-a-coffee-break-and-talking-4427814/ |
+
+As três fotos novas somam 469985 bytes. Importação AVIF do recurso público CDN de cada página, com auto=compress&w=1260&h=750&dpr=2. Uso ilustrativo, sem atribuir endosso ou vínculo com o curso às pessoas retratadas. Total das sete fotografias: 1315416 bytes.
+
 Verificação: 29/09/2026. Licença: https://www.pexels.com/license/
 Uso comercial: https://help.pexels.com/hc/en-us/articles/360042295214-Can-I-use-the-photos-and-videos-for-a-commercial-project
 
