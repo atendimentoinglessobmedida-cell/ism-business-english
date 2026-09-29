@@ -3,7 +3,7 @@ const {chromium}=require(process.env.ISM_PLAYWRIGHT_MODULE||'playwright');
 const repo=path.resolve(__dirname,'..'),root=path.join(repo,'dist');
 const server=http.createServer((req,res)=>{let f=path.resolve(root,'.'+new URL(req.url,'http://localhost').pathname);if(f===root)f=path.join(root,'index.html');if(!f.startsWith(root+path.sep))return res.writeHead(404).end();fs.readFile(f,(e,b)=>{if(e)return res.writeHead(404).end();res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml'})[path.extname(f)]||'application/octet-stream');res.end(b)})});
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({headless:true,...(process.env.ISM_BROWSER_CHANNEL?{channel:process.env.ISM_BROWSER_CHANNEL}:{})});try{
-for(const width of [390,1280]){
+for(const width of [320,390,1280]){
  const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'}),errors=[];let allowed=false,revoked=false,assets=0,statusFailure=false;
  page.on('pageerror',e=>errors.push(e.message));
  await page.route('**/ism-premium-gateway/**',async route=>{
@@ -17,7 +17,10 @@ for(const width of [390,1280]){
  const origin='http://127.0.0.1:'+server.address().port;
  assert.equal((await page.request.get(origin+'/premium-courses.js')).status(),404);
  assert.equal((await page.request.get(origin+'/supabase/functions/ism-premium-gateway/private-assets.json')).status(),404);
- await page.goto(origin+'/premium.html');await page.locator('dialog[open]').waitFor();assert.equal(assets,0);
+ await page.goto(origin+'/planos.html');await page.locator('.premium-existing a').click();await page.locator('dialog[open]').waitFor();
+ await page.goto(origin+'/index.html');await page.locator('.premium-entry').waitFor();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ if(process.env.ISM_QA_OUTPUT)await page.screenshot({path:path.join(process.env.ISM_QA_OUTPUT,`premium-entry-${width}.png`)});
+ await page.locator('.premium-entry').click();await page.locator('dialog[open]').waitFor();assert.equal(assets,0);
  await page.locator('[name=email]').fill('test@example.test');await page.locator('[name=code]').fill('invalid-test');await page.getByRole('button',{name:'Entrar',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#premiumAccessStatus').textContent.includes('não autorizado'));assert.equal(assets,0);
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(process.env.ISM_QA_OUTPUT)await page.screenshot({path:path.join(process.env.ISM_QA_OUTPUT,`premium-login-${width}.png`)});
