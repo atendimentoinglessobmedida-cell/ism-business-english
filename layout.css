@@ -53,3 +53,8 @@ small,.ey,.badge,.chip,.pill,.stage,.stage-status,.title span{font-size:14px;lin
 /* Home actions also use a flex layout in action-buttons.css. */
 .home-action{align-items:stretch}.home-action>.home-action-icon{align-self:flex-start}.home-action>div{width:100%;text-align:left}
 .lesson-visual img{height:auto}
+/* Text-free supplied cover, kept whole within the persistent Core header. */
+body:has(.header-portrait){overflow-x:clip;overflow-y:visible}
+.top:has(.header-portrait){position:sticky;top:0;z-index:10}
+.top .brand > .header-portrait{display:block;width:144px;height:81px;flex:0 0 144px;object-fit:contain;border-radius:10px;background:#031d29}
+@media(max-width:799px){.top .brand > .header-portrait{width:96px;height:54px;flex-basis:96px}.top .brand:has(.header-portrait){gap:10px}.top .brand:has(.header-portrait)>div{min-width:0}}

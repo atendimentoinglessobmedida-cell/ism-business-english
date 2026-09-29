@@ -7,6 +7,12 @@ const base='http://127.0.0.1:'+server.address().port;
 for(const width of [320,390,768,1280]){
  const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'});
  await page.goto(base);await page.locator('.home-photo-cover img').evaluate(i=>i.decode());
+ await page.locator('.header-portrait').evaluate(i=>i.decode());
+ assert.equal(await page.locator('.header-portrait').count(),1);
+ await page.evaluate(()=>scrollTo(0,500));
+ assert.equal(await page.locator('.top').evaluate(e=>Math.round(e.getBoundingClientRect().top)),0);
+ if(out)await page.locator('.top').screenshot({path:path.join(out,`cabecalho-${width}.png`)});
+ await page.evaluate(()=>scrollTo(0,0));
  assert.equal(await page.locator('.home-photo-cover').count(),1);
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(out)await page.locator('.home-photo-cover').screenshot({path:path.join(out,`capa-fotografica-${width}.png`)});
