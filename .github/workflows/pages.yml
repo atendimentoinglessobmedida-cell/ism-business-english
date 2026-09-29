@@ -40,10 +40,16 @@ jobs:
         run: node scripts/release-e2e-contract.mjs
       - name: Check product completion gate
         run: node scripts/product-completion-check.mjs
+      - name: Check market benchmark gate
+        run: node scripts/market-benchmark-check.mjs
+      - name: Check visual learning gate
+        run: node scripts/visual-learning-check.mjs
       - name: Check Premium learning schema
         run: node .ci/premium-check.cjs
       - name: Check authentic listening
         run: node .ci/authentic-listening-check.cjs
+      - name: Check regional audio
+        run: node .ci/regional-audio-check.cjs
       - name: Check referenced local assets
         run: |
           python - <<'PY'
@@ -63,15 +69,19 @@ jobs:
       - name: Validate critical release files
         run: |
           set -e
-          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
+          for f in index.html storage-guard.js learner-features.js core-shell.css experience.js audio-player.js sw.js adaptive-coach.js adaptive-coach.css speaking-experience.js speaking-experience.css my-business-english.js my-business-english.css real-business.js real-business.css premium-ux.css completion-hardening.js completion-hardening.css visual-learning.js visual-learning.css action-buttons.css DEVICE-MEDIA-CERTIFICATION.md FINAL-PROMPT-AUDIT.md planos.html planos.css planos.js professor.html premium.html premium-study.js premium-shell.css premium-shell.js shared-learning-ui.css learning-quality.js; do test -s "$f"; done
           grep -q 'onclick="continueLearning()"' index.html
           grep -q 'onclick="nav(this)"' index.html
           grep -q 'SMART REVIEW' index.html
           grep -q 'BUSINESS MODE' index.html
           grep -q 'storage-guard.js?v=13' index.html
-          grep -q 'ism-business-v62' sw.js
+          grep -Eq "const CACHE='ism-business-v[0-9]+'" sw.js
           grep -q 'completion-hardening.js' sw.js
+          grep -q 'visual-learning.js' sw.js
+          grep -q 'action-buttons.css' sw.js
           grep -q 'completion-hardening.js?v=1' experience.js
+          grep -q 'visual-learning.js?v=1' experience.js
+          grep -q 'action-buttons.css?v=1' experience.js
           grep -q 'indexedDB.open' storage-guard.js
           grep -q 'ism-business-backup-v1' storage-guard.js
           grep -q 'R$ 409,99' planos.html
