@@ -1,1 +1,28 @@
-(()=>{if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}let deferred=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;window.dispatchEvent(new CustomEvent('ism-install-ready'))});window.ISMInstall={async prompt(){if(deferred){deferred.prompt();const r=await deferred.userChoice;deferred=null;return r.outcome}return 'manual'},isStandalone(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}}})();
+(() => {
+  let deferred = null;
+  const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  async function register() {
+    if (!('serviceWorker' in navigator)) return;
+    try { await navigator.serviceWorker.register('./sw.js'); }
+    catch { window.dispatchEvent(new CustomEvent('ism-install-error')); }
+  }
+  if (document.readyState === 'complete') register();
+  else window.addEventListener('load', register, { once: true });
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault(); deferred = event;
+    window.dispatchEvent(new CustomEvent('ism-install-ready'));
+  });
+  window.addEventListener('appinstalled', () => {
+    deferred = null; window.dispatchEvent(new CustomEvent('ism-installed'));
+  });
+  window.ISMInstall = {
+    isStandalone,
+    async prompt() {
+      if (isStandalone()) return 'installed';
+      if (!deferred) return 'manual';
+      const event = deferred; deferred = null;
+      try { await event.prompt(); return (await event.userChoice).outcome; }
+      catch { return 'manual'; }
+    }
+  };
+})();

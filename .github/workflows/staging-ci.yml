@@ -2,7 +2,7 @@ name: ISM Staging CI
 
 on:
   pull_request:
-    branches: ["github-pages-preview", "ux-learning-upgrade"]
+    branches: ["github-pages-preview", "ux-learning-upgrade", "global-text-alignment-recovery"]
   workflow_dispatch:
 
 jobs:
@@ -37,6 +37,14 @@ jobs:
         run: node scripts/visual-learning-check.mjs
       - name: Premium learning schema regression
         run: node .ci/premium-check.cjs
+      - name: Premium progress migration
+        run: node .ci/premium-progress-check.cjs
+      - name: Premium access session regression
+        run: node scripts/access-session-check.mjs
+      - name: Pedagogical content regression
+        run: node scripts/pedagogy-content-check.mjs
+      - name: Legacy access rollout candidates
+        run: node scripts/legacy-access-rollout-check.mjs
       - name: Authentic listening regression
         run: node .ci/authentic-listening-check.cjs
       - name: Regional audio regression
