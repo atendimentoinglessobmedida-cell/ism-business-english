@@ -8,7 +8,7 @@ const server=http.createServer((req,res)=>{
  if(pathname==='/sw.js'&&legacy){res.setHeader('Content-Type','text/javascript');res.setHeader('Cache-Control','no-store');return res.end(oldWorker)}
  let f=path.resolve(root,'.'+pathname);if(f===root)f=path.join(root,'index.html');
  if(!f.startsWith(root+path.sep))return res.writeHead(403).end();
- fs.readFile(f,(err,data)=>{if(err)return res.writeHead(404).end();res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.png':'image/png'})[path.extname(f)]||'application/octet-stream');res.end(data)});
+ fs.readFile(f,(err,data)=>{if(err)return res.writeHead(404).end();res.setHeader('Cache-Control','no-store');res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.webmanifest':'application/manifest+json','.avif':'image/avif','.svg':'image/svg+xml','.png':'image/png'})[path.extname(f)]||'application/octet-stream');res.end(data)});
 });
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const browser=await chromium.launch({headless:true,...(process.env.ISM_BROWSER_CHANNEL?{channel:process.env.ISM_BROWSER_CHANNEL}:{})});try{
  const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -17,7 +17,7 @@ const server=http.createServer((req,res)=>{
  await page.evaluate(()=>localStorage.setItem('ismbe:premium:p3:v1',JSON.stringify({done:{'P3.1':true},drafts:{'P3.1':'My saved answer'}})));
  assert((await page.evaluate(()=>caches.keys())).includes('ism-business-api-v1'));
  legacy=false;
- await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update()});
+ await page.evaluate(async()=>{const prior=navigator.serviceWorker.controller,reg=await navigator.serviceWorker.getRegistration();const changed=new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));await reg.update();if(navigator.serviceWorker.controller===prior)await changed});
  await page.waitForFunction(async()=>!(await caches.keys()).includes('ism-business-api-v1'));
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1')).drafts['P3.1']),'My saved answer');
  await page.reload();await page.waitForFunction(()=>window.ISMInstall);
@@ -30,6 +30,7 @@ const server=http.createServer((req,res)=>{
  const offline=await page.evaluate(async()=>{const core=await fetch('https://bfuoykappwybuxdlrbmo.supabase.co/functions/v1/ism-course-content?lesson=1.1'),premium=await fetch('https://bfuoykappwybuxdlrbmo.supabase.co/functions/v1/ism-premium-gateway/asset?name=premium-courses.js');return {core:await core.json(),premium:premium.status}});
  assert.equal(offline.core.fixture,'core-offline');assert.equal(offline.premium,503);
  await page.reload();assert(await page.locator('h1').isVisible());
+ const photos=await page.evaluate(async()=>Promise.all(['meetings','presentations','negotiation','client-call'].map(async id=>{const r=await fetch('assets/photo-'+id+'.avif');return r.ok&&(await r.arrayBuffer()).byteLength>1000})));assert(photos.every(Boolean),'all four licensed photos available offline');
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1')).done['P3.1']),true);
  assert.deepEqual(errors,[]);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  console.log('PASS PWA: legacy cache removed, update preserves progress/drafts, manual and simulated native install flows, offline install shell/Core fixture, Premium denied offline, 390px layout. Physical installation not certified.');

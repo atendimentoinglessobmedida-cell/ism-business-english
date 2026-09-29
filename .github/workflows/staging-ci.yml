@@ -2,7 +2,7 @@ name: ISM Staging CI
 
 on:
   pull_request:
-    branches: ["github-pages-preview", "ux-learning-upgrade", "global-text-alignment-recovery"]
+    branches: ["github-pages-preview", "ux-learning-upgrade", "global-text-alignment-recovery", "premium-catalog-access-recovery"]
   workflow_dispatch:
 
 jobs:
