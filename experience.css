@@ -1,5 +1,5 @@
 /* Calm spacing, clear hierarchy and visible learning milestones. */
-.utility-nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;padding:10px 12px 12px;background:#fff;border-bottom:1px solid #e3eaed;max-width:520px;margin:auto}
+.utility-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:10px 12px 12px;background:#fff;border-bottom:1px solid #e3eaed;max-width:520px;margin:auto}
 .utility-nav a{min-width:0;min-height:66px;padding:8px 3px;border:1px solid #e1e8ec;border-radius:13px;background:#f8fafc;color:#0b2b52;text-decoration:none;font-size:10.5px;font-weight:800;line-height:1.12;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:5px;box-shadow:none;transition:transform .14s ease,border-color .14s ease,background .14s ease}
 .utility-nav .utility-icon{width:26px;height:26px;display:grid;place-items:center;font-size:18px;line-height:1;color:#0b2b52}
 .utility-nav .plans .utility-icon{font-size:17px}.utility-nav .professor .utility-icon{font-size:20px}.utility-nav .contact .utility-icon{font-size:19px}.utility-nav .rewards .utility-icon{font-size:20px}.utility-nav .practice .utility-icon{font-size:16px}
@@ -70,7 +70,7 @@ html[data-theme="light"] .ey{color:#47747d}html[data-theme="light"] .badge{backg
 #home{width:100%}#home>.resume-card,#home>.brand-hero,#home>.weekly-progress,#home>.home-more,#home>.quick-tools,#home>.title,#home>#homePhases{width:100%;box-sizing:border-box}.brand-hero .hero-actions{display:block}.brand-hero .hero-actions .cta{width:100%;justify-content:center}.brand-hero .hero-copy{display:flex;flex-direction:column;justify-content:center}.brand-hero .author-signature{margin-top:12px}.weekly-head,.smart-practice{align-items:center}#home>.title{margin-top:4px;margin-bottom:10px}#homePhases{display:grid;gap:10px}@media(max-width:480px){#home>.resume-card,#home>.brand-hero,#home>.weekly-progress{margin-left:0;margin-right:0}.brand-hero .hero-copy{text-align:left}.brand-hero .hero-actions{width:100%}.weekly-head{align-items:flex-start}.smart-practice{align-items:stretch}}
 
 /* Home UX audit v2 — compact, aligned and free of duplicated destinations. */
-.utility-nav{grid-template-columns:repeat(3,minmax(0,1fr))}.theme-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.utility-nav{grid-template-columns:repeat(4,minmax(0,1fr))}.theme-toggle svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 #home>.resume-card,#home>.brand-hero,#home>.learning-dashboard{max-width:100%}.brand-hero{min-height:0}.brand-hero .hero-copy{padding-bottom:4px}.brand-hero .author-signature{margin-top:14px}.learning-dashboard{display:grid;gap:10px}.learning-dashboard .weekly-head,.learning-dashboard .smart-practice,.learning-dashboard .summary{margin:0}.learning-dashboard .progress-caption{display:block;margin-top:-3px}
 @media(max-width:480px){.utility-nav{gap:7px}.utility-nav a{min-width:0;padding-inline:6px}.resume-card{align-items:center}.resume-card>div{min-width:0}.resume-card strong,.smart-practice strong{line-height:1.25}.brand-hero{margin-top:0}.learning-dashboard{padding:13px}}
 
@@ -165,3 +165,4 @@ html[data-theme="professional"] #home .btn-secondary{background:#0e4557;color:#f
 .home-action small{font-size:14px;line-height:1.5}
 html[data-theme="professional"] .home-action{background:var(--surface);color:var(--surface-text)}
 @media(max-width:560px){.listening-item,.simulation-step{grid-template-columns:30px minmax(0,1fr)}}
+
