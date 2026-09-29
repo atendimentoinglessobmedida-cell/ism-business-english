@@ -59,4 +59,10 @@ body:has(.header-portrait){overflow-x:clip;overflow-y:visible}
 .top .brand > .header-portrait{display:block;width:144px;height:81px;flex:0 0 144px;object-fit:contain;border-radius:10px;background:#031d29}
 @media(max-width:799px){.top .brand > .header-portrait{width:96px;height:54px;flex-basis:96px}.top .brand:has(.header-portrait){gap:10px}.top .brand:has(.header-portrait)>div{min-width:0}}
 .top .brand .header-premium{display:flex;align-items:center;min-height:44px;width:fit-content;color:#75edf3;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
+/* Four utility actions share one row and matching icon/label tracks. */
+body nav.utility-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch;gap:8px;width:100%;max-width:1180px;padding:10px 12px}
+body nav.utility-nav>a{display:grid;grid-template-rows:26px minmax(36px,auto);align-content:start;justify-items:center;align-items:center;gap:6px;min-width:0;min-height:86px;padding:8px 4px;font-size:13px;line-height:18px}
+body nav.utility-nav .utility-icon{width:26px;height:26px;display:grid;place-items:center;margin:0}
+body nav.utility-nav>a>span:last-child{display:block;align-self:start;text-align:center;line-height:18px;min-height:36px;overflow-wrap:normal}
+@media(max-width:380px){body nav.utility-nav{gap:5px;padding-inline:8px}body nav.utility-nav>a{font-size:11px}}
 
