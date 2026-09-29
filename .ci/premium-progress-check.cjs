@@ -37,8 +37,8 @@ assert.equal(E.legacySummary(storage).tracks[0].done,1,'objects are not legacy b
 records.set(E.legacyKey('P2'),{done:Object.fromEntries(Array.from({length:12},(_,i)=>[i,true]))});
 assert.equal(E.legacySummary(storage).tracks[1].done,8,'legacy displays cannot exceed their declared total');
 assert.equal(E.legacySummary(storage).total,88);
-assert.equal(courses.reduce((n,c)=>n+c.lessons.length,0),57);
-assert.equal(courses.length,7);
+assert.equal(courses.reduce((n,c)=>n+c.lessons.length,0),59);
+assert.equal(courses.length,9);
 assert.equal(E.route('#P10/1',[{id:'P10',lessons:[[]]}]).index,0);
 assert.equal(E.route('#P999/1',courses).course,null);
 const study=fs.readFileSync('premium-study.js','utf8');
@@ -48,4 +48,4 @@ assert(study.includes('Progresso da coleção de prática aplicada'));
 const index=fs.readFileSync('index.html','utf8');
 assert(index.includes('ISMPremiumEngine.legacySummary(ISMStorage)'));
 assert(index.indexOf('src="premium-engine.js')<index.indexOf('const premiumTracks='));
-console.log('PASS: separate 88/8 remote and 57/7 authored catalogues; idempotent migration, source preservation, drafts, counts, routes, malformed records and renderer wiring.');
+console.log('PASS: separate 88/8 remote and 59/9 authored catalogues; idempotent migration, source preservation, drafts, counts, routes, malformed records and renderer wiring.');

@@ -78,3 +78,175 @@ window.ISM_PREMIUM_COURSES.push({id:'P9',title:'International Business Essential
  listening:{text:'Supplier: The quotation is exclusive of applicable taxes. Buyer: Could you show the tax amount separately on the invoice? Supplier: We can revise the invoice after the tax treatment is confirmed. Buyer: Our adviser will check whether withholding applies and confirm the required details before payment.',question:'Qual é o próximo passo combinado?',options:['Pagar assumindo que nenhum tributo existe.','Confirmar o tratamento tributário e a eventual retenção antes de revisar os detalhes e pagar.','Aplicar automaticamente a mesma alíquota em qualquer país.'],answer:1,feedback:'Exclusive of exclui os tributos do valor cotado. O diálogo não define uma alíquota: prevê consulta ao assessor e confirmação dos detalhes antes do pagamento.'},sources:[['OECD — International VAT/GST Guidelines','https://www.oecd.org/en/publications/international-vat-gst-guidelines_9789264271401-en.html'],['GOV.UK — informações em invoices (Reino Unido)','https://www.gov.uk/invoicing-and-taking-payment-from-customers/invoices-what-they-must-include'],['GOV.UK — exemplo de termos contratuais públicos britânicos','https://www.gov.uk/government/publications/the-public-sector-contract-core-terms/general-terms-v10-html']]}
 ]
 ]});
+
+/* Two original pilot lessons; existing IDs and progress remain unchanged. */
+window.ISM_PREMIUM_COURSES.push(...[
+  {
+    "id": "P10",
+    "title": "Asynchronous Teamwork",
+    "pt": "Trabalho assíncrono · lição-piloto",
+    "goal": "Entregar uma atualização que permita a outra pessoa continuar o trabalho sem uma reunião.",
+    "prerequisite": "Conseguir descrever tarefas e prazos em frases curtas. Revise Global Teams se precisar.",
+    "outcome": "Uma passagem de tarefa com status, impedimento, responsável, prazo e pedido de confirmação.",
+    "lessons": [
+      [
+        "A clear handoff across time zones",
+        "Passe uma tarefa adiante com clareza",
+        "Cenário fictício: a análise está pronta, mas falta a aprovação de Finance. Você encerra seu expediente. Maya assume a tarefa em outro fuso. A atualização deve identificar o impedimento, quem fará o acompanhamento e quando a equipe receberá notícias. Use 14 October, 14:00 UTC como prazo combinado.",
+        [
+          "The analysis is ready for review.",
+          "A análise está pronta para revisão.",
+          "We are waiting for approval from Finance.",
+          "Estamos aguardando a aprovação de Finance.",
+          "Maya will follow up with Finance.",
+          "Maya fará o acompanhamento com Finance.",
+          "Please post an update by 14 October, 14:00 UTC.",
+          "Publique uma atualização até 14 de outubro, às 14h UTC.",
+          "If approval is delayed, please flag the impact on the timeline.",
+          "Se a aprovação atrasar, sinalize o impacto no cronograma.",
+          "Could you confirm that you can take this on?",
+          "Você pode confirmar que consegue assumir esta tarefa?"
+        ],
+        [
+          "handoff|passagem de tarefa",
+          "blocker|impedimento",
+          "follow up|acompanhar ou cobrar retorno",
+          "owner|responsável",
+          "by|até (prazo limite)",
+          "flag a risk|sinalizar um risco"
+        ],
+        "Qual mensagem permite a Maya agir sem adivinhar responsabilidade ou prazo?",
+        [
+          "The analysis is ready. We need approval soon; please check when you have time.",
+          "The analysis is ready; Finance approval is pending. Maya, please follow up and post an update by 14 October, 14:00 UTC. Can you confirm you can take this on?",
+          "Finance has approved the analysis. Maya will deliver it by tomorrow."
+        ],
+        1,
+        "A segunda mensagem distingue trabalho concluído e aprovação pendente, atribui o acompanhamento, informa data e fuso e pede confirmação. A primeira deixa o prazo vago; a terceira inventa uma aprovação e usa tomorrow sem referência clara.",
+        [
+          "Please follow ___ with Finance.",
+          "up",
+          "Follow up with someone significa acompanhar o assunto com essa pessoa ou equipe."
+        ],
+        "Escreva uma passagem de tarefa de 50–80 palavras para Maya. Inclua o que está pronto, o impedimento, a ação solicitada, o prazo com fuso e um pedido de confirmação. Não anuncie aprovação que ainda não ocorreu.",
+        "Hi Maya, the analysis is ready for review, but Finance approval is still pending. Could you follow up with Finance and post an update by 14 October, 14:00 UTC? If approval is delayed, please flag the impact on the timeline in this thread. Please confirm that you can take this on before I sign off. Thank you.",
+        [
+          "Distingui o que está pronto do que ainda está pendente.",
+          "Indiquei responsável, próxima ação, data e fuso.",
+          "Pedi confirmação e expliquei o que fazer se houver atraso."
+        ],
+        {
+          "notes": [
+            [
+              "Prazo claro",
+              "By indica um limite; at indica um horário pontual. Prefira data por extenso e fuso compartilhado. Evite EOD ou tomorrow quando a equipe trabalha em fusos diferentes."
+            ],
+            [
+              "Pedido não é aceite",
+              "Could you take this on? solicita uma confirmação. Não descreva a tarefa como aceita antes da resposta. No trabalho real, respeite o expediente e os acordos da equipe."
+            ],
+            [
+              "Transferência",
+              "Reescreva sua mensagem para outro projeto: troque o impedimento, o responsável e o prazo. Confira se alguém fora da conversa consegue identificar a próxima ação."
+            ]
+          ],
+          "listening": {
+            "text": "Alex: The analysis is ready, but Finance has not approved it yet. Maya: I can follow up. I will post an update by 14 October at 14:00 UTC, even if approval is still pending. Alex: Thanks. Please flag any impact on the timeline.",
+            "question": "O que Maya se comprometeu a fazer até o prazo?",
+            "options": [
+              "Garantir a aprovação de Finance.",
+              "Publicar uma atualização, mesmo que a aprovação continue pendente.",
+              "Concluir uma nova análise."
+            ],
+            "answer": 1,
+            "feedback": "Maya prometeu uma atualização e acompanhamento. Ela não garantiu a decisão de Finance."
+          }
+        }
+      ]
+    ]
+  },
+  {
+    "id": "P11",
+    "title": "Customer Recovery",
+    "pt": "Clientes difíceis · lição-piloto",
+    "goal": "Responder a uma reclamação com empatia, limites claros e um próximo passo verificável.",
+    "prerequisite": "Conseguir explicar um problema e uma próxima ação. Revise Difficult Conversations se precisar.",
+    "outcome": "Uma resposta ao cliente que reconhece o impacto e combina uma atualização sem prometer uma solução não confirmada.",
+    "lessons": [
+      [
+        "Recover trust after a missed delivery",
+        "Recupere a confiança após um atraso",
+        "Cenário fictício: uma entrega combinada não chegou e interrompeu o planejamento do cliente. A operação ainda não confirmou nova data. Você pode investigar e dar uma atualização até 16 October, 15:00 UTC, mas não pode garantir entrega nem reembolso.",
+        [
+          "I am sorry the delivery missed the agreed date.",
+          "Sinto muito que a entrega não tenha ocorrido na data combinada.",
+          "I understand this has disrupted your planning.",
+          "Entendo que isso prejudicou seu planejamento.",
+          "I am checking the status with our operations team.",
+          "Estou verificando a situação com nossa equipe de operações.",
+          "I cannot confirm a new delivery date yet.",
+          "Ainda não posso confirmar uma nova data de entrega.",
+          "I will update you by 16 October, 15:00 UTC.",
+          "Darei uma atualização até 16 de outubro, às 15h UTC.",
+          "I will contact you even if the investigation is still ongoing.",
+          "Entrarei em contato mesmo que a investigação ainda esteja em andamento."
+        ],
+        [
+          "agreed date|data combinada",
+          "disruption|interrupção ou transtorno",
+          "look into|investigar",
+          "update|atualização",
+          "confirmed|confirmado",
+          "ongoing|em andamento"
+        ],
+        "Qual resposta acolhe o cliente sem criar uma promessa que você não pode cumprir?",
+        [
+          "We are sorry. Your delivery will definitely arrive tomorrow and we will refund the full amount.",
+          "Operations caused the delay. Please wait until they contact you.",
+          "I am sorry the delivery missed the agreed date. I understand the impact on your planning. I am checking with Operations and will update you by 16 October, 15:00 UTC, even if the new date is not confirmed."
+        ],
+        2,
+        "A terceira resposta reconhece o impacto, assume o acompanhamento e promete uma ação controlável. A primeira garante entrega e reembolso sem autorização; a segunda transfere a responsabilidade e não informa próximo contato.",
+        [
+          "I will look ___ the delay.",
+          "into",
+          "Look into a problem significa investigar um problema; look after significa cuidar de alguém ou algo."
+        ],
+        "Responda ao cliente em 60–90 palavras. Reconheça o atraso e seu impacto, diga o que está sendo investigado e quando fará o próximo contato. Diferencie atualização prometida de solução ainda não confirmada.",
+        "I am sorry the delivery missed the agreed date. I understand this has disrupted your planning. I am checking the status with our operations team, but I cannot confirm a new delivery date yet. I will update you by 16 October, 15:00 UTC, even if the investigation is still ongoing. In the meantime, could you let me know which part of your schedule is most affected?",
+        [
+          "Reconheci o atraso e o impacto sem culpar o cliente ou outra equipe.",
+          "Expliquei a ação e o que ainda não está confirmado.",
+          "Combinei um próximo contato com data e fuso, sem garantir entrega ou reembolso."
+        ],
+        {
+          "notes": [
+            [
+              "Empatia específica",
+              "I understand your frustration pode soar genérico. Relacione a resposta ao impacto informado: I understand this has disrupted your planning. Não invente consequências que o cliente não relatou."
+            ],
+            [
+              "Compromisso controlável",
+              "Prometa investigar e retornar em um prazo que consiga cumprir. Uma atualização não equivale à resolução. Siga as políticas da sua organização para compensações."
+            ],
+            [
+              "Transferência",
+              "Adapte a resposta a um serviço indisponível. Substitua entrega por serviço, mantenha as incertezas explícitas e peça uma informação que ajude a priorizar o atendimento."
+            ]
+          ],
+          "listening": {
+            "text": "Customer: Can you guarantee delivery tomorrow? Agent: I cannot confirm that yet. I am checking with Operations and will update you by 16 October at 15:00 UTC, even if we are still investigating. Customer: Please make sure you contact me by then. Agent: I will.",
+            "question": "Qual compromisso foi confirmado?",
+            "options": [
+              "Entrega garantida amanhã.",
+              "Reembolso integral imediato.",
+              "Contato até o horário combinado, mesmo sem resolução."
+            ],
+            "answer": 2,
+            "feedback": "O compromisso é retornar com uma atualização. A data da entrega ainda não foi confirmada."
+          }
+        }
+      ]
+    ]
+  }
+]);

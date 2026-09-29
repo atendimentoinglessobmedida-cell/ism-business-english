@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),output=process.env.ISM_QA_OUTPUT;
 const server=http.createServer((req,res)=>{let file=path.resolve(root,'.'+new URL(req.url,'http://localhost').pathname);if(file===root)file=path.join(root,'index.html');if(!file.startsWith(root+path.sep))return res.writeHead(403).end();fs.readFile(file,(error,data)=>{if(error)return res.writeHead(404).end();res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.avif':'image/avif','.svg':'image/svg+xml','.png':'image/png'})[path.extname(file)]||'application/octet-stream');res.end(data);});});
 const original={done:{'P3.1':true},drafts:{'P3.1':'Original remote draft'},practice:{'P3.1':true},lessons:{'P3.2':{done:true,draft:'Original authored draft',model:true,criteria:[true,true],oral:true}}};
 (async()=>{await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));let browser;try{browser=await chromium.launch({headless:true,...(process.env.ISM_BROWSER_CHANNEL?{channel:process.env.ISM_BROWSER_CHANNEL}:{})});
-for(const width of [390,1280]){
+for(const width of [320,390,768,1280]){
  const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'}),errors=[];
  page.on('pageerror',error=>errors.push(error.message));
  // This fixture isolates progress compatibility; it does not validate real authorization.
@@ -27,9 +27,16 @@ for(const width of [390,1280]){
   await page.locator('input[name=code]').fill('fixture-code');
   await page.getByRole('button',{name:'Entrar',exact:true}).click();
  }
- assert((await page.locator('.premium-overall').innerText()).includes('1/57 lições de prática aplicada'));
+ assert((await page.locator('.premium-overall').innerText()).includes('1/59 lições de prática aplicada'));
  assert((await page.locator('#course-view').innerText()).includes('registros separados'));
- assert.equal(await page.locator('.premium-track-visual').count(),7);
+ assert.equal(await page.locator('.premium-track-visual').count(),9);
+ assert.equal(await page.locator('.premium-start-actions a').count(),3);
+ await page.getByRole('link',{name:'Revisar o que aprendi',exact:true}).click();
+ await page.waitForFunction(()=>document.querySelector('h1')?.textContent==='Use novamente o que aprendeu');
+ assert.equal(await page.locator('.lesson-list a').count(),1);
+ await page.goto(base+'/premium.html',{waitUntil:'networkidle'});
+ await page.getByRole('link',{name:'Preparar uma situação',exact:true}).click();
+ await page.waitForFunction(()=>document.activeElement?.id==='premium-goals');
  for(const img of await page.locator('.premium-track-visual').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(i=>i.decode());assert(await img.evaluate(i=>i.naturalWidth>=1000&&i.currentSrc.endsWith('.avif')));}
  await page.evaluate(()=>scrollTo(0,0));
  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1'))),original);
@@ -57,17 +64,35 @@ for(const width of [390,1280]){
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  audited++;
  }
- assert.equal(audited,57);
+ assert.equal(audited,59);
+ for(const id of ['P10','P11']){
+ await page.evaluate(hash=>location.hash=hash,id+'/1');await page.waitForFunction(id=>document.querySelector('.reading .ey')?.textContent.startsWith(id+'.1 ·'),id);
+ const l=await page.evaluate(id=>ISM_PREMIUM_COURSES.find(c=>c.id===id).lessons[0],id);
+ await page.locator('[data-finish]').click();assert((await page.locator('#finish-status').innerText()).includes('compreensão'));
+ await page.locator('input[name=choice][value="'+l[7]+'"]').check();await page.locator('[data-check=choice]').click();
+ await page.locator('#gap').fill(l[9][1]);await page.locator('[data-check=gap]').click();
+ await page.locator('input[name=listening][value="'+l[13].listening.answer+'"]').check();await page.locator('[data-check=listening]').click();
+ await page.locator('#draft').fill('My own response for this simulated professional situation. '+id);
+ await page.goto(base+'/premium.html',{waitUntil:'networkidle'});assert.equal(await page.locator('[data-resume]').getAttribute('href'),'#'+id+'/1');
+ await page.locator('[data-resume]').click();await page.locator('[data-model]').click();
+ for(const box of await page.locator('[data-criterion]').all())await box.check();await page.locator('[data-oral]').check();await page.locator('[data-finish]').click();
+ assert((await page.locator('#finish-status').innerText()).includes('Conclusão salva'));
+ await page.reload({waitUntil:'networkidle'});assert((await page.locator('[data-finish]').innerText()).includes('Lição concluída'));
+ }
  await page.evaluate(()=>location.hash='P3/1');await page.waitForFunction(()=>document.querySelector('.reading .ey')?.textContent.startsWith('P3.1 ·'));
  await page.locator('[data-finish]').click();assert((await page.locator('#finish-status').innerText()).includes('Para concluir, falta:'));
- console.log('PASS '+width+'px: all 57 authored lessons render, bilingual pairing, oral markup, overflow and specific completion guidance');
+ console.log('PASS '+width+'px: all 59 authored lessons render, bilingual pairing, oral markup, overflow and specific completion guidance');
  await page.goto(base+'/index.html#premium',{waitUntil:'networkidle'});
  assert((await page.locator('#premiumTracks').innerText()).includes('1/88 lições'));
  assert((await page.locator('#premiumTracks').innerText()).includes('trilhas originais concluídas'));
  assert.equal(await page.locator('#premium .premium a.btn').innerText(),'ACESSAR CONTEÚDO PREMIUM →');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  if(output)await page.screenshot({path:path.join(output,`progresso-original-${width}.png`),fullPage:true});
- assert.deepEqual(errors,[]);console.log(`PASS ${width}px: hub 1/57, original 1/88, migration, draft edit/reload, source intact, no overflow or JS errors`);
+ assert.deepEqual(errors,[]);console.log(`PASS ${width}px: hub 1/59, original 1/88, migration, draft edit/reload, source intact, no overflow or JS errors`);
+ await page.evaluate(()=>{for(const k of Object.keys(localStorage))if(k.startsWith('ismbe:premium:authored:')||k==='ismbe:premium:p3:v1')localStorage.removeItem(k)});
+ await page.goto(base+'/premium.html#review',{waitUntil:'networkidle'});
+ assert((await page.locator('h2').innerText()).includes('primeira conclusão'));
+ assert.equal(await page.getByRole('link',{name:'Começar uma lição →',exact:true}).getAttribute('href'),'#P3/1');
  await page.close();
 }
 }finally{await browser?.close();await new Promise(resolve=>server.close(resolve));}})().catch(error=>{console.error(error);process.exitCode=1;});

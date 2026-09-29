@@ -10,6 +10,7 @@ for(const course of context.window.ISM_PREMIUM_COURSES){for(const [i,l] of cours
  assert(l[9]?.[1]&&l[10]&&l[11]&&l[12]?.length,id+' gap, transfer, model and criteria required');
  const q=l[13]?.listening;if(q)assert(q.options[q.answer],id+' listening answer must exist');
 }}
+for(const id of ['P10','P11']){const c=context.window.ISM_PREMIUM_COURSES.find(c=>c.id===id);assert(c.prerequisite&&c.outcome);const l=c.lessons[0],n=l[11].split(/\s+/).length;assert(n>=(id==='P10'?50:60)&&n<=(id==='P10'?80:90),id+' model word count');assert.equal(l[3].length%2,0);assert.equal(new Set(l[6]).size,3);assert(l[13].listening&&l[13].notes.length>=3);}
 const units=context.window.ISM_EXTRA_UNITS;
 for(const u of units){assert(u.choice[1][u.choice[2]],u.id+' choice');assert(u.listen[2][u.listen[3]],u.id+' listening');}
 const intro=units.find(u=>u.id==='13.6').write[1],words=intro.split(/\s+/).length;
