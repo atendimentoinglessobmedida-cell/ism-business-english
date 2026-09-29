@@ -9,3 +9,6 @@
 .page-photo-credit{font-size:12px;line-height:1.5;margin:12px 0 20px}.page-photo-credit a{color:inherit;text-underline-offset:3px}
 .home-photo-copy a:focus-visible,.page-photo-credit a:focus-visible{outline:3px solid #e9a83a;outline-offset:4px}
 @media(max-width:620px){.home-photo-cover{grid-template-columns:1fr;border-radius:18px;margin-bottom:18px}.home-photo-copy{padding:22px}.home-photo-copy h1{font-size:29px}.home-photo-cover>.page-context-photo{min-height:0;height:180px;max-height:none}.page-context-photo{height:170px;margin:14px 0 18px}}
+.home-photo-copy a.home-start-practice{font-size:15px;color:#002237;background:#36d4e6;border:1px solid #36d4e6;margin:0 0 10px}
+.home-photo-copy p.home-practice-note{font-size:13px;line-height:1.5;margin-bottom:14px}
+@media(max-width:620px){.home-photo-cover>.page-context-photo{height:140px}.home-photo-copy a.home-start-practice{width:100%}}

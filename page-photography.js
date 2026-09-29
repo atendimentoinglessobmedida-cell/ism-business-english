@@ -17,7 +17,7 @@
     const cover = document.createElement('section');
     cover.className = 'home-photo-cover';
     cover.setAttribute('aria-label', 'Inglês para sua vida profissional');
-    cover.innerHTML = '<div class="home-photo-copy"><span>ISM BUSINESS ENGLISH</span><h1>Seu inglês.<br>Novas possibilidades.</h1><p>Prepare-se para reuniões, apresentações e conversas que fazem parte da sua carreira.</p><a href="photo-credits.html">Créditos das fotografias</a></div>';
+    cover.innerHTML = '<div class="home-photo-copy"><span>ISM BUSINESS ENGLISH</span><h1>Inglês para agir<br>no trabalho.</h1><p>Pratique reuniões, apresentações e conversas profissionais com modelos, áudio e exercícios.</p><a class="btn home-start-practice" href="#practice">Praticar uma situação real →</a><p class="home-practice-note">Ouça uma fala, identifique a intenção e prepare sua resposta.</p><a href="photo-credits.html">Créditos das fotografias</a></div>';
     cover.append(makePhoto('networking', true));
     home.prepend(cover);
   }

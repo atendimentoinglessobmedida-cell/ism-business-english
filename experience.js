@@ -35,7 +35,7 @@
   });
  };
  improveActions();
- loadScript('adaptive-coach.js?v=2');loadScript('speaking-experience.js?v=1');loadScript('my-business-english.js?v=1');loadScript('real-business.js?v=2');loadScript('completion-hardening.js?v=1');loadScript('visual-learning.js?v=1');
+ loadScript('adaptive-coach.js?v=2');loadScript('speaking-experience.js?v=1');loadScript('my-business-english.js?v=1');loadScript('real-business.js?v=3');loadScript('completion-hardening.js?v=1');loadScript('visual-learning.js?v=1');
  const attachSpeaking=()=>{const lesson=document.getElementById('lessonBody');if(!lesson||document.getElementById('speakingExperience'))return;const speaking=[...lesson.querySelectorAll('.card,.stage')].find(x=>/SPEAK|fale|gravar/i.test(x.textContent||''));if(speaking){const host=document.createElement('div');host.id='speakingExperience';speaking.insertAdjacentElement('afterend',host);window.ISMSpeaking?.render?.()}};
  const observer=new MutationObserver(()=>requestAnimationFrame(()=>{attachSpeaking();improveActions()}));const lessonBody=document.getElementById('lessonBody');if(lessonBody)observer.observe(lessonBody,{childList:true,subtree:true});window.addEventListener('load',()=>{attachSpeaking();improveActions()});
 })();
