@@ -12,7 +12,8 @@
     "release:check": "node scripts/qa-static.mjs",
     "release:staging": "node scripts/qa-static.mjs",
     "qa:product": "node scripts/product-browser-check.cjs",
-    "qa:pwa": "node scripts/pwa-browser-check.cjs"
+    "qa:pwa": "node scripts/pwa-browser-check.cjs",
+    "qa:visual": "node scripts/visual-design-browser-check.cjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.6",

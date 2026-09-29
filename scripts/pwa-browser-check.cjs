@@ -17,7 +17,7 @@ const server=http.createServer((req,res)=>{
  await page.evaluate(()=>localStorage.setItem('ismbe:premium:p3:v1',JSON.stringify({done:{'P3.1':true},drafts:{'P3.1':'My saved answer'}})));
  assert((await page.evaluate(()=>caches.keys())).includes('ism-business-api-v1'));
  legacy=false;
- await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update()});
+ await page.evaluate(async()=>{const prior=navigator.serviceWorker.controller,reg=await navigator.serviceWorker.getRegistration();const changed=new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));await reg.update();if(navigator.serviceWorker.controller===prior)await changed});
  await page.waitForFunction(async()=>!(await caches.keys()).includes('ism-business-api-v1'));
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:premium:p3:v1')).drafts['P3.1']),'My saved answer');
  await page.reload();await page.waitForFunction(()=>window.ISMInstall);
