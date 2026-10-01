@@ -1,0 +1,15 @@
+.business-flow{margin:18px 0;padding:18px;border:1px solid #b9cdd2;border-radius:14px;background:#f5fafb;color:#123544}
+.flow-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.flow-steps .btn{white-space:normal;min-height:48px;justify-content:flex-start;text-align:left;font-size:14px}
+.business-flow .flow-steps button.flow-current{background:#07566b!important;color:#fff!important;border:2px solid #22d5d5!important;box-shadow:inset 0 -3px 0 #22d5d5}
+.flow-tools,.flow-footer{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.flow-hint{line-height:1.6;margin:14px 0}
+.flow-footer{justify-content:space-between;margin:20px 0}
+.flow-panel[hidden]{display:none!important}
+.flow-panel{min-width:0;scroll-margin-top:20px}
+.flow-listen-item{border-top:1px solid #d1e0e4;margin-top:14px;padding-top:14px}
+.flow-listen-item details{margin:12px 0}
+.flow-hide-translations .phrase .pt,.flow-hide-translations .vocabulary li>span{display:none!important}
+.flow-panel:focus-visible,.business-flow button:focus-visible{outline:3px solid #b76b10;outline-offset:4px}
+.business-flow button:disabled,.flow-footer button:disabled{opacity:.5;cursor:default}
+@media(max-width:480px){.flow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.business-flow{padding:12px}.flow-tools .btn,.flow-footer .btn{flex:1 1 140px}}
