@@ -13,3 +13,5 @@
 .flow-panel:focus-visible,.business-flow button:focus-visible{outline:3px solid #b76b10;outline-offset:4px}
 .business-flow button:disabled,.flow-footer button:disabled{opacity:.5;cursor:default}
 @media(max-width:480px){.flow-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.business-flow{padding:12px}.flow-tools .btn,.flow-footer .btn{flex:1 1 140px}}
+
+@import url('intent-paths.css?v=1');
