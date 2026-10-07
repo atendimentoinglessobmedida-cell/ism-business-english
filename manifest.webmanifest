@@ -1,7 +1,7 @@
 {
-  "name": "ISM Business English — Meetings, Presentations & Global Careers",
-  "short_name": "ISM Business",
-  "description": "Business English para reuniões, apresentações e carreira global.",
+  "name": "ISM Business English",
+  "short_name": "ISM Business English",
+  "description": "Treinamento de Business English orientado a objetivos profissionais, com jornadas rápidas e prática aplicada.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
