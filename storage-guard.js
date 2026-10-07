@@ -18,3 +18,5 @@ async function hydrate(key,fallback){let local=null;try{const raw=localStorage.g
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mountBackupUI);else mountBackupUI();
  return {read,write,object,collect,exportBackup,importBackup,restoreLastGood,storageHealth,clearWarning,dbGet,selfTest,ready};
 })();
+/* Goal-first navigation shell: loaded separately to keep the Core learning engine stable. */
+(()=>{const s=document.createElement('script');s.src='intent-paths.js?v=1';s.defer=true;document.head.append(s)})();
