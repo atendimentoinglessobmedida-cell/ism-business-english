@@ -76,8 +76,10 @@ function createDialoguePlayer(options) {
     };
     next();
   }
-  return {play,stop,repeat:()=>play(last,{...lastSettings,from:0,single:false}),line:index=>last[index]?play(last,{...lastSettings,from:index,single:true}):undefined};
+  function clear(){stop(true);last=[];lastSettings={};publish('stopped');}
+  return {play,stop,clear,repeat:()=>play(last,{...lastSettings,from:0,single:false}),line:index=>last[index]?play(last,{...lastSettings,from:index,single:true}):undefined};
 }
+
 
 
 
@@ -144,6 +146,7 @@ function createDialoguePlayer(options) {
  repeat.onclick=()=>{if(last?.dialogue)void dialogue.play(last.dialogue,{rate:last.rate});else if(last)speak(last.text,last.rate,last.regional);};stopButton.onclick=()=>stop();
 
  function updateDialogue(event){
+  if(!event.segments.length){panel.querySelector("[data-dialogue]")?.remove();return;}
   let box=panel.querySelector('[data-dialogue]');
   if(!box){box=document.createElement('section');box.dataset.dialogue='';box.setAttribute('aria-label','Transcrição e falas do diálogo');panel.append(box);}
   if(event.state==='loading'){
@@ -157,13 +160,14 @@ function createDialoguePlayer(options) {
 
  dialogue=createDialoguePlayer({synthesis:synth,origin:window.location?.origin||'http://localhost',prepare:async()=>{if(supported&&!synth.getVoices().length)await new Promise(resolve=>{const done=()=>{clearTimeout(wait);synth.removeEventListener('voiceschanged',done);resolve()};const wait=setTimeout(done,900);synth.addEventListener('voiceschanged',done)});return supported?synth.getVoices():[];},makeUtterance:text=>new SpeechSynthesisUtterance(text),makeAudio:url=>new Audio(url),voiceA:()=>selected,voiceB:()=>panel.querySelector('#ismVoiceB').value,rate:()=>Number(panel.querySelector('#ismDialogueRate').value),cancelOther:()=>stop(null),publish:event=>{updateDialogue(event);stopButton.disabled=!['loading','playing'].includes(event.state);}});
  panel.querySelector('#ismVoiceB').onchange=()=>stop();panel.querySelector('#ismDialogueRate').onchange=()=>stop();
- window.addEventListener('hashchange',()=>stop(null));
+ function clearDialogue(){dialogue.clear();last=null;repeat.disabled=true;}
+ window.addEventListener('hashchange',()=>{stop(null);clearDialogue();});
  if(supported)synth.addEventListener('voiceschanged',refresh);
  document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});
  window.addEventListener('pagehide',()=>stop(null));
  // Prevent speech continuing after leaving an activity, including dynamic Premium views.
- const view=document.getElementById('view');if(view)new MutationObserver(()=>{stop();}).observe(view,{childList:true});
+ const view=document.getElementById('view');if(view)new MutationObserver(()=>{stop();clearDialogue();}).observe(view,{childList:true});
  document.querySelectorAll('.panel').forEach(p=>new MutationObserver(()=>{stop();}).observe(p,{attributes:true,attributeFilter:['class']}));
  function capability(){return {supported,englishVoices:voices.length,selected:selected||'auto',lastText:playback.text,lastRate:playback.rate};}
- window.ISMAudio={speak,stop,capability,speakDialogue:(lines,settings={})=>{last={dialogue:parseDialogue(lines),rate:settings.rate??Number(panel.querySelector('#ismDialogueRate').value)};repeat.disabled=false;return dialogue.play(last.dialogue,{rate:last.rate});}};refresh();
+ window.ISMAudio={speak,stop:()=>{stop();clearDialogue();},capability,speakDialogue:(lines,settings={})=>{last={dialogue:parseDialogue(lines),rate:settings.rate??Number(panel.querySelector('#ismDialogueRate').value)};repeat.disabled=false;return dialogue.play(last.dialogue,{rate:last.rate});}};refresh();
 })();
