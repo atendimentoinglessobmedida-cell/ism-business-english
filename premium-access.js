@@ -22,14 +22,16 @@ window.ISMPremiumAccess=(()=>{
       document.body.append(dialog);dialog.showModal();dialog.addEventListener('cancel',e=>e.preventDefault());
       const form=dialog.querySelector('form'),status=dialog.querySelector('[role=status]'),button=form.querySelector('button');
       form.addEventListener('submit',async event=>{
-        event.preventDefault();button.disabled=true;status.textContent='Verificando acesso…';
+        event.preventDefault();if(button.disabled)return;button.disabled=true;status.textContent='Verificando acesso…';
+        const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),15000);
         try{
-          const response=await nativeFetch(base+'session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:form.elements.email.value,code:form.elements.code.value}),cache:'no-store'});
+          const response=await nativeFetch(base+'session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:form.elements.email.value,code:form.elements.code.value}),cache:'no-store',signal:controller.signal});
+          if(response.status>=500)throw Error('O serviço de acesso está indisponível. Tente novamente em alguns instantes.');
           const data=await response.json();
           if(!response.ok||!data.ok)throw Error(response.status===429?'Muitas tentativas. Aguarde alguns minutos.':'Acesso não autorizado. Confira o email, o código e a validade.');
           session={token:data.token,expiresAt:data.expiresAt};try{sessionStorage.setItem(key,JSON.stringify(session))}catch{}
           form.reset();dialog.close();dialog.remove();pending=null;arm();resolve(session);
-        }catch(error){status.textContent=navigator.onLine?error.message:'Conecte-se à internet para acessar o Premium.'}finally{button.disabled=false}
+        }catch(error){status.textContent=!navigator.onLine?'Conecte-se à internet para acessar o Premium.':controller.signal.aborted?'A verificação demorou demais. Tente novamente.':error instanceof TypeError?'Não foi possível conectar ao serviço. Tente novamente.':error.message}finally{clearTimeout(timeout);button.disabled=false}
       });
       form.elements.email.focus();
     });
