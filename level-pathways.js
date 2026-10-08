@@ -11,7 +11,7 @@ meeting:[['Nice to meet you.','When does the meeting start?'],['We have complete
 interview:[['I work as...','My main skill is...'],['I have experience in...','For example...'],['The situation was...','As a result...'],['I led a project that...','The measurable impact was...'],['I weighed the alternatives...','In hindsight, I would...']],
 presentation:[['Today I will talk about...','First... Second...'],['My agenda has three parts...','To conclude...'],['The data shows...','Therefore, I recommend...'],['Although some may argue...','The evidence suggests...'],['Under the base case...','Our mitigation plan is...']]};
 const topics=[['Communication','https://www.ted.com/topics/communication'],['Business','https://www.ted.com/topics/business'],['Business','https://www.ted.com/topics/business'],['Leadership','https://www.ted.com/topics/leadership'],['Leadership','https://www.ted.com/topics/leadership']];
-const storageKey='ismbe:level-pathways:v1';let data={};try{data=JSON.parse(localStorage.getItem(storageKey))||{}}catch{};let kind='meeting';
+const storageKey='ismbe:level-pathways:v1';let data={};try{data=JSON.parse(localStorage.getItem(storageKey))||{}}catch{};let kind=new URLSearchParams(location.search).get('kind')||'meeting';if(!kinds.includes(kind))kind='meeting';
 const el=id=>document.getElementById(id);const escapeHTML=value=>String(value).replace(/[&<>"]/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[char]));
 const persist=()=>{try{localStorage.setItem(storageKey,JSON.stringify(data))}catch{}};
 const level=()=>Number(el('level').value);
