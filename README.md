@@ -24,3 +24,6 @@ O gateway Supabase entrega os scripts de conteúdo após login por email e códi
 - `npm run qa:pwa`: atualização do service worker, cache e persistência; não substitui instalação em aparelhos reais.
 
 GitHub Pages e Vercel publicam somente `dist`. A certificação física em `DEVICE-MEDIA-CERTIFICATION.md` continua necessária para promover a versão candidata.
+# Distribuição para alunos
+
+Use a versão atual em https://ism-business-english.vercel.app/ e a instalação em https://ism-business-english.vercel.app/install.html. O GitHub Pages pode conter uma versão anterior. Ao trocar de endereço, exporte o progresso local antes e importe no novo endereço. Consulte [STUDENT-READINESS.md](STUDENT-READINESS.md) para validações e limitações.
