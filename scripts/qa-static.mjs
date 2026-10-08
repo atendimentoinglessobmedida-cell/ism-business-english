@@ -10,5 +10,6 @@ for(const file of ['premium-check','premium-progress-check','authentic-listening
 run(['scripts/access-session-check.mjs']);
 run(['scripts/pedagogy-content-check.mjs']);
 run(['scripts/legacy-access-rollout-check.mjs']);
+run(['scripts/release-readiness-check.mjs']);
 run(['scripts/build-static.mjs']);
 console.log('All static QA checks passed.');
