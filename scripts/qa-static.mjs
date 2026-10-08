@@ -13,4 +13,5 @@ run(['scripts/legacy-access-rollout-check.mjs']);
 run(['scripts/release-readiness-check.mjs']);
 run(['scripts/build-static.mjs']);
 run(['scripts/published-artifact-check.mjs']);
+run(['scripts/editorial-navigation-check.mjs']);
 console.log('All static QA checks passed.');
