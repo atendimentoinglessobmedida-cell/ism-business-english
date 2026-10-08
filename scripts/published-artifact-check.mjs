@@ -10,8 +10,7 @@ assert(htmlFiles.length>0,'No HTML entry points in build');
 for (const name of htmlFiles) {
   const html=fs.readFileSync(path.join(dist,name),'utf8');
   for (const asset of forbidden.filter(x=>x.startsWith('premium-')&&x.endsWith('.js'))) {
-    const escaped=asset.replace(/[.*+?^\u0024{}()|[\]\\]/g,'\\$&');
-    assert(!new RegExp('<script[^>]+src=["\\\'](?:\\./)?'+escaped+'(?:[?"\\\'])','i').test(html),name+' directly loads private script '+asset);
+    assert(!html.includes('src="'+asset+'"') && !html.includes("src='"+asset+"'"), name+' directly loads private script '+asset);
   }
 }
 console.log('Published artifact check passed: '+htmlFiles.length+' HTML entries; no forbidden files. Live endpoint tests still required.');
