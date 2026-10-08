@@ -16,4 +16,5 @@ run(['scripts/published-artifact-check.mjs']);
 run(['scripts/editorial-navigation-check.mjs']);
 run(['scripts/executive-vibrant-check.mjs']);
 run(['scripts/skills-feedback-check.mjs']);
+run(['scripts/scenario-followups-check.mjs']);
 console.log('All static QA checks passed.');
