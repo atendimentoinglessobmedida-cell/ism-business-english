@@ -9,7 +9,7 @@ for(const kind of ['meeting','interview','presentation']) {
 assert(script.includes("new URLSearchParams(location.search).get('kind')"),'Academy must honor contextual navigation');
 assert(script.includes('kinds.includes(kind)'), 'Academy must validate the selected scenario');
 for(const [file,html] of [['index.html',index],['level-pathways.html',academy]]) {
-  const images=[...html.matchAll(/<img\\b[^>]*\\bsrc="(assets\\/[^"]+)"/g)].map(m=>m[1]);
+  const images=html.split('<img ').slice(1).map(tag=>tag.split('src="')[1]?.split('"')[0]).filter(src=>src&&src.startsWith('assets/'));
   for(const src of images) assert(fs.existsSync(src), file+' references missing image: '+src);
   assert(images.length>=3,file+' should contain at least three images');
   console.log(file+': '+images.length+' local images verified');
