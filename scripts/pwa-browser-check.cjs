@@ -43,6 +43,8 @@ const server=http.createServer((req,res)=>{
  await page.goto(origin+'/business-practice.html#meeting-decisions/0');
  await page.locator('.word-card').first().waitFor();assert.equal(await page.locator('.word-card').count(),12);
  await page.locator('.stage-nav button').nth(5).click();assert.equal(await page.locator('#stage-content textarea').count(),4);
+ await page.goto(origin+'/business-practice.html#email-request/1');
+ await page.locator('.gap-question').first().waitFor();assert.equal(await page.locator('.gap-question').count(),6);
  assert.deepEqual(errors,[]);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  console.log('PASS PWA: legacy cache removed, update preserves progress/drafts, manual and simulated native install flows, offline install shell/Core fixture, Premium denied offline, 390px layout. Physical installation not certified.');
  await context.close();
