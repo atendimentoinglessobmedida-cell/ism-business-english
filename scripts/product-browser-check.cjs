@@ -7,6 +7,9 @@ for(const width of [360,390,768,1280]){
 const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'}),errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto('http://127.0.0.1:'+server.address().port,{waitUntil:'domcontentloaded'});await page.waitForFunction(()=>window.ISMSpeaking&&window.ISMMyEnglish&&window.ISMCoach&&window.ISMRealBusiness&&window.ISMCompletion);
 await page.evaluate(()=>{window.state.exerciseResults={'2.1:test':{score:0},'2.2:test':{score:100},missing:{},empty:{score:null}};window.state.lessonScores={'2.1':0};window.state.reviewHistory={'2.1':{last:new Date(Date.now()-5*86400000).toISOString(),nextDays:2}};window.state.speakingEvidence={sample:{lesson:'2.1',clarity:3,fluency:3,business:3,action:1,at:new Date().toISOString()}};ISMCoach.setGoal('meetings');ISMMyEnglish.render();});
+// The current home groups the Coach in an expandable area; open it as a learner would.
+const coachArea=page.locator('details').filter({has:page.locator('#ismCoach')});
+if(await coachArea.count()&&!(await coachArea.getAttribute('open')!==null))await coachArea.locator(':scope > summary').click();
 assert.equal(await page.locator('.coach-skills b').first().innerText(),'50%');assert.equal(await page.evaluate(()=>ISMMyEnglish.stats().mistakes),1);
 await page.evaluate(()=>{window.state.reviewHistory={};ISMCoach.render();window.openLesson=(...args)=>window.openedLesson=args});await page.locator('.coach-action').click();assert.deepEqual(await page.evaluate(()=>window.openedLesson),[2,0]);
 await page.evaluate(()=>{setNav('toolkit');show('toolkit');ISMMyEnglish.render()});assert((await page.locator('#myBusinessEnglish').innerText()).includes('83%'));
