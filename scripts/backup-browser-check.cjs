@@ -29,10 +29,10 @@ const file=(records)=>({name:'progress.json',mimeType:'application/json',buffer:
   const oldSet=Storage.prototype.setItem;let failed=false;Storage.prototype.setItem=function(k,v){if(k==='ismbe:audio:v1'&&!failed){failed=true;throw new DOMException('full','QuotaExceededError');}return oldSet.call(this,k,v);};
   rejected=false;try{await ISMStorage.restoreBackup(plan);}catch{rejected=true;}finally{Storage.prototype.setItem=oldSet;}
   ensure(rejected&&ISMStorage.read('ismbe:v9').draft==='before','failed restore replaced state');ensure(JSON.stringify(await ISMStorage.dbGet('ismbe:v9'))===beforeDB,'failed restore changed indexeddb');
-  localStorage.setItem('ismbe:session',JSON.stringify({token:'never-export'}));
+  localStorage.setItem('ismbe:session',JSON.stringify({token:'never-export'}));localStorage.setItem('ismbe:practice-course:v1',JSON.stringify({'meeting-decisions':{writing:'my original meeting follow-up'}}));
   const db=await new Promise(r=>{const req=indexedDB.open('ism-business-progress',1);req.onsuccess=()=>r(req.result);});await new Promise(r=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put({draft:'other page'},'ismbe:premium:authored:p10:v1');tx.oncomplete=r;});
   const exported=await ISMStorage.exportBackup();ensure(!exported.records['ismbe:session'],'credential export');ensure(exported.records['ismbe:premium:authored:p10:v1'].draft==='other page','unhydrated DB record lost');
-  return count;
+  ensure(exported.records['ismbe:practice-course:v1']['meeting-decisions'].writing==='my original meeting follow-up','extended lesson backup omitted');return count;
  });checks+=tests;
  const fallback=await browser.newPage();await fallback.addInitScript(()=>{Storage.prototype.setItem=()=>{throw new DOMException('blocked','SecurityError');};});await fallback.goto('http://127.0.0.1:'+server.address().port);
  await fallback.evaluate(async()=>{await ISMStorage.ready();const db=await new Promise(r=>{const q=indexedDB.open('ism-business-progress',1);q.onsuccess=()=>r(q.result);});await new Promise(r=>{const tx=db.transaction('records','readwrite');tx.objectStore('records').put({draft:'fallback'},'ismbe:practice-lab:v1');tx.oncomplete=r;});const data=await ISMStorage.exportBackup();if(data.records['ismbe:practice-lab:v1'].draft!=='fallback')throw Error('fallback export lost unopened record');});checks++;
