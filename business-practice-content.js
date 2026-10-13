@@ -1,7 +1,7 @@
 /* Original ISM pilot lessons. Public practice; independent of Core/Premium completion. */
 window.ISM_BUSINESS_PRACTICE=[
 {
- id:'meeting-decisions',title:'Reunião: transformar uma conversa em decisões',level:'B1',image:'assets/photo-meetings.avif',goal:'Conduzir uma atualização, esclarecer um impedimento e fechar ações com responsáveis e prazos.',
+ id:'meeting-decisions',learnerSpeaker:'Alex',title:'Reunião: transformar uma conversa em decisões',level:'B1',image:'assets/photo-meetings.avif',goal:'Conduzir uma atualização, esclarecer um impedimento e fechar ações com responsáveis e prazos.',
  context:'You and a colleague are preparing a client launch. Testing is delayed. Agree on a priority and leave the meeting with a clear action plan.',
  vocabulary:[
  ['agenda','pauta','The agenda has three items.'],['objective','objetivo','Our objective is to agree on the launch date.'],['update','atualização','Could you give us a quick update?'],['priority','prioridade','Testing is our main priority.'],['blocker','impedimento','The missing approval is a blocker.'],['clarify','esclarecer','Could you clarify what is missing?'],['action item','ação acordada','Our first action item is to contact the client.'],['owner','responsável pela ação','Who is the owner of this action?'],['follow up','dar continuidade; acompanhar','I will follow up with the client tomorrow.'],['timeline','cronograma','We need to adjust the timeline.'],['on track','dentro do planejado','The design work is on track.'],['wrap up','encerrar; concluir','Let us wrap up with the next steps.']
@@ -47,7 +47,7 @@ window.ISM_BUSINESS_PRACTICE=[
  rubric:['Expliquei a situação e o impedimento.','Usei pelo menos três expressões com sentido adequado.','Defini uma ação, um responsável e um prazo.','Confirmei um próximo encontro ou acompanhamento.']
 },
 {
- id:'deadline-negotiation',title:'Negociação: ajustar um prazo com diplomacia',level:'B1–B2',image:'assets/photo-negotiation.avif',goal:'Explicar limites de capacidade, negociar uma alternativa e confirmar um compromisso realista.',
+ id:'deadline-negotiation',learnerSpeaker:'Taylor',title:'Negociação: ajustar um prazo com diplomacia',level:'B1–B2',image:'assets/photo-negotiation.avif',goal:'Explicar limites de capacidade, negociar uma alternativa e confirmar um compromisso realista.',
  context:'A client requests a full report on Friday. Your team can deliver a summary on Friday, but the complete analysis needs until Tuesday. Negotiate scope and timing.',
  vocabulary:[
  ['deadline','prazo final','The deadline is Friday.'],['extension','prorrogação','Could we request an extension?'],['workload','volume de trabalho','Our workload is high this week.'],['capacity','capacidade disponível','We do not have the capacity for the full report by Friday.'],['scope','escopo','Could we reduce the scope of the first version?'],['deliverable','entrega acordada','The summary is the first deliverable.'],['push back','adiar','Could we push back the full report to Tuesday?'],['bring forward','antecipar','We can bring forward the summary to Friday morning.'],['trade-off','escolha com concessões','The trade-off is speed versus detail.'],['feasible','viável','A summary by Friday is feasible.'],['commitment','compromisso','We can make a commitment to Tuesday.'],['revised schedule','cronograma revisado','I will send the revised schedule today.']
@@ -93,7 +93,7 @@ window.ISM_BUSINESS_PRACTICE=[
  rubric:['Reconheci a necessidade do cliente.','Expliquei a limitação com tom profissional.','Ofereci uma alternativa com escopo e datas claros.','Confirmei o compromisso e pedi confirmação.']
 },
 {
- id:'presenting-results',title:'Apresentação: explicar resultados e recomendar ações',level:'B1–B2',image:'assets/photo-presentations.avif',goal:'Apresentar resultados, diferenciar dados e previsões e responder a perguntas com uma recomendação clara.',
+ id:'presenting-results',learnerSpeaker:'Morgan',title:'Apresentação: explicar resultados e recomendar ações',level:'B1–B2',image:'assets/photo-presentations.avif',goal:'Apresentar resultados, diferenciar dados e previsões e responder a perguntas com uma recomendação clara.',
  context:'Your team exceeded its revenue target, but delivery costs increased. Present the figures, discuss the trend and recommend a small pilot before expanding.',
  vocabulary:[
  ['key takeaway','mensagem principal','The key takeaway is that growth must remain profitable.'],['revenue','receita','Revenue increased this quarter.'],['forecast','previsão','The forecast is positive, but uncertain.'],['target','meta','We exceeded our revenue target.'],['growth','crescimento','Growth reached eight percent.'],['figure','número; dado numérico','This figure shows the quarterly revenue.'],['trend','tendência','The trend is positive across three months.'],['compared with','em comparação com','Revenue rose compared with last quarter.'],['highlight','destacar','I would like to highlight the increase in costs.'],['shortfall','diferença abaixo da meta','There is a shortfall in our margin target.'],['recommendation','recomendação','My recommendation is to run a small pilot.'],['next step','próximo passo','Our next step is to review delivery costs.']
@@ -142,7 +142,7 @@ window.ISM_BUSINESS_PRACTICE=[
 
 window.ISM_BUSINESS_PRACTICE.push(
 {
- id:'email-request',title:'E-mails: solicitar informação e confirmar próximos passos',level:'B1',image:'assets/photo-writing.avif',gapGame:true,
+ id:'email-request',learnerSpeaker:'Riley',title:'E-mails: solicitar informação e confirmar próximos passos',level:'B1',image:'assets/photo-writing.avif',gapGame:true,
  goal:'Escrever uma solicitação clara, informar o prazo e confirmar uma resposta sem soar impositivo.',
  context:'You need a colleague to review a proposal before a client meeting. Agree on the request, the attachment and the response deadline.',
  vocabulary:[
@@ -189,7 +189,7 @@ window.ISM_BUSINESS_PRACTICE.push(
  rubric:['Usei um assunto e uma solicitação específicos.','Indiquei o anexo e o prazo da resposta.','Mantive um tom profissional e conciso.','Confirmei os próximos passos e responsáveis.']
 },
 {
- id:'customer-recovery',title:'Atendimento: resolver uma reclamação com confiança',level:'B1–B2',image:'assets/photo-client-call.avif',gapGame:true,
+ id:'customer-recovery',learnerSpeaker:'Quinn',title:'Atendimento: resolver uma reclamação com confiança',level:'B1–B2',image:'assets/photo-client-call.avif',gapGame:true,
  goal:'Reconhecer o problema, esclarecer uma solução possível e assumir um acompanhamento concreto.',
  context:'A customer reports that a delivery arrived damaged. Listen, investigate the issue and explain the next action without making an unsupported promise.',
  vocabulary:[
@@ -236,7 +236,7 @@ window.ISM_BUSINESS_PRACTICE.push(
  rubric:['Reconheci o impacto e resumi o problema.','Pedi informação pertinente à apuração.','Expliquei uma solução possível sem garantia não confirmada.','Assumi ações e um prazo de atualização.']
 },
 {
- id:'interview-evidence',title:'Entrevista: apresentar experiência com evidências',level:'B1–B2',image:'assets/photo-interview.avif',gapGame:true,
+ id:'interview-evidence',learnerSpeaker:'Robin',title:'Entrevista: apresentar experiência com evidências',level:'B1–B2',image:'assets/photo-interview.avif',gapGame:true,
  goal:'Relacionar sua experiência à vaga e responder a perguntas com contexto, ação e resultado.',
  context:'You are interviewing for a customer-support role. Explain a relevant achievement, your contribution to teamwork and one skill you are still improving.',
  vocabulary:[

@@ -6,6 +6,7 @@ assert.equal(lessons.filter(l=>l.gapGame===true).length,3);
 for(const l of lessons){
  assert(!ids.has(l.id));ids.add(l.id);assert(!images.has(l.image));images.add(l.image);assert(fs.existsSync(l.image));assert.equal(l.vocabulary.length,12);assert.equal(new Set(l.vocabulary.map(v=>v[0])).size,12);
  assert.equal(l.dialogue.length,12);assert.equal(new Set(l.dialogue.map(v=>v[0])).size,2);
+ assert(new Set(l.dialogue.map(v=>v[0])).has(l.learnerSpeaker),'Learner must be a dialogue participant: '+l.id);
  const transcript=l.dialogue.map(v=>v[1]).join(' ').toLowerCase();for(const [term,translation,example] of l.vocabulary){assert(translation.length>2);assert(example.toLowerCase().includes(term.toLowerCase()),term+' missing from example');assert(transcript.includes(term.toLowerCase()),term+' missing from dialogue');}
  for(const q of [...l.practice,...l.listening]){assert.equal(q.length,4);assert.equal(q[2].length,3);assert.equal(new Set(q[2]).size,3);assert(q[2].includes(q[1]));assert(q[3].length>30);}
  assert.equal(l.practice.length,6);assert.equal(l.listening.length,5);assert.equal(l.order.length,3);assert.equal(l.simulation.length,4);assert.equal(l.rubric.length,4);const count=l.model.trim().split(/\s+/).length;assert(count>=60&&count<=90,l.id+' model should demonstrate word range');
