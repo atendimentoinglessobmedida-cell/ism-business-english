@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(p,'utf8'),assert=(ok,msg)=>{if(!ok)throw new Error(msg)};
 const html=read('index.html'),premium=read('premium.html'),storage=read('storage-guard.js'),audio=read('audio-player.js'),sw=read('sw.js'),features=read('learner-features.js'),coreCss=read('core-shell.css'),experience=read('experience.js'),coach=read('adaptive-coach.js'),coachCss=read('adaptive-coach.css'),speaking=read('speaking-experience.js'),myEnglish=read('my-business-english.js'),realBusiness=read('real-business.js'),premiumUx=read('premium-ux.css'),actions=read('action-buttons.css');
-assert(html.includes('core-shell.css?v=1')&&html.includes('learner-features.js?v=5'),'Core modular assets missing');
+assert(html.includes('core-shell.css?v=2')&&html.includes('learner-features.js?v=5'),'Core modular assets missing');
 assert(features.includes('startSmartReview')&&features.includes('rateReview')&&features.includes('openBusinessMode'),'Learner feature module incomplete');
 assert(features.includes('reviewGoalBoost')&&features.includes('lessonEvidence')&&features.includes('reviewReason'),'Smart Review 2 evidence engine missing');
 assert(features.includes('SMART REVIEW 2.0')&&features.includes('OUÇA E RECUPERE')&&features.includes('ligado ao seu objetivo'),'Smart Review 2 mixed retrieval missing');
