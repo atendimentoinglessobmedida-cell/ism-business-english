@@ -1,0 +1,36 @@
+name: QA Device Emulation and Audio
+on:
+  push:
+    branches: [qa/full-validation-2026-10-16]
+  pull_request:
+    paths:
+      - '.github/workflows/qa-browser.yml'
+      - 'scripts/*browser-check.cjs'
+jobs:
+  browser-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        suite:
+          - full-lessons-browser-check
+          - simulation-roles-browser-check
+          - pwa-browser-check
+          - access-browser-check
+          - product-browser-check
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Install Playwright browser runtime
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Build production-like static site
+        run: npm run build
+      - name: Test responsive learner flows, simulated audio, microphone and PWA
+        run: node scripts/${{ matrix.suite }}.cjs

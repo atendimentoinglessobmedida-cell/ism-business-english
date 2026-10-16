@@ -8,6 +8,7 @@
     "start": "node scripts/serve-static.mjs --dist",
     "test": "node scripts/qa-static.mjs",
     "qa:static": "node scripts/qa-static.mjs",
+    "qa:answers": "node scripts/answer-order-check.cjs",
     "qa:browser": "node scripts/alignment-browser-check.cjs",
     "release:check": "node scripts/qa-static.mjs",
     "release:staging": "node scripts/qa-static.mjs",

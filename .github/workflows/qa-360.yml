@@ -1,0 +1,21 @@
+name: QA 360 ISM Business English
+on:
+  push:
+    branches: [qa/full-validation-2026-10-16]
+  pull_request:
+    paths: ['scripts/answer-order-check.cjs','scripts/qa-static.mjs','package.json']
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - name: Validate 2,000 quizzes and stable answer positions
+        run: npm run qa:answers
+      - name: Full static regression and production build
+        run: npm run qa:static
