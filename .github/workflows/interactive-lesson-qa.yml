@@ -1,0 +1,17 @@
+name: Interactive lesson engine QA
+on:
+  push:
+    branches: [feature/interactive-lessons-standard]
+  pull_request:
+    paths:
+      - 'src/learning/**'
+      - 'tests/answer-engine.test.mjs'
+jobs:
+  answer-engine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test tests/answer-engine.test.mjs
