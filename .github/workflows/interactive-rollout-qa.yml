@@ -1,0 +1,22 @@
+name: ISM Interactive Rollout QA
+on:
+  push:
+    branches: [feature/interactive-learning-rollout-2026-10-16]
+  pull_request:
+    paths:
+      - 'ism-answer-order.js'
+      - 'premium-study.js'
+      - 'premium-engine.js'
+      - 'business-practice.js'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/answer-order-check.cjs
+      - run: node --check premium-study.js && node --check premium-engine.js && node --check business-practice.js
+      - run: npm ci --ignore-scripts
+      - run: npm run build
