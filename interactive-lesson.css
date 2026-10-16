@@ -1,0 +1,9 @@
+/* Accessible, compact flashcards for every authored Premium lesson. */
+.ism-flashcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}
+.ism-flashcard{border:1px solid #cbdce2;border-radius:14px;background:#f5fafb;overflow:hidden}
+.ism-flashcard summary{padding:14px;min-height:52px;cursor:pointer;color:#062b3b}
+.ism-flashcard summary span{font-size:.75rem;color:#50656d}
+.ism-flashcard p{margin:0;padding:0 14px 14px;color:#29444d}
+.ism-flashcard:focus-within{outline:3px solid #bb8a2a;outline-offset:2px}
+@media(max-width:420px){.ism-flashcards{grid-template-columns:1fr 1fr}}
+@media(max-width:340px){.ism-flashcards{grid-template-columns:1fr}}
