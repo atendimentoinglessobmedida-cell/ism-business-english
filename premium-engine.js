@@ -24,7 +24,7 @@ window.ISMPremiumEngine=(()=>{
  function route(hash,courses){const match=/^#(P\d+)(?:\/(\d+))?$/.exec(hash);if(!match)return {course:null,index:null};const course=courses.find(c=>c.id===match[1]);if(!course)return {course:null,index:null};const index=match[2]?Number(match[2])-1:null;return {course,index:index!==null&&index>=0&&index<course.lessons.length?index:null};}
  function missing(s,l){const items=[];if(!s.choiceCorrect)items.push('conferir a escolha pelo contexto');if(!s.gapCorrect)items.push('conferir a expressão');if(l[13]?.listening&&l[13].listening.required!==false&&!s.listeningCorrect)items.push('conferir a compreensão do diálogo');if(!s.draft.trim())items.push('escrever sua resposta');if(!s.model)items.push('comparar com o modelo');if(!l[12].every((_,i)=>s.criteria[i]===true))items.push('revisar os critérios de escrita');if(!s.oral)items.push('registrar a prática oral');return items;}
  function ready(s,l){return missing(s,l).length===0;}
- function order(l,i){return window.ISMAnswerOrder.one(l[6]);}
+ function order(l,i){return window.ISMAnswerOrder?.one?window.ISMAnswerOrder.one(l[6]):l[6].map((_,n)=>(n+i+1)%l[6].length);}
  const gapOK=(value,l)=>[l[9][1],...(l[9][3]||[])].some(answer=>value.trim().toLowerCase().replace(/[.!?]+$/,'')===answer.toLowerCase());
  return {obj,record,key,legacyKey,legacyTracks,legacySummary,load,save,lessonId,count,route,ready,missing,order,gapOK};
 })();
