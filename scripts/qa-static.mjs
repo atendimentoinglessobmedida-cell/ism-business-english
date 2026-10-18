@@ -19,4 +19,5 @@ run(['scripts/skills-feedback-check.mjs']);
 run(['scripts/scenario-followups-check.mjs']);
 run(['--test','scripts/dialogue-playback.test.cjs']);
 run(['scripts/full-lessons-content-check.cjs']);
+run(['--test','scripts/conversation-lab.test.cjs']);
 console.log('All static QA checks passed.');
