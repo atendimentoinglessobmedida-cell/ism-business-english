@@ -22,4 +22,5 @@ run(['scripts/full-lessons-content-check.cjs']);
 run(['--test','scripts/conversation-lab.test.cjs']);
 run(['--test','scripts/review-triplets.test.cjs']);
 run(['--test','scripts/business-practice-reviews.test.cjs']);
+run(['--test','scripts/business-ordering.test.cjs']);
 console.log('All static QA checks passed.');

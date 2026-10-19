@@ -2,3 +2,8 @@
 .question label:has(textarea){display:block;border:0;padding:0;cursor:default}.question label:has(textarea) textarea{margin-top:8px}.audio-status{color:#365c64}
 .question label:has(input[type=text]){display:block;cursor:default}.question label:has(input[type=text]) input{display:block;margin-top:8px}
 body .audio-status{color:#365c64}
+/* Keep the return link readable after the shared family theme is applied. */
+body .course-top a{color:#fff!important;display:inline-flex;align-items:center;min-height:44px;padding:8px 0}
+.practice-skip{position:absolute;top:-120px;left:16px;z-index:10000;padding:12px 18px;background:#fff;color:#073b45!important;border:2px solid #073b45;border-radius:10px;min-height:44px}
+.practice-skip:focus{top:12px}
+@media(forced-colors:active){.practice-skip,body .course-top a{forced-color-adjust:auto}}
