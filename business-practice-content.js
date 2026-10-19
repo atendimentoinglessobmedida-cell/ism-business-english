@@ -283,3 +283,854 @@ window.ISM_BUSINESS_PRACTICE.push(
  rubric:['Usei uma experiência verdadeira e pertinente à função.','Expliquei contexto, responsabilidade e ação específica.','Apresentei um resultado sem inventar dados.','Reconheci minha contribuição e o trabalho em equipe.']
 }
 );
+
+/* Original A2 workplace foundations, added 2026-10-19. */
+window.ISM_BUSINESS_PRACTICE.push({
+ "id": "workplace-introductions",
+ "learnerSpeaker": "Sam",
+ "title": "Primeiro contato: apresentar seu trabalho",
+ "level": "A2",
+ "image": "assets/photo-networking.avif",
+ "gapGame": true,
+ "goal": "Apresentar sua função, conhecer um colega e combinar um próximo contato.",
+ "context": "It is your first day at a fictional company. Introduce yourself to a colleague, explain your work and arrange a short follow-up conversation.",
+ "vocabulary": [
+  [
+   "colleague",
+   "colega de trabalho",
+   "My colleague works in sales."
+  ],
+  [
+   "department",
+   "departamento",
+   "Which department do you work in?"
+  ],
+  [
+   "role",
+   "função",
+   "My role is to help customers."
+  ],
+  [
+   "responsible for",
+   "responsável por",
+   "I am responsible for customer messages."
+  ],
+  [
+   "based in",
+   "sediado em; trabalhando em",
+   "Our team is based in Recife."
+  ],
+  [
+   "join",
+   "entrar para; integrar",
+   "I will join the team on Monday."
+  ],
+  [
+   "work with",
+   "trabalhar com",
+   "I work with the support team."
+  ],
+  [
+   "customer",
+   "cliente",
+   "I help the customer find an answer."
+  ],
+  [
+   "daily",
+   "diário; diariamente",
+   "We have a daily team meeting."
+  ],
+  [
+   "contact",
+   "contato; contatar",
+   "You can contact me by email."
+  ],
+  [
+   "available",
+   "disponível",
+   "I am available after lunch."
+  ],
+  [
+   "nice to meet you",
+   "prazer em conhecer você",
+   "It is nice to meet you, Lee."
+  ]
+ ],
+ "order": [
+  "Which department do you work in?",
+  "I am responsible for customer messages.",
+  "I am available after lunch."
+ ],
+ "practice": [
+  [
+   "Você quer saber em qual área a pessoa trabalha.",
+   "Which department do you work in?",
+   [
+    "Which department do you work in?",
+    "What time is your train?",
+    "How many pages is the report?"
+   ],
+   "Department pergunta sobre a área da empresa; a pergunta não pede o horário nem o tamanho de um documento."
+  ],
+  [
+   "Complete: I am ___ customer messages.",
+   "responsible for",
+   [
+    "based in",
+    "responsible for",
+    "available"
+   ],
+   "Responsible for apresenta uma responsabilidade; depois de for, indique a tarefa ou área de atuação."
+  ],
+  [
+   "Você quer apresentar sua função de forma concreta.",
+   "My role is to help customers.",
+   [
+    "My role is very many.",
+    "I am tomorrow at two.",
+    "My role is to help customers."
+   ],
+   "Role significa função neste contexto. O infinitivo to help explica o que a pessoa faz."
+  ],
+  [
+   "A equipe trabalha em Recife. Complete: Our team is ___.",
+   "based in Recife",
+   [
+    "based in Recife",
+    "responsible for Recife city",
+    "join Recife yesterday"
+   ],
+   "Based in indica a localização de trabalho da equipe, sem afirmar que todos nasceram nessa cidade."
+  ],
+  [
+   "Qual pergunta ajuda a marcar uma conversa?",
+   "Are you available after lunch?",
+   [
+    "Are you available after lunch?",
+    "Are you a lunch department?",
+    "Do you responsible after?"
+   ],
+   "Available pergunta sobre disponibilidade; after lunch oferece uma referência de horário."
+  ],
+  [
+   "Qual fechamento combina cordialidade e próximo contato?",
+   "Nice to meet you. I will contact you after lunch.",
+   [
+    "Nice to meet you. I will contact you after lunch.",
+    "You must know everything now.",
+    "There is no way to speak again."
+   ],
+   "O fechamento reconhece o encontro e informa quando haverá novo contato, sem impor uma tarefa inesperada."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Lee",
+   "Hello, I am Lee, your new colleague. Welcome!",
+   "Olá, sou Lee, seu novo colega de trabalho. Boas-vindas!"
+  ],
+  [
+   "Sam",
+   "Hi, Lee. I am Sam. It is nice to meet you.",
+   "Olá, Lee. Sou Sam. É um prazer conhecer você."
+  ],
+  [
+   "Lee",
+   "Nice to meet you too. Which department do you work in?",
+   "Prazer em conhecer você também. Em qual departamento você trabalha?"
+  ],
+  [
+   "Sam",
+   "I work in support. My role is to help customers with their orders.",
+   "Trabalho no suporte. Minha função é ajudar clientes com os pedidos."
+  ],
+  [
+   "Lee",
+   "What are you responsible for on the team?",
+   "Pelo que você é responsável na equipe?"
+  ],
+  [
+   "Sam",
+   "I am responsible for customer messages. I work with the delivery team too.",
+   "Sou responsável pelas mensagens dos clientes. Também trabalho com a equipe de entregas."
+  ],
+  [
+   "Lee",
+   "Is your team based in Recife?",
+   "Sua equipe trabalha em Recife?"
+  ],
+  [
+   "Sam",
+   "Yes. I will join their daily meeting tomorrow. What do you do?",
+   "Sim. Vou participar da reunião diária deles amanhã. O que você faz?"
+  ],
+  [
+   "Lee",
+   "I work in sales. Sometimes a customer asks me about an order.",
+   "Trabalho em vendas. Às vezes um cliente me pergunta sobre um pedido."
+  ],
+  [
+   "Sam",
+   "You can contact me by email. I can explain our support process.",
+   "Você pode me contatar por e-mail. Posso explicar nosso processo de suporte."
+  ],
+  [
+   "Lee",
+   "Thank you. Are you available after lunch for a short conversation?",
+   "Obrigado. Você está disponível depois do almoço para uma conversa breve?"
+  ],
+  [
+   "Sam",
+   "Yes, at two. I will send you a meeting invitation. See you then.",
+   "Sim, às duas. Vou enviar um convite de reunião. Até lá."
+  ]
+ ],
+ "listening": [
+  [
+   "Which department does Sam work in?",
+   "Support.",
+   [
+    "Sales.",
+    "Support.",
+    "Finance."
+   ],
+   "Sam diz que trabalha no suporte; Lee é a pessoa que trabalha em vendas."
+  ],
+  [
+   "What is Sam responsible for?",
+   "Customer messages.",
+   [
+    "Booking Lee’s holiday.",
+    "Preparing lunch.",
+    "Customer messages."
+   ],
+   "A responsabilidade apresentada é responder às mensagens dos clientes, em colaboração com entregas."
+  ],
+  [
+   "Where is Sam’s team based?",
+   "Recife.",
+   [
+    "Recife.",
+    "Lisbon.",
+    "Toronto."
+   ],
+   "A pergunta de Lee menciona Recife, e Sam confirma essa informação com yes."
+  ],
+  [
+   "How can Lee contact Sam?",
+   "By email.",
+   [
+    "Only by post.",
+    "By email.",
+    "Through a public announcement."
+   ],
+   "Sam oferece o e-mail como canal de contato para explicar o processo de suporte."
+  ],
+  [
+   "What do they agree to do at two?",
+   "Have a short conversation.",
+   [
+    "Cancel the daily meeting.",
+    "Have a short conversation.",
+    "Visit a customer in another city."
+   ],
+   "A conversa breve será depois do almoço, às duas; Sam enviará um convite."
+  ]
+ ],
+ "simulation": [
+  [
+   "Welcome! What is your name, and which department do you work in?",
+   "I am Sam. I work in support. It is nice to meet you.",
+   "Apresente nome, área e uma saudação cordial."
+  ],
+  [
+   "What are you responsible for?",
+   "I am responsible for customer messages, and I work with the delivery team.",
+   "Explique uma responsabilidade concreta e uma colaboração."
+  ],
+  [
+   "How can I contact you about an order?",
+   "You can contact me by email. I can explain our support process.",
+   "Ofereça um canal e diga como pode ajudar."
+  ],
+  [
+   "Are you available after lunch?",
+   "Yes, I am available at two. I will send you a meeting invitation.",
+   "Confirme um horário e uma próxima ação."
+  ]
+ ],
+ "writing": "Write a fictional introduction of 60–90 words for a new colleague. Include your name, department, role, responsibility, team location, contact channel and a time for a short conversation.",
+ "model": "Hi Lee, my name is Sam, and I am your new colleague in support. My role is to help customers with their orders. I am responsible for customer messages, and I work with the delivery team. Our team is based in Recife. I will join the daily meeting tomorrow. You can contact me by email if you have a question about an order. I am available at two after lunch for a short conversation. It is nice to meet you.",
+ "rubric": [
+  "Apresentei um personagem fictício e seu departamento.",
+  "Expliquei função e responsabilidade com exemplos claros.",
+  "Indiquei localização e canal de contato.",
+  "Combinei um horário e mantive um tom cordial."
+ ]
+},
+{
+ "id": "scheduling-a-meeting",
+ "learnerSpeaker": "Casey",
+ "title": "Agenda: combinar e confirmar uma reunião",
+ "level": "A2",
+ "image": "assets/practice-scheduling.svg",
+ "gapGame": true,
+ "goal": "Perguntar sobre disponibilidade, propor outro horário e confirmar os detalhes de uma reunião online.",
+ "context": "You and a colleague need a short online meeting about a draft report. Compare your schedules and confirm the day, time, duration and meeting link.",
+ "vocabulary": [
+  [
+   "schedule",
+   "agenda; programação",
+   "Let me check my schedule."
+  ],
+  [
+   "free",
+   "livre; disponível",
+   "Are you free on Tuesday?"
+  ],
+  [
+   "busy",
+   "ocupado",
+   "I am busy at ten."
+  ],
+  [
+   "instead",
+   "em vez disso",
+   "Could we meet at eleven instead?"
+  ],
+  [
+   "suit",
+   "ser conveniente para",
+   "Does eleven suit you?"
+  ],
+  [
+   "confirm",
+   "confirmar",
+   "Please confirm the time by email."
+  ],
+  [
+   "invitation",
+   "convite",
+   "I will send a meeting invitation."
+  ],
+  [
+   "link",
+   "link; endereço de acesso",
+   "The meeting link is in the invitation."
+  ],
+  [
+   "last",
+   "durar",
+   "The meeting will last twenty minutes."
+  ],
+  [
+   "time zone",
+   "fuso horário",
+   "Which time zone are we using?"
+  ],
+  [
+   "reschedule",
+   "remarcar",
+   "Please tell me if we need to reschedule."
+  ],
+  [
+   "look forward to",
+   "aguardar com expectativa positiva",
+   "I look forward to our conversation."
+  ]
+ ],
+ "order": [
+  "Are you free on Tuesday?",
+  "Could we meet at eleven instead?",
+  "The meeting will last twenty minutes."
+ ],
+ "practice": [
+  [
+   "Você quer verificar a disponibilidade para terça-feira.",
+   "Are you free on Tuesday?",
+   [
+    "Are you free on Tuesday?",
+    "Are Tuesday your department?",
+    "How much is your schedule?"
+   ],
+   "Free significa disponível neste contexto. On é usado antes do dia da semana."
+  ],
+  [
+   "O horário das dez não funciona. Qual alternativa é educada?",
+   "Could we meet at eleven instead?",
+   [
+    "You must cancel everything.",
+    "Could we meet at eleven instead?",
+    "There is no other hour ever."
+   ],
+   "Could we oferece uma alternativa como pergunta; instead indica a substituição do horário anterior."
+  ],
+  [
+   "Qual pergunta confirma se a proposta é conveniente?",
+   "Does eleven suit you?",
+   [
+    "Does eleven suit you?",
+    "Is eleven your suit jacket?",
+    "Where does eleven live?"
+   ],
+   "Suit funciona como verbo: ser conveniente. Aqui não se refere a um terno."
+  ],
+  [
+   "Complete: The meeting will ___ twenty minutes.",
+   "last",
+   [
+    "busy",
+    "link",
+    "last"
+   ],
+   "Como verbo, last informa a duração do encontro. Não significa último nesta frase."
+  ],
+  [
+   "Há participantes em cidades diferentes. O que precisa ser confirmado?",
+   "The time zone.",
+   [
+    "The colour of the keyboard.",
+    "The time zone.",
+    "Everyone’s private password."
+   ],
+   "Confirmar o fuso evita que cada pessoa interprete o mesmo horário pela sua localização."
+  ],
+  [
+   "Qual confirmação registra os detalhes combinados?",
+   "Tuesday at eleven, Brasília time, for twenty minutes.",
+   [
+    "Some day when possible.",
+    "Tuesday at eleven, Brasília time, for twenty minutes.",
+    "The meeting happened last year."
+   ],
+   "Uma confirmação útil reúne dia, hora, fuso e duração, reduzindo ambiguidades."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Casey",
+   "Hi, Noor. Are you free on Tuesday for a short meeting about the draft report?",
+   "Olá, Noor. Você está disponível na terça para uma reunião breve sobre o rascunho do relatório?"
+  ],
+  [
+   "Noor",
+   "Let me check my schedule. What time would you like to meet?",
+   "Deixe-me verificar minha agenda. A que horas você gostaria de se reunir?"
+  ],
+  [
+   "Casey",
+   "Would ten in the morning work for you?",
+   "Dez da manhã funcionaria para você?"
+  ],
+  [
+   "Noor",
+   "I am busy at ten. Could we meet at eleven instead?",
+   "Estou ocupado às dez. Poderíamos nos reunir às onze em vez disso?"
+  ],
+  [
+   "Casey",
+   "Yes. Does eleven suit you for an online meeting?",
+   "Sim. Onze é conveniente para uma reunião online?"
+  ],
+  [
+   "Noor",
+   "Yes. Which time zone are we using?",
+   "Sim. Qual fuso horário estamos usando?"
+  ],
+  [
+   "Casey",
+   "Brasília time. The meeting will last twenty minutes.",
+   "Horário de Brasília. A reunião vai durar vinte minutos."
+  ],
+  [
+   "Noor",
+   "That works. Could you confirm the details by email?",
+   "Funciona. Você pode confirmar os detalhes por e-mail?"
+  ],
+  [
+   "Casey",
+   "Of course. I will send an invitation with the meeting link today.",
+   "Claro. Enviarei hoje um convite com o link da reunião."
+  ],
+  [
+   "Noor",
+   "Thank you. Please tell me if we need to reschedule.",
+   "Obrigado. Por favor, avise se precisarmos remarcar."
+  ],
+  [
+   "Casey",
+   "I will. So, Tuesday at eleven, Brasília time, for twenty minutes.",
+   "Avisarei. Então, terça às onze, horário de Brasília, por vinte minutos."
+  ],
+  [
+   "Noor",
+   "Confirmed. I look forward to our conversation about the draft.",
+   "Confirmado. Aguardo com expectativa nossa conversa sobre o rascunho."
+  ]
+ ],
+ "listening": [
+  [
+   "What is the meeting about?",
+   "The draft report.",
+   [
+    "A new office kitchen.",
+    "The draft report.",
+    "A private bank account."
+   ],
+   "Casey apresenta o rascunho do relatório como o assunto da reunião logo na primeira fala."
+  ],
+  [
+   "Why do they not choose ten?",
+   "Noor is busy at ten.",
+   [
+    "The report is cancelled.",
+    "Noor is busy at ten.",
+    "Casey cannot use email."
+   ],
+   "Noor informa uma indisponibilidade específica e propõe onze como alternativa."
+  ],
+  [
+   "What time do they agree on?",
+   "Eleven in the morning, Brasília time.",
+   [
+    "Ten at night, London time.",
+    "Eleven in the morning, Brasília time.",
+    "Twelve in the afternoon, without a time zone."
+   ],
+   "A confirmação final retoma onze e o fuso de Brasília, após a proposta inicial para a manhã."
+  ],
+  [
+   "How long will the meeting last?",
+   "Twenty minutes.",
+   [
+    "Two hours.",
+    "Ten days.",
+    "Twenty minutes."
+   ],
+   "Casey limita a duração a vinte minutos; isso ajuda Noor a reservar o período."
+  ],
+  [
+   "Where will Noor find the meeting link?",
+   "In the invitation.",
+   [
+    "On a printed receipt.",
+    "In the invitation.",
+    "In a message sent last year."
+   ],
+   "Casey enviará um convite com o link ainda hoje; o diálogo não informa outro canal de acesso."
+  ]
+ ],
+ "simulation": [
+  [
+   "Are you free on Tuesday at ten?",
+   "I am busy at ten. Could we meet at eleven instead?",
+   "Explique indisponibilidade e ofereça uma alternativa."
+  ],
+  [
+   "Does eleven work for you?",
+   "Yes, eleven works for me. Which time zone are we using?",
+   "Confirme a proposta e esclareça o fuso."
+  ],
+  [
+   "How long do you need, and where is the link?",
+   "The meeting will last twenty minutes. I will send an invitation with the link.",
+   "Informe duração e como acessar a reunião."
+  ],
+  [
+   "Can you confirm what we agreed?",
+   "Tuesday at eleven in the morning, Brasília time, for twenty minutes. Please tell me if we need to reschedule.",
+   "Reúna dia, horário, fuso e duração."
+  ]
+ ],
+ "writing": "Write a fictional confirmation email of 60–90 words. Include the report topic, agreed day, morning time, time zone, duration, invitation link and what to do if the schedule changes.",
+ "model": "Hi Noor, thank you for checking your schedule. This message confirms our online meeting about the draft report on Tuesday at eleven in the morning, Brasília time. The meeting will last twenty minutes. I will send the invitation with the meeting link today. Please read the draft before we meet and bring one question about the figures. If you are no longer free at that time, please let me know so we can reschedule. I look forward to our conversation.",
+ "rubric": [
+  "Indiquei assunto e dia da reunião.",
+  "Confirmei hora da manhã, fuso e duração.",
+  "Expliquei onde estará o link de acesso.",
+  "Informei o que fazer se for necessário remarcar."
+ ]
+},
+{
+ "id": "taking-a-phone-message",
+ "learnerSpeaker": "Dana",
+ "title": "Telefone: anotar e confirmar um recado",
+ "level": "A2",
+ "image": "assets/practice-phone-message.svg",
+ "gapGame": true,
+ "goal": "Atender uma ligação, pedir esclarecimento e confirmar um recado antes de encaminhá-lo.",
+ "context": "You answer a call at a fictional office. Your colleague is in a meeting. Take a message, check the spelling and numbers, then confirm the next action without promising a callback time.",
+ "vocabulary": [
+  [
+   "calling",
+   "ligando",
+   "Thank you for calling our office."
+  ],
+  [
+   "speak to",
+   "falar com",
+   "May I speak to Mr Chen?"
+  ],
+  [
+   "hold",
+   "aguardar na linha",
+   "Could you hold for a moment?"
+  ],
+  [
+   "message",
+   "recado; mensagem",
+   "May I take a message?"
+  ],
+  [
+   "spell",
+   "soletrar",
+   "Could you spell your name?"
+  ],
+  [
+   "repeat",
+   "repetir",
+   "Could you repeat the number?"
+  ],
+  [
+   "extension",
+   "ramal",
+   "My extension is four two."
+  ],
+  [
+   "call back",
+   "retornar a ligação",
+   "Could he call back when he is free?"
+  ],
+  [
+   "urgent",
+   "urgente",
+   "The request is not urgent."
+  ],
+  [
+   "pass on",
+   "transmitir; encaminhar",
+   "I will pass on your message."
+  ],
+  [
+   "reach",
+   "entrar em contato com",
+   "How can he reach you?"
+  ],
+  [
+   "read back",
+   "repetir para conferir",
+   "Let me read back the details."
+  ]
+ ],
+ "order": [
+  "May I take a message?",
+  "Could you spell your name?",
+  "Let me read back the details."
+ ],
+ "practice": [
+  [
+   "Qual abertura é apropriada ao atender uma ligação no escritório?",
+   "Thank you for calling our office. How can I help?",
+   [
+    "Who are you and why?",
+    "Thank you for calling our office. How can I help?",
+    "You cannot say anything."
+   ],
+   "A abertura identifica o atendimento e convida a pessoa a explicar o objetivo da ligação."
+  ],
+  [
+   "O colega está em reunião. Qual oferta ajuda o interlocutor?",
+   "May I take a message?",
+   [
+    "May I take a message?",
+    "I guarantee he will call in one minute.",
+    "You must find him yourself."
+   ],
+   "Oferecer um recado é uma ação possível. Não prometa um retorno que o colega não confirmou."
+  ],
+  [
+   "Você não entendeu o sobrenome.",
+   "Could you spell your surname, please?",
+   [
+    "Your surname is certainly wrong.",
+    "I will guess your surname.",
+    "Could you spell your surname, please?"
+   ],
+   "Pedir para soletrar é uma forma precisa e educada de esclarecer a grafia do sobrenome."
+  ],
+  [
+   "Você quer conferir o número antes de desligar.",
+   "Let me read back the number.",
+   [
+    "Let me read back the number.",
+    "The number is not important.",
+    "I will invent the missing digits."
+   ],
+   "Read back significa repetir a informação recebida para confirmar que ela foi anotada corretamente."
+  ],
+  [
+   "Qual pergunta esclarece a prioridade do recado?",
+   "Is the request urgent?",
+   [
+    "Is the request a keyboard?",
+    "Is the request urgent?",
+    "Does the request wear a suit?"
+   ],
+   "Urgent verifica se o pedido exige atenção imediata; não significa que o retorno já está garantido."
+  ],
+  [
+   "Qual fechamento assume somente a ação que Dana pode realizar?",
+   "I will pass on your message when the meeting ends.",
+   [
+    "He will definitely approve your order today.",
+    "He will call back in one minute, I promise.",
+    "I will pass on your message when the meeting ends."
+   ],
+   "Dana pode encaminhar o recado. A aprovação do pedido e o horário do retorno dependem de outra pessoa."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Dana",
+   "Good morning. Thank you for calling North Office. How can I help?",
+   "Bom dia. Obrigado por ligar para a North Office. Como posso ajudar?"
+  ],
+  [
+   "Pat",
+   "Hello. May I speak to Mr Chen, please?",
+   "Olá. Posso falar com o senhor Chen, por favor?"
+  ],
+  [
+   "Dana",
+   "Could you hold for a moment while I check?",
+   "Você pode aguardar na linha um momento enquanto verifico?"
+  ],
+  [
+   "Pat",
+   "Of course. My name is Pat Vale from the delivery team.",
+   "Claro. Meu nome é Pat Vale, da equipe de entregas."
+  ],
+  [
+   "Dana",
+   "He is in a meeting. May I take a message?",
+   "Ele está em reunião. Posso anotar um recado?"
+  ],
+  [
+   "Pat",
+   "Yes. Could he call back about order seven six when he is free?",
+   "Sim. Ele poderia retornar a ligação sobre o pedido sete seis quando estiver disponível?"
+  ],
+  [
+   "Dana",
+   "Certainly. Could you spell your surname and tell me how he can reach you?",
+   "Certamente. Você pode soletrar seu sobrenome e dizer como ele pode entrar em contato com você?"
+  ],
+  [
+   "Pat",
+   "Vale: V-A-L-E. He has the team number. My extension is four two.",
+   "Vale: V-A-L-E. Ele tem o número da equipe. Meu ramal é quatro dois."
+  ],
+  [
+   "Dana",
+   "Could you repeat the extension? Is the request urgent?",
+   "Você pode repetir o ramal? O pedido é urgente?"
+  ],
+  [
+   "Pat",
+   "Four two. It is not urgent. I want to confirm the delivery day.",
+   "Quatro dois. Não é urgente. Quero confirmar o dia da entrega."
+  ],
+  [
+   "Dana",
+   "Let me read back the message: Pat Vale, extension four two, order seven six, to confirm the delivery day. I will pass on your message when the meeting ends.",
+   "Vou repetir o recado para conferir: Pat Vale, ramal quatro dois, pedido sete seis, para confirmar o dia da entrega. Encaminharei o recado quando a reunião terminar."
+  ],
+  [
+   "Pat",
+   "That is correct. Thank you for your help. Goodbye.",
+   "Está correto. Obrigado pela ajuda. Até logo."
+  ]
+ ],
+ "listening": [
+  [
+   "Why can Mr Chen not answer the call?",
+   "He is in a meeting.",
+   [
+    "He no longer works there.",
+    "He is in a meeting.",
+    "His phone number has changed."
+   ],
+   "Dana verifica a disponibilidade e informa que o colega está em uma reunião."
+  ],
+  [
+   "What is the caller’s surname?",
+   "Vale.",
+   [
+    "Dale.",
+    "Vale.",
+    "Lane."
+   ],
+   "Pat soletra V-A-L-E, permitindo conferir a grafia sem adivinhar pelo som."
+  ],
+  [
+   "Which extension does Pat give?",
+   "Four two.",
+   [
+    "Two four.",
+    "Four two.",
+    "Seven six."
+   ],
+   "O ramal é quatro dois; sete seis é o número do pedido, não o ramal."
+  ],
+  [
+   "What does Pat want to confirm?",
+   "The delivery day for order seven six.",
+   [
+    "Mr Chen’s home address.",
+    "The delivery day for order seven six.",
+    "A new employee’s salary."
+   ],
+   "O objetivo é confirmar o dia da entrega de um pedido específico, sem solicitar informação pessoal."
+  ],
+  [
+   "What does Dana promise to do?",
+   "Pass on the message when the meeting ends.",
+   [
+    "Make Mr Chen call in one minute.",
+    "Approve the order immediately.",
+    "Pass on the message when the meeting ends."
+   ],
+   "O compromisso se limita ao encaminhamento do recado; Dana não garante um horário de retorno."
+  ]
+ ],
+ "simulation": [
+  [
+   "Hello. May I speak to Mr Chen?",
+   "Could you hold for a moment? He is in a meeting. May I take a message?",
+   "Verifique a disponibilidade e ofereça um recado."
+  ],
+  [
+   "Please ask him to call me about order seven six.",
+   "Certainly. Could you spell your surname and tell me how he can reach you?",
+   "Peça identificação e canal de retorno necessários ao recado."
+  ],
+  [
+   "My extension is four two.",
+   "Could you repeat the extension, please? Is the request urgent?",
+   "Esclareça o número e a prioridade sem adivinhar."
+  ],
+  [
+   "Could you check the details before I go?",
+   "Pat Vale, extension four two, order seven six, to confirm the delivery day. I will pass on your message when the meeting ends.",
+   "Repita os detalhes e assuma somente o encaminhamento."
+  ]
+ ],
+ "writing": "Write a fictional phone message of 60–90 words to Mr Chen. Include the caller, team, order number, extension, purpose, urgency and your next action. Do not invent a callback time or a real phone number.",
+ "model": "Hi Mr Chen, Pat Vale from the delivery team called while you were in a meeting. Pat would like you to call back about order seven six to confirm the delivery day. You already have the team number; Pat’s extension is four two. The request is not urgent. I checked the surname and read back the order number and extension before ending the call. I will pass on this message when your meeting ends. I did not promise a callback time.",
+ "rubric": [
+  "Identifiquei personagem, equipe e motivo da ligação.",
+  "Registrei pedido e ramal sem trocar os números.",
+  "Informei a prioridade do recado.",
+  "Indiquei o encaminhamento sem inventar uma promessa de retorno."
+ ]
+});

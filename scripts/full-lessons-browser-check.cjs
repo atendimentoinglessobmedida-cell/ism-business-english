@@ -6,7 +6,7 @@ async function chooseQuestions(page,questions){for(let i=0;i<questions.length;i+
 (async()=>{await new Promise(r=>server.listen(0,'127.0.0.1',r));const base='http://127.0.0.1:'+server.address().port,browser=await chromium.launch({headless:true,channel:'msedge'});try{
  for(const width of [320,390,768,1280]){
   const page=await browser.newPage({viewport:{width,height:900},serviceWorkers:'block'}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.addInitScript(audioFixture);
-  await page.goto(base+'/business-practice.html');await page.locator('.course-card').first().waitFor();assert.equal(await page.locator('.course-card').count(),6);
+  await page.goto(base+'/business-practice.html');await page.locator('.course-card').first().waitFor();assert.equal(await page.locator('.course-card').count(),9);
   for(const l of lessons){
    await page.goto(base+'/business-practice.html#'+l.id+'/0');await page.locator('.word-card').first().waitFor();assert.equal(await page.locator('.word-card').count(),12);assert.equal(await page.locator('#ism-data-backup').count(),1);assert.equal(await page.locator('#ismVoiceB').count(),1);
    await page.evaluate(()=>localStorage.setItem('ismbe:v9',JSON.stringify({lessons:{'2.1':'mastered'},xp:123})));
@@ -27,7 +27,7 @@ async function chooseQuestions(page,questions){for(let i=0;i<questions.length;i+
    await page.locator('.stage-nav button').nth(7).click();await chooseQuestions(page,[0,2,4].map(i=>l.practice[i]));await page.getByRole('button',{name:'Concluir prática completa',exact:true}).click();assert.match(await page.locator('#stage-content > .feedback').innerText(),/Prática concluída/);await page.reload();await page.locator('.result-banner').waitFor();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('ismbe:v9')).xp),123);
    await page.locator('.stage-nav button').nth(3).click();assert.equal(await page.locator('#listening-notes').inputValue(),notes);
   }
-  assert.deepEqual(errors,[]);console.log(`PASS ${width}px: six complete lessons, 12-word vocabulary, three game types, retry feedback, 8 stages, completion gate, simulations, drafts/reload and old Core progress preserved.`);await page.close();
+  assert.deepEqual(errors,[]);console.log(`PASS ${width}px: nine complete lessons, 12-word vocabulary, three game types, retry feedback, 8 stages, completion gate, simulations, drafts/reload and old Core progress preserved.`);await page.close();
  }
  const page=await browser.newPage();await page.goto(base+'/business-practice.html#meeting-decisions/6');await page.locator('#record-controls').waitFor();await page.evaluate(()=>{Object.defineProperty(navigator,'mediaDevices',{value:{getUserMedia:async()=>{throw new DOMException('denied','NotAllowedError');}},configurable:true});});await page.getByRole('button',{name:'Gravar tentativa',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#record-status').textContent.includes('não autorizado'));assert.equal(await page.getByRole('button',{name:'Gravar tentativa',exact:true}).isEnabled(),true);
  await page.evaluate(()=>{window.stoppedTracks=0;navigator.mediaDevices.getUserMedia=()=>new Promise(r=>window.resolveMicrophone=r);});await page.getByRole('button',{name:'Gravar tentativa',exact:true}).click();await page.locator('.stage-nav button').nth(0).click();await page.evaluate(()=>window.resolveMicrophone({getTracks:()=>[{stop(){window.stoppedTracks++;}}]}));await page.waitForFunction(()=>window.stoppedTracks===1);
