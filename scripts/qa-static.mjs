@@ -26,4 +26,6 @@ run(['--test','scripts/business-ordering.test.cjs']);
 run(['--test','scripts/business-review-checklist.test.cjs']);
 run(['--test','scripts/business-ideas-reliability.test.cjs']);
 run(['--test','scripts/business-lesson-model.test.cjs']);
+
+run(['--test','scripts/business-grammar.test.cjs']);
 console.log('All static QA checks passed.');
