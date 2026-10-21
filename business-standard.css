@@ -75,3 +75,5 @@ body[data-ism-page] .mod small{color:#536675!important}
 body[data-ism-page] .visual-learning-heading p{color:#536675!important}
 body[data-ism-page] .ism-editorial-card-copy>a{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:12px;background:#205ec5!important;color:#fff!important;text-decoration:none}
 body[data-ism-page] .practice-option:not(.primary-practice)>span{background:#edf4ff!important;color:#194f9e!important}
+.reference-new{margin:24px 0;padding:24px;border:1px solid #bdcfea;border-left:5px solid #f3c94b;border-radius:18px;background:#fff}.reference-new h2{margin:8px 0}.reference-support{margin-top:30px;padding:18px;border:1px solid #dce5ec;border-radius:14px;background:#f3f6fa}.reference-support summary{min-height:44px;color:#194f9e}.reference-support article{border-top:1px solid #dce5ec;padding-top:15px;margin-top:15px}.reference-support a{color:#194f9e;overflow-wrap:anywhere}.reference-support p{font-size:15px;line-height:1.6}
+@media(max-width:600px){.reference-new{padding:18px}.reference-new .actions a{width:100%}}
