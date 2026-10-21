@@ -1,0 +1,4 @@
+const fs=require('node:fs'),crypto=require('node:crypto'),path=require('node:path'),{build}=require('./podcast-scripts.cjs');
+const out=process.argv[2];if(!out)throw Error('Provide a build directory.');fs.mkdirSync(out,{recursive:true});const episodes=build(),jobs=new Map();
+for(const ep of episodes)for(const version of Object.values(ep.versions))for(const chapter of version.chapters)for(const segment of chapter.segments){const key=crypto.createHash('sha256').update(JSON.stringify([segment.lang,segment.text,segment.rate,segment.pitch])).digest('hex');segment.clip=key;jobs.set(key,{key,...segment});}
+fs.writeFileSync(path.join(out,'episodes.json'),JSON.stringify(episodes,null,2));fs.writeFileSync(path.join(out,'jobs.json'),JSON.stringify([...jobs.values()],null,2));console.log(JSON.stringify({episodes:episodes.length,languageVersions:6,uniqueSegments:jobs.size}));
