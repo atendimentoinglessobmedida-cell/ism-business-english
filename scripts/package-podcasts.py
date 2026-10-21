@@ -5,7 +5,7 @@ import numpy as np
 
 build_dir, root, encoder = map(Path, sys.argv[1:4])
 episodes = json.loads((build_dir / 'episodes.json').read_text(encoding='utf-8-sig'))
-rate = 22050
+rate = 24000
 audio_dir = root / 'assets' / 'podcasts'
 audio_dir.mkdir(parents=True, exist_ok=True)
 decoded = {}
@@ -53,8 +53,8 @@ for episode in episodes:
             output.writeframes(np.concatenate(pieces).tobytes())
         name = episode['id'] + '-' + language + '.mp3'
         destination = audio_dir / name
-        subprocess.run([str(encoder), '-hide_banner', '-loglevel', 'error', '-y', '-i', str(pcm_file), '-af', 'loudnorm=I=-18:TP=-2:LRA=7', '-ar', str(rate), '-ac', '1', '-codec:a', 'libmp3lame', '-b:a', '64k', str(destination)], check=True)
+        subprocess.run([str(encoder), '-hide_banner', '-loglevel', 'error', '-y', '-i', str(pcm_file), '-af', 'loudnorm=I=-18:TP=-2:LRA=7', '-ar', str(rate), '-ac', '1', '-codec:a', 'libmp3lame', '-b:a', '96k', str(destination)], check=True)
         version.update(audio='assets/podcasts/' + name, duration=round(frames / rate, 3), bytes=destination.stat().st_size, sha256=hashlib.sha256(destination.read_bytes()).hexdigest())
         print(f"{name}: {version['duration'] / 60:.1f} min; {version['bytes']} bytes", flush=True)
-    episode['disclosure'] = 'Narração sintetizada: Microsoft Maria (português) e Microsoft Zira (inglês). Os personagens compartilham a voz inglesa com variações de ritmo e tom.'
+    episode['disclosure'] = 'Vozes neurais sintetizadas com Kokoro: Dora (português), Heart e Michael (inglês). Cada personagem mantém uma voz própria. Não são gravações de atores.'
 (root / 'business-podcast-data.js').write_text('/* Timed transcripts for original Regular practice lessons. */\nwindow.ISMBusinessPodcasts=' + json.dumps(episodes, ensure_ascii=False, separators=(',', ':')) + ';\n', encoding='utf-8')
