@@ -1,0 +1,26 @@
+body #practice-main{max-width:1400px;padding:28px}
+.lesson-workspace{display:grid;grid-template-columns:260px minmax(0,1fr);gap:26px;margin-top:20px;align-items:start}
+.lesson-outline{padding:20px;background:#fff;border:1px solid #dce5ec;border-radius:18px}
+.lesson-outline h2{font-size:21px;margin:0 0 8px}.lesson-outline>p{font-size:14px;color:#536675}
+.lesson-outline a{display:block;padding:14px 12px;margin:8px 0;border:1px solid #dce5ec;border-radius:12px;text-decoration:none;background:#fff;color:#203445}
+.lesson-outline a span{display:block;font-size:11px;letter-spacing:.05em;color:#536675;margin-bottom:5px}.lesson-outline a b{font-size:14px;line-height:1.5;display:block}
+.lesson-outline a[aria-current=page]{background:#e6f4f2;border-color:#087b7d}.lesson-outline a:hover{border-color:#087b7d}
+.lesson-main{min-width:0}.lesson-main .lesson-hero{background:#fff;border:1px solid #dce5ec;padding:24px;border-radius:20px;grid-template-columns:minmax(0,1fr) 190px;margin-top:0;gap:20px}
+.lesson-main .lesson-hero h1{font-size:clamp(25px,3vw,34px);line-height:1.2;margin:10px 0}.lesson-main .lesson-hero img{width:100%;height:160px;object-fit:cover;border-radius:14px}
+.lesson-main .progress-summary{background:#eaf3f7;color:#365663;font-size:14px}
+.lesson-main .stage-nav,.flow-core-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:18px 0 12px}
+.lesson-main .stage-nav button,.flow-core-steps button{min-height:48px;background:white!important;color:#375461!important;border:1px solid #dce5ec!important;border-radius:10px!important;padding:12px;text-align:left;font-size:14px;white-space:normal}
+.lesson-main .stage-nav button[aria-current=step],.flow-core-steps button[aria-current=step]{background:#087b7d!important;color:#fff!important;border-color:#087b7d!important;font-weight:800}
+.lesson-step-hint{color:#536675;font-size:15px;line-height:1.6;margin:12px 0 18px}
+.lesson-substeps{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.lesson-substeps button{padding:10px 16px;min-height:44px;background:#fff!important;color:#375461!important;border:1px solid #cadce0!important;border-radius:10px!important}
+.lesson-substeps button[aria-pressed=true],.lesson-substeps button[aria-current=step]{background:#e6f4f2!important;color:#075f64!important;border-color:#087b7d!important}
+.lesson-support{margin:14px 0}.lesson-support button{background:#e6f4f2;color:#075f64;border-color:#b5d8d6}
+.lesson-main .stage-card{background:#fff;border:1px solid #dce5ec;border-radius:18px;padding:26px}.lesson-main .stage-card>h2{font-size:25px;margin:0 0 16px}
+.lesson-main .word-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-main .word-card{background:#f8fafc;border:1px solid #dce5ec;box-shadow:none;padding:18px}.lesson-main .word-card strong{font-size:21px}.lesson-main .word-card p{font-size:16px}
+.lesson-hide-pt [data-business-translation]{display:none!important}
+.language-focus{padding:20px;background:#f0f7f6;border:1px solid #cde1de;border-radius:14px;margin:16px 0 24px}.language-focus h3{font-size:20px;margin-top:0}.language-focus p[lang=en]{font-weight:650;background:#fff;padding:12px;border-radius:10px}
+.easy-core-layout .lesson-stage-compact{display:none!important}.easy-core-layout>.business-flow{display:block!important;background:#fff;border:1px solid #dce5ec;border-radius:18px}.easy-core-layout .flow-core-steps{width:100%}.easy-core-layout .lesson-screen{background:#fff;border-radius:18px;padding:20px;border:1px solid #dce5ec}
+body .flow-steps{grid-template-columns:repeat(3,minmax(0,1fr))}.flow-steps .flow-current{background:#087b7d!important;color:#fff!important}
+@media(min-width:1200px){.lesson-main .stage-nav,.flow-core-steps{grid-template-columns:repeat(6,minmax(0,1fr))}.lesson-main .stage-nav button,.flow-core-steps button{padding:10px 8px;font-size:13px}}
+@media(max-width:900px){.lesson-workspace{grid-template-columns:1fr}.lesson-outline{display:none}.lesson-main .lesson-hero{grid-template-columns:minmax(0,1fr) 160px}.lesson-main .lesson-hero img{height:150px}}
+@media(max-width:600px){body #practice-main{padding:20px 14px}.lesson-main .lesson-hero{grid-template-columns:1fr;padding:20px}.lesson-main .lesson-hero img{height:150px;max-height:150px}.lesson-main .stage-card{padding:18px}.lesson-main .stage-nav,.flow-core-steps{grid-template-columns:repeat(2,minmax(0,1fr))}.lesson-main .word-grid{grid-template-columns:1fr}.lesson-main .stage-nav button{font-size:14px}.lesson-main #stage-footer button{flex:1 1 130px}}
