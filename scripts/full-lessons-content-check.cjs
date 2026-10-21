@@ -1,8 +1,8 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('business-practice-content.js','utf8'),sandbox);
-const lessons=sandbox.window.ISM_BUSINESS_PRACTICE,ids=new Set(),images=new Set();assert.equal(lessons.length,9);
+const lessons=sandbox.window.ISM_BUSINESS_PRACTICE,ids=new Set(),images=new Set();assert.equal(lessons.length,12);
 assert.deepEqual(Array.from(lessons.slice(0,3),l=>l.id),['meeting-decisions','deadline-negotiation','presenting-results']);
-assert.equal(lessons.filter(l=>l.gapGame===true).length,6);
+assert.equal(lessons.filter(l=>l.gapGame===true).length,9);
 for(const l of lessons){
  assert(!ids.has(l.id));ids.add(l.id);assert(!images.has(l.image));images.add(l.image);assert(fs.existsSync(l.image));assert.equal(l.vocabulary.length,12);assert.equal(new Set(l.vocabulary.map(v=>v[0])).size,12);
  assert.equal(l.dialogue.length,12);assert.equal(new Set(l.dialogue.map(v=>v[0])).size,2);
@@ -13,4 +13,4 @@ for(const l of lessons){
 }
 assert.deepEqual(Array.from(lessons.slice(0,6),l=>l.id),['meeting-decisions','deadline-negotiation','presenting-results','email-request','customer-recovery','interview-evidence']);
 const sw=fs.readFileSync('sw.js','utf8');for(const file of ['business-practice.html','business-practice.js','business-practice.css','business-practice-content.js'])assert(sw.includes(file));assert(fs.readFileSync('storage-guard.js','utf8').includes("'ismbe:practice-course:v1'"));
-console.log('PASS: 9 original lessons; 108 contextual expressions/examples; 108 dialogue turns; 24 game instances of 3 types; 54 practice questions; 45 listening questions; 36 simulation prompts; models, vocabulary recycling, distinct images and old IDs preserved.');
+console.log('PASS: 12 original lessons; 144 contextual expressions/examples; 144 dialogue turns; 33 game instances of 3 types; 72 practice questions; 60 listening questions; 48 simulation prompts; models, vocabulary recycling, distinct images and old IDs preserved.');

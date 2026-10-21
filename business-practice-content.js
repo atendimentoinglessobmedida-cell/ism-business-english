@@ -1134,3 +1134,854 @@ window.ISM_BUSINESS_PRACTICE.push({
   "Indiquei o encaminhamento sem inventar uma promessa de retorno."
  ]
 });
+
+/* Original workplace communication block, inspired by professional needs, not copied course material. */
+window.ISM_BUSINESS_PRACTICE.push({
+ "id": "clarify-and-confirm",
+ "learnerSpeaker": "Morgan",
+ "title": "Alinhamento: esclarecer sem constrangimento",
+ "level": "B1",
+ "goal": "Pedir esclarecimentos, reformular uma instrução e confirmar tarefa, responsável e prazo.",
+ "context": "A colleague asks you to prepare a client file. The request is unclear. Ask specific questions and confirm the agreed scope before starting.",
+ "vocabulary": [
+  [
+   "clarification",
+   "esclarecimento",
+   "I need clarification on the request."
+  ],
+  [
+   "specific",
+   "específico",
+   "Could you be more specific?"
+  ],
+  [
+   "refer to",
+   "referir-se a",
+   "Does that refer to the sales file?"
+  ],
+  [
+   "in other words",
+   "em outras palavras",
+   "In other words, you need a short summary."
+  ],
+  [
+   "check my understanding",
+   "confirmar se entendi",
+   "Let me check my understanding."
+  ],
+  [
+   "latest version",
+   "versão mais recente",
+   "Please use the latest version."
+  ],
+  [
+   "attachment",
+   "anexo",
+   "The attachment contains the figures."
+  ],
+  [
+   "leave out",
+   "deixar de fora",
+   "We can leave out the regional detail."
+  ],
+  [
+   "include",
+   "incluir",
+   "Please include the total."
+  ],
+  [
+   "by noon",
+   "até meio-dia",
+   "I will send it by noon."
+  ],
+  [
+   "confirm in writing",
+   "confirmar por escrito",
+   "I will confirm in writing."
+  ],
+  [
+   "agreed scope",
+   "escopo acordado",
+   "The agreed scope is one page."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Casey",
+   "Could you prepare the client file? Please use the latest version.",
+   "Você pode preparar o arquivo do cliente? Use a versão mais recente."
+  ],
+  [
+   "Morgan",
+   "I need some clarification. Which file does that refer to?",
+   "Preciso de um esclarecimento. A qual arquivo isso se refere?"
+  ],
+  [
+   "Casey",
+   "The sales summary in the attachment I sent this morning.",
+   "Ao resumo de vendas no anexo que enviei hoje de manhã."
+  ],
+  [
+   "Morgan",
+   "Could you be more specific about the figures you need?",
+   "Você pode especificar melhor quais números precisa?"
+  ],
+  [
+   "Casey",
+   "Please include the total for June and the comparison with May.",
+   "Inclua o total de junho e a comparação com maio."
+  ],
+  [
+   "Morgan",
+   "Should I leave out the regional detail?",
+   "Devo deixar de fora os detalhes por região?"
+  ],
+  [
+   "Casey",
+   "Yes. The agreed scope is one page for the client call.",
+   "Sim. O escopo acordado é uma página para a ligação com o cliente."
+  ],
+  [
+   "Morgan",
+   "In other words, you need the total and a monthly comparison, without regional figures.",
+   "Em outras palavras, você precisa do total e de uma comparação mensal, sem números regionais."
+  ],
+  [
+   "Casey",
+   "Exactly. Could you send it by noon tomorrow?",
+   "Exatamente. Você pode enviar até meio-dia de amanhã?"
+  ],
+  [
+   "Morgan",
+   "Let me check my understanding: I prepare one page and send it to you by noon tomorrow.",
+   "Deixe-me confirmar se entendi: preparo uma página e envio a você até meio-dia de amanhã."
+  ],
+  [
+   "Casey",
+   "Correct. I will review it before the client call.",
+   "Correto. Vou revisar antes da ligação com o cliente."
+  ],
+  [
+   "Morgan",
+   "Thank you. I will confirm in writing so we both have the same instructions.",
+   "Obrigado. Vou confirmar por escrito para termos as mesmas instruções."
+  ]
+ ],
+ "practice": [
+  [
+   "Qual pergunta esclarece uma referência ambígua?",
+   "Which file does that refer to?",
+   [
+    "Which file does that refer to?",
+    "Why is your work always confusing?",
+    "I will choose any file."
+   ],
+   "Refer to pede que a pessoa identifique exatamente o arquivo mencionado."
+  ],
+  [
+   "Você quer verificar sua interpretação.",
+   "Let me check my understanding.",
+   [
+    "Let me check my understanding.",
+    "You must agree with me.",
+    "There is no need to check."
+   ],
+   "A frase introduz uma reformulação e permite corrigir um mal-entendido."
+  ],
+  [
+   "Complete: Please ___ the total for June.",
+   "include",
+   [
+    "include",
+    "leave out",
+    "cancel"
+   ],
+   "Include solicita que a informação faça parte do resumo."
+  ],
+  [
+   "Qual frase retira um detalhe do escopo?",
+   "We can leave out the regional detail.",
+   [
+    "We can include every region.",
+    "We can leave out the regional detail.",
+    "We can add a regional appendix."
+   ],
+   "Leave out significa omitir; aqui a exclusão foi acordada, não esquecida."
+  ],
+  [
+   "Quando termina o prazo by noon tomorrow?",
+   "At twelve o’clock tomorrow, at the latest.",
+   [
+    "Any time tomorrow evening.",
+    "At twelve o’clock tomorrow, at the latest.",
+    "Only after tomorrow’s lunch."
+   ],
+   "By indica limite: até esse horário, inclusive antes dele."
+  ],
+  [
+   "Qual confirmação registra uma ação verificável?",
+   "I will send you one page by noon tomorrow.",
+   [
+    "I will deal with it sometime.",
+    "I will send you one page by noon tomorrow.",
+    "Everything is probably fine."
+   ],
+   "A confirmação especifica entrega, destinatário e prazo, evitando uma promessa vaga."
+  ]
+ ],
+ "listening": [
+  [
+   "Which file should Morgan use?",
+   "The sales summary in the morning attachment.",
+   [
+    "The sales summary in the morning attachment.",
+    "An old regional spreadsheet.",
+    "A presentation from last year."
+   ],
+   "Casey identifica o resumo de vendas enviado naquela manhã."
+  ],
+  [
+   "Which months will be compared?",
+   "June and May.",
+   [
+    "April and May.",
+    "June and May.",
+    "June and July."
+   ],
+   "A comparação solicitada usa junho e maio, não uma previsão de julho."
+  ],
+  [
+   "What should be excluded?",
+   "Regional detail.",
+   [
+    "The June total.",
+    "The monthly comparison.",
+    "Regional detail."
+   ],
+   "A exclusão explícita mantém o documento dentro de uma página."
+  ],
+  [
+   "Who will review the summary?",
+   "Casey.",
+   [
+    "Morgan’s client.",
+    "Casey.",
+    "An unnamed manager."
+   ],
+   "Casey assume a revisão antes da ligação com o cliente."
+  ],
+  [
+   "When must Morgan send the summary?",
+   "By noon tomorrow.",
+   [
+    "By noon tomorrow.",
+    "Tonight at midnight.",
+    "After the client call."
+   ],
+   "Morgan repete o prazo no fechamento para confirmar que o entendeu."
+  ]
+ ],
+ "simulation": [
+  [
+   "Please prepare the file.",
+   "Which file does that refer to? Could you be more specific?",
+   "Esclareça a referência antes de começar."
+  ],
+  [
+   "I need the main figures.",
+   "Should I include the June total and leave out regional detail?",
+   "Transforme uma instrução vaga em duas escolhas concretas."
+  ],
+  [
+   "Yes, one page by noon tomorrow.",
+   "Let me check my understanding: one page with June and May, by noon tomorrow.",
+   "Reformule escopo e prazo sem alterar o acordo."
+  ],
+  [
+   "That is correct.",
+   "I will confirm in writing and send it to you for review.",
+   "Confirme o próximo passo e o destinatário."
+  ]
+ ],
+ "writing": "Write a fictional confirmation email of 60–90 words. Identify the attachment, specify the agreed scope, say what you will leave out, and confirm the owner, recipient and deadline.",
+ "model": "Hi Casey, thanks for clarifying the request. I will use the latest version of the sales summary in your morning attachment. The agreed scope is one page showing the June total and a comparison with May. I will leave out the regional detail. I will prepare the summary and send it to you by noon tomorrow for your review before the client call. Please let me know if I have misunderstood any part of these instructions.",
+ "rubric": [
+  "Identifiquei o arquivo e sua versão.",
+  "Reformulei o escopo e a informação excluída.",
+  "Confirmei responsável, destinatário e prazo.",
+  "Deixei espaço para corrigir um possível mal-entendido."
+ ],
+ "gapGame": true,
+ "order": [
+  "Which file does that refer to? Could you be more specific?",
+  "Should I include the June total and leave out regional detail?",
+  "Let me check my understanding: one page with June and May, by noon tomorrow."
+ ],
+ "image": "assets/workplace-clarify-and-confirm.svg"
+},
+{
+ "id": "concise-project-update",
+ "learnerSpeaker": "Riley",
+ "title": "Apresentação: uma atualização de um minuto",
+ "level": "B1",
+ "goal": "Organizar uma atualização breve com mensagem central, evidência, risco e pedido de decisão.",
+ "context": "Give a short update on a fictional customer portal pilot. Distinguish a measured result from a forecast and ask your colleague for a concrete decision.",
+ "vocabulary": [
+  [
+   "main takeaway",
+   "mensagem principal",
+   "The main takeaway is that response time improved."
+  ],
+  [
+   "baseline",
+   "referência inicial",
+   "Our baseline was five hours."
+  ],
+  [
+   "compared with",
+   "comparado com",
+   "Response time fell compared with May."
+  ],
+  [
+   "pilot",
+   "projeto-piloto",
+   "The pilot involved one team."
+  ],
+  [
+   "sample",
+   "amostra",
+   "The sample contains twenty requests."
+  ],
+  [
+   "result",
+   "resultado",
+   "The result is encouraging."
+  ],
+  [
+   "limitation",
+   "limitação",
+   "The limitation is the small sample."
+  ],
+  [
+   "forecast",
+   "previsão",
+   "This is a forecast, not a guarantee."
+  ],
+  [
+   "risk",
+   "risco",
+   "The main risk is limited support capacity."
+  ],
+  [
+   "recommendation",
+   "recomendação",
+   "My recommendation is another short test."
+  ],
+  [
+   "approval",
+   "aprovação",
+   "We need approval for the next test."
+  ],
+  [
+   "next step",
+   "próximo passo",
+   "The next step is a two-week test."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Riley",
+   "The main takeaway is that our portal pilot reduced response time.",
+   "A mensagem principal é que o piloto do portal reduziu o tempo de resposta."
+  ],
+  [
+   "Jamie",
+   "What was the baseline?",
+   "Qual era a referência inicial?"
+  ],
+  [
+   "Riley",
+   "Five hours in May. In June, the average was three hours compared with five before the pilot.",
+   "Cinco horas em maio. Em junho, a média foi três horas, comparada a cinco antes do piloto."
+  ],
+  [
+   "Jamie",
+   "How large was the sample?",
+   "Qual era o tamanho da amostra?"
+  ],
+  [
+   "Riley",
+   "Twenty requests from one team. That result is encouraging, but it has a limitation.",
+   "Vinte solicitações de uma equipe. Esse resultado é animador, mas tem uma limitação."
+  ],
+  [
+   "Jamie",
+   "You mean we cannot assume every team will get the same improvement?",
+   "Você quer dizer que não podemos supor a mesma melhora em todas as equipes?"
+  ],
+  [
+   "Riley",
+   "Exactly. A wider rollout would be a forecast, not a measured result.",
+   "Exatamente. Uma expansão seria uma previsão, não um resultado medido."
+  ],
+  [
+   "Jamie",
+   "What is the main risk if we expand now?",
+   "Qual é o principal risco de expandir agora?"
+  ],
+  [
+   "Riley",
+   "Support capacity. My recommendation is a second two-week test with another team.",
+   "A capacidade do suporte. Minha recomendação é um segundo teste de duas semanas com outra equipe."
+  ],
+  [
+   "Jamie",
+   "What approval do you need today?",
+   "De que aprovação você precisa hoje?"
+  ],
+  [
+   "Riley",
+   "Approval for that test. The next step is to confirm support availability before choosing a start date.",
+   "Aprovação para esse teste. O próximo passo é confirmar a disponibilidade do suporte antes de escolher a data de início."
+  ],
+  [
+   "Jamie",
+   "Approved for planning. Please confirm capacity before you promise a launch date.",
+   "Aprovado para planejamento. Confirme a capacidade antes de prometer uma data de lançamento."
+  ]
+ ],
+ "practice": [
+  [
+   "Qual abertura apresenta logo a mensagem principal?",
+   "The main takeaway is that response time improved.",
+   [
+    "The main takeaway is that response time improved.",
+    "Let me list every email first.",
+    "I have no point to make."
+   ],
+   "Uma atualização curta começa pela conclusão relevante para o público."
+  ],
+  [
+   "Qual afirmação descreve a baseline?",
+   "The initial average was five hours.",
+   [
+    "Every future team will need three hours.",
+    "The initial average was five hours.",
+    "The support team approved a launch."
+   ],
+   "Baseline é a medida inicial usada para comparar o resultado observado."
+  ],
+  [
+   "Qual frase reconhece uma limitação?",
+   "The sample includes only one team.",
+   [
+    "The result proves universal success.",
+    "There are no limits to this evidence.",
+    "The sample includes only one team."
+   ],
+   "Uma equipe e vinte solicitações não sustentam uma garantia para todas as equipes."
+  ],
+  [
+   "Qual frase é uma previsão?",
+   "Other teams may also reduce response time.",
+   [
+    "Other teams may also reduce response time.",
+    "The sample contained twenty requests.",
+    "The May average was five hours."
+   ],
+   "May expressa possibilidade futura; as outras opções descrevem dados já medidos."
+  ],
+  [
+   "Qual pedido pode gerar uma decisão clara?",
+   "Could you approve a second two-week test?",
+   [
+    "Could someone think about something?",
+    "Could you approve a second two-week test?",
+    "Could we ignore support capacity?"
+   ],
+   "O pedido delimita o que precisa de aprovação, sem exigir um lançamento imediato."
+  ],
+  [
+   "O que deve ocorrer antes de prometer a data?",
+   "Confirm support availability.",
+   [
+    "Promise tomorrow first.",
+    "Assume all teams are ready.",
+    "Confirm support availability."
+   ],
+   "A recomendação reconhece o risco operacional e condiciona a data à capacidade."
+  ]
+ ],
+ "listening": [
+  [
+   "What happened to average response time?",
+   "It fell from five to three hours.",
+   [
+    "It rose from three to five hours.",
+    "It fell from five to three hours.",
+    "It stayed at five hours."
+   ],
+   "O diálogo distingue a referência de maio e a média de junho."
+  ],
+  [
+   "How many requests were measured?",
+   "Twenty.",
+   [
+    "Two hundred.",
+    "Twelve.",
+    "Twenty."
+   ],
+   "Riley informa vinte solicitações, de uma única equipe."
+  ],
+  [
+   "What is the main limitation?",
+   "A small sample from one team.",
+   [
+    "No baseline exists.",
+    "A small sample from one team.",
+    "The result is a guaranteed forecast."
+   ],
+   "A limitação restringe a generalização, sem negar a melhora observada."
+  ],
+  [
+   "What does Riley recommend?",
+   "A second two-week test with another team.",
+   [
+    "A second two-week test with another team.",
+    "A company-wide launch tomorrow.",
+    "Closing the portal permanently."
+   ],
+   "Riley recomenda coletar mais evidências antes de expandir."
+  ],
+  [
+   "What does Jamie approve?",
+   "Planning the test, subject to checking support capacity.",
+   [
+    "An unconditional launch date.",
+    "Planning the test, subject to checking support capacity.",
+    "A guaranteed result for all teams."
+   ],
+   "A aprovação é para planejamento; a capacidade ainda deve ser confirmada."
+  ]
+ ],
+ "simulation": [
+  [
+   "Give me your main point in one sentence.",
+   "The main takeaway is that our portal pilot reduced response time.",
+   "Comece pela mensagem principal, não pelo histórico inteiro."
+  ],
+  [
+   "What evidence supports that?",
+   "The average fell from five to three hours in a sample of twenty requests.",
+   "Apresente medida inicial, resultado e amostra."
+  ],
+  [
+   "Can you guarantee the same result everywhere?",
+   "No. The sample covers one team; a wider rollout is a forecast.",
+   "Reconheça a limitação sem transformar previsão em fato."
+  ],
+  [
+   "What decision do you need?",
+   "Could you approve a second two-week test? I will confirm support capacity before setting the date.",
+   "Peça uma decisão delimitada e indique o próximo passo."
+  ]
+ ],
+ "writing": "Write a fictional project update of 60–90 words. State the main takeaway, compare the baseline and result, explain a limitation, and request a decision with a realistic next step.",
+ "model": "Hi Jamie, the main takeaway from our portal pilot is faster response time. The average fell from a baseline of five hours in May to three hours in June. Our sample includes twenty requests from one team, so we cannot guarantee the same result elsewhere. My recommendation is a second two-week test with another team. Could you approve the planning? I will confirm support capacity before proposing a start date. This approach will give us more evidence before a wider rollout.",
+ "rubric": [
+  "Apresentei a mensagem principal e uma comparação correta.",
+  "Distingui resultado medido e previsão.",
+  "Reconheci a limitação e o risco.",
+  "Pedi uma decisão concreta com próximo passo realista."
+ ],
+ "gapGame": true,
+ "order": [
+  "The main takeaway is that our portal pilot reduced response time.",
+  "The average fell from five to three hours in a sample of twenty requests.",
+  "No. The sample covers one team; a wider rollout is a forecast."
+ ],
+ "image": "assets/workplace-concise-project-update.svg"
+},
+{
+ "id": "handover-across-teams",
+ "learnerSpeaker": "Drew",
+ "title": "Equipes: passar uma tarefa sem perder informações",
+ "level": "B1",
+ "goal": "Fazer uma passagem de trabalho com contexto, dependência, responsabilidade e confirmação de recebimento.",
+ "context": "Hand over a fictional supplier checklist before being away. Separate completed work from pending approval and agree on an escalation route.",
+ "vocabulary": [
+  [
+   "handover",
+   "passagem de trabalho",
+   "Let us schedule a handover."
+  ],
+  [
+   "background",
+   "contexto",
+   "Here is the background to the request."
+  ],
+  [
+   "completed",
+   "concluído",
+   "The first section is completed."
+  ],
+  [
+   "pending",
+   "pendente",
+   "The final approval is pending."
+  ],
+  [
+   "dependency",
+   "dependência",
+   "Legal approval is a dependency."
+  ],
+  [
+   "point of contact",
+   "pessoa de contato",
+   "Lee is the point of contact."
+  ],
+  [
+   "access",
+   "acesso",
+   "Do you have access to the folder?"
+  ],
+  [
+   "checklist",
+   "lista de verificação",
+   "Please follow the checklist."
+  ],
+  [
+   "acknowledge",
+   "confirmar recebimento",
+   "Please acknowledge the handover."
+  ],
+  [
+   "escalate",
+   "encaminhar a uma instância responsável",
+   "We should escalate the issue to Lee."
+  ],
+  [
+   "availability",
+   "disponibilidade",
+   "Please confirm your availability."
+  ],
+  [
+   "status update",
+   "atualização de andamento",
+   "Send a status update on Thursday."
+  ]
+ ],
+ "dialogue": [
+  [
+   "Drew",
+   "Thanks for joining this handover. The background is a supplier review due on Friday.",
+   "Obrigado por participar desta passagem de trabalho. O contexto é uma revisão de fornecedor para sexta-feira."
+  ],
+  [
+   "Robin",
+   "Which parts are completed?",
+   "Quais partes estão concluídas?"
+  ],
+  [
+   "Drew",
+   "The contact details are completed. Final approval is pending, and legal approval is our dependency.",
+   "Os dados de contato estão concluídos. A aprovação final está pendente e depende do Jurídico."
+  ],
+  [
+   "Robin",
+   "Who is the point of contact for that approval?",
+   "Quem é a pessoa de contato para essa aprovação?"
+  ],
+  [
+   "Drew",
+   "Lee in Legal. Do you have access to the shared folder and the checklist?",
+   "Lee, do Jurídico. Você tem acesso à pasta compartilhada e à lista de verificação?"
+  ],
+  [
+   "Robin",
+   "Yes, I can open both. Please confirm your availability while you are away.",
+   "Sim, consigo abrir os dois. Confirme sua disponibilidade durante a ausência."
+  ],
+  [
+   "Drew",
+   "I will be offline. If approval has not arrived by Thursday morning, escalate the issue to Lee.",
+   "Estarei sem acesso. Se a aprovação não chegar até quinta de manhã, encaminhe a questão a Lee."
+  ],
+  [
+   "Robin",
+   "Should I send the supplier an approval message before Legal replies?",
+   "Devo enviar a aprovação ao fornecedor antes da resposta do Jurídico?"
+  ],
+  [
+   "Drew",
+   "No. Follow the checklist and wait for approval. Please send me a status update on Thursday.",
+   "Não. Siga a lista de verificação e espere a aprovação. Envie uma atualização na quinta-feira."
+  ],
+  [
+   "Robin",
+   "I acknowledge the handover. I will check the folder, contact Lee if needed, and report the status.",
+   "Confirmo o recebimento da passagem de trabalho. Vou verificar a pasta, contatar Lee se necessário e informar o andamento."
+  ],
+  [
+   "Drew",
+   "Thank you. Please record the decision in the folder so the team can see it.",
+   "Obrigado. Registre a decisão na pasta para a equipe poder consultá-la."
+  ],
+  [
+   "Robin",
+   "Understood. I will not tell the supplier it is approved while the decision is still pending.",
+   "Entendido. Não direi ao fornecedor que está aprovado enquanto a decisão estiver pendente."
+  ]
+ ],
+ "practice": [
+  [
+   "Qual frase distingue uma pendência de trabalho concluído?",
+   "Contact details are completed; approval is pending.",
+   [
+    "Everything is approved.",
+    "Contact details are completed; approval is pending.",
+    "Nothing needs a decision."
+   ],
+   "A passagem deve separar o que foi feito daquilo que depende de outra pessoa."
+  ],
+  [
+   "Quem responde por uma dúvida sobre a aprovação?",
+   "The point of contact in Legal.",
+   [
+    "Any supplier chosen at random.",
+    "The point of contact in Legal.",
+    "An unavailable colleague with no access."
+   ],
+   "Point of contact indica a pessoa responsável por receber aquele contato."
+  ],
+  [
+   "Como verificar se o colega pode executar a tarefa?",
+   "Can you open the folder and the checklist?",
+   [
+    "You probably have everything.",
+    "Can you open the folder and the checklist?",
+    "You do not need access."
+   ],
+   "Testar o acesso evita descobrir um bloqueio depois da saída do colega."
+  ],
+  [
+   "O que significa acknowledge neste contexto?",
+   "Confirm receipt of the handover.",
+   [
+    "Guarantee legal approval.",
+    "Delete the checklist.",
+    "Confirm receipt of the handover."
+   ],
+   "Acknowledge confirma recebimento e entendimento, não concede aprovação jurídica."
+  ],
+  [
+   "Quando a questão deve ser encaminhada a Lee?",
+   "If approval has not arrived by Thursday morning.",
+   [
+    "Before checking whether approval exists.",
+    "If approval has not arrived by Thursday morning.",
+    "Only after telling the supplier it is approved."
+   ],
+   "A instrução define condição, momento e destinatário da escalada."
+  ],
+  [
+   "Qual mensagem evita uma promessa indevida?",
+   "Approval is still pending; we will update you after the decision.",
+   [
+    "Approval is guaranteed today.",
+    "You can assume everything is approved.",
+    "Approval is still pending; we will update you after the decision."
+   ],
+   "A frase comunica o estado real sem antecipar uma decisão que ainda não existe."
+  ]
+ ],
+ "listening": [
+  [
+   "What is the review deadline?",
+   "Friday.",
+   [
+    "Monday.",
+    "Friday.",
+    "Next month."
+   ],
+   "Drew informa o prazo no início da passagem de trabalho."
+  ],
+  [
+   "What has already been completed?",
+   "The contact details.",
+   [
+    "The legal approval.",
+    "The supplier approval email.",
+    "The contact details."
+   ],
+   "Somente os dados de contato estão concluídos; aprovação ainda está pendente."
+  ],
+  [
+   "Who handles the approval question?",
+   "Lee in Legal.",
+   [
+    "Lee in Legal.",
+    "The supplier’s receptionist.",
+    "Drew while offline."
+   ],
+   "Lee é a pessoa de contato para a dependência jurídica."
+  ],
+  [
+   "When is a status update requested?",
+   "Thursday.",
+   [
+    "Friday after completion only.",
+    "Thursday.",
+    "No update is needed."
+   ],
+   "O acompanhamento na quinta permite agir antes do prazo de sexta."
+  ],
+  [
+   "What must Robin avoid?",
+   "Telling the supplier it is approved before the decision.",
+   [
+    "Reading the checklist.",
+    "Opening the folder.",
+    "Telling the supplier it is approved before the decision."
+   ],
+   "A fala final confirma que Robin entendeu o limite de sua responsabilidade."
+  ]
+ ],
+ "simulation": [
+  [
+   "What do I need to know before you leave?",
+   "The contact details are completed, but legal approval is pending.",
+   "Separe trabalho concluído de dependência pendente."
+  ],
+  [
+   "Where can I find the information?",
+   "Use the shared folder and checklist. Can you confirm you have access?",
+   "Indique a fonte e confirme acesso real."
+  ],
+  [
+   "What if approval does not arrive?",
+   "If it is still pending on Thursday morning, escalate the issue to Lee in Legal.",
+   "Defina condição, momento e pessoa de contato."
+  ],
+  [
+   "Can I tell the supplier it is approved now?",
+   "No. Wait for the decision, record it in the folder, and send a status update on Thursday.",
+   "Evite promessa indevida e confirme acompanhamento."
+  ]
+ ],
+ "writing": "Write a fictional handover note of 60–90 words. Include completed work, the pending dependency, where to find the checklist, the contact and escalation condition, and the next update. Do not include real client data.",
+ "model": "Hi Robin, thanks for taking over the supplier review due on Friday. The contact details are completed, but final approval is pending from Legal. The checklist and supporting documents are in the shared folder. Lee is the point of contact. If approval has not arrived by Thursday morning, please escalate the issue to Lee and record the decision in the folder. Send a status update on Thursday. I will be offline, so please do not promise approval before Legal confirms it.",
+ "rubric": [
+  "Separei itens concluídos e pendentes.",
+  "Indiquei checklist, fonte e pessoa de contato.",
+  "Defini condição de encaminhamento e atualização.",
+  "Evitei prometer uma aprovação ainda pendente."
+ ],
+ "gapGame": true,
+ "order": [
+  "The contact details are completed, but legal approval is pending.",
+  "Use the shared folder and checklist. Can you confirm you have access?",
+  "If it is still pending on Thursday morning, escalate the issue to Lee in Legal."
+ ],
+ "image": "assets/workplace-handover-across-teams.svg"
+});
