@@ -3,7 +3,7 @@
  const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  if(!Array.isArray(episodes)||!episodes.length||!model){root.textContent='Não foi possível preparar os episódios. Recarregue a página ou volte às aulas.';root.setAttribute('aria-busy','false');return;}
  let stored={};try{stored=JSON.parse(localStorage.getItem(KEY)||'{}');}catch{}
- let state=model.settings(stored,episodes),audio=null,generation=0,repeat=false;
+ let state=model.settings(stored,episodes),audio=null,generation=0,repeat=false,playRequest=0;
  const route=location.hash.slice(1).split('/');if(episodes.some(e=>e.id===route[0]))state={...state,chapter:state.episode===route[0]?state.chapter:0,episode:route[0],language:route[1]==='en'?'en':route[1]==='pt'?'pt':state.language};
  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state));}catch{/* Playback remains available without preference storage. */}};
  function stop(clear=false){generation++;if(audio){audio.onseeked=audio.onloadedmetadata=audio.ontimeupdate=audio.onerror=audio.onended=audio.onplay=audio.onpause=null;audio.pause();if(clear){audio.removeAttribute('src');audio.load();audio=null;}}}
@@ -18,15 +18,15 @@
   audio.onpause=()=>status(english?'Paused.':'Áudio pausado.');
   audio.onended=()=>{if(token!==generation)return;if(repeat){audio.currentTime=version.chapters[state.chapter].start;void audio.play().catch(()=>status('Pressione Reproduzir para continuar.'));return;}status(english?'Episode finished. Return to the lesson to practise.':'Episódio concluído. Volte à aula para praticar.');};
   audio.onerror=()=>status(english?'Audio could not load. Read the transcript or press Play to try again.':'Não foi possível carregar o áudio. Leia a transcrição ou pressione Reproduzir para tentar novamente.');
-  root.querySelector('#podcast-play').onclick=async()=>{if(!audio.paused){audio.pause();return;}try{if(audio.error){audio.load();pending=version.chapters[state.chapter].start;}await audio.play();}catch{status(english?'Playback did not start. Check the connection and try again.':'A reprodução não iniciou. Confira a conexão e tente novamente.');}};
-  root.querySelector('#podcast-stop').onclick=()=>{audio.pause();pending=version.chapters[state.chapter].start;if(audio.readyState>=1){audio.currentTime=pending;}status(english?'Stopped at the beginning of this chapter.':'Áudio parado no início deste capítulo.');};
+  root.querySelector('#podcast-play').onclick=async()=>{const intent=++playRequest;if(!audio.paused){audio.pause();return;}try{if(audio.error){audio.load();pending=version.chapters[state.chapter].start;}await audio.play();}catch{if(token!==generation||intent!==playRequest)return;status(english?'Playback did not start. Check the connection and try again.':'A reprodução não iniciou. Confira a conexão e tente novamente.');}};
+  root.querySelector('#podcast-stop').onclick=()=>{playRequest++;audio.pause();pending=version.chapters[state.chapter].start;if(audio.readyState>=1){audio.currentTime=pending;}status(english?'Stopped at the beginning of this chapter.':'Áudio parado no início deste capítulo.');};
   root.querySelector('#podcast-speed').onchange=event=>{state.speed=Number(event.target.value);audio.playbackRate=state.speed;save();};
   root.querySelector('#podcast-repeat').onchange=event=>{repeat=event.target.checked;};
   root.querySelector('#podcast-language').onchange=event=>{state.language=event.target.value;save();render(state.language==='en'?'Language changed. Press Play when ready.':'Idioma alterado. Pressione Reproduzir quando quiser.');};
   root.querySelector('#podcast-episode').onchange=event=>{state.episode=event.target.value;state.chapter=0;save();render();};
-  root.querySelectorAll('[data-chapter]').forEach(button=>button.onclick=()=>{audio.pause();state.chapter=Number(button.dataset.chapter);pending=version.chapters[state.chapter].start;if(audio.readyState>=1){audio.currentTime=pending;pending=null;}paintChapter();save();status(english?'Chapter selected. Press Play.':'Capítulo selecionado. Pressione Reproduzir.');});
+  root.querySelectorAll('[data-chapter]').forEach(button=>button.onclick=()=>{playRequest++;audio.pause();state.chapter=Number(button.dataset.chapter);pending=version.chapters[state.chapter].start;if(audio.readyState>=1){audio.currentTime=pending;pending=null;}paintChapter();save();status(english?'Chapter selected. Press Play.':'Capítulo selecionado. Pressione Reproduzir.');});
   paintChapter();status(message||(english?'Choose a chapter and press Play to load the audio.':'Escolha um capítulo e pressione Reproduzir para carregar o áudio.'));root.setAttribute('aria-busy','false');
  }
  // User-started native audio can continue in a background tab; leaving this page stops it.
- window.addEventListener('pagehide',()=>audio?.pause());render();
+ window.addEventListener('pagehide',()=>{playRequest++;audio?.pause();});render();
 })();
