@@ -29,4 +29,5 @@ run(['--test','scripts/business-lesson-model.test.cjs']);
 
 run(['--test','scripts/business-grammar.test.cjs']);
 run(['scripts/business-standard-check.cjs']);
+run(['scripts/business-reference-content-check.cjs']);
 console.log('All static QA checks passed.');
