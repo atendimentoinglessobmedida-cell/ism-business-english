@@ -1,6 +1,6 @@
 /* Shared learning sequence inspired by the ISM Teens lesson cycle. */
 (()=>{'use strict';
- const names=['Repertório','Situação','Ouvir','Entender','Praticar','Aplicar'];
+ const names=['Vocabulário','Situação','Ouvir','Linguagem','Praticar','Aplicar'];
  const hints=['Leia as expressões, ouça e tente lembrar sem tradução.','Identifique o interlocutor, o objetivo e o próximo passo.','Ouça antes de ler. Depois confira e repita.','Observe a intenção e o tom; explique por que a expressão funciona.','Responda, confira a explicação e tente novamente.','Produza uma resposta própria, revise e pratique em voz alta.'];
  const storage=()=>window.ISMStorage;
  const read=k=>storage()?.read(k)||{};
@@ -86,6 +86,15 @@
   if(root.querySelector('.business-flow'))return;
   const screen=root.querySelector('.lesson-screen');if(!screen)return;
   const toolbar=document.createElement('div');toolbar.className='business-flow flow-tools';translations(root,toolbar);screen.before(toolbar);
+  const original=[...root.querySelectorAll('.lesson-stage-nav button')],stages=['context','learn','listen','notice','practice','speak'],labels=['Situação','Vocabulário','Ouvir','Linguagem','Praticar','Aplicar'];
+  const active=original.find(button=>button.getAttribute('aria-current')==='step');
+  if(original.length===8&&active){
+   const current=stages.findIndex(stage=>active.classList.contains('stage-'+stage)),group=current<0?5:current;
+   root.classList.add('easy-core-layout');const nav=document.createElement('nav');nav.className='flow-core-steps';nav.setAttribute('aria-label','Etapas da lição');
+   stages.forEach((stage,i)=>{const source=original.find(button=>button.classList.contains('stage-'+stage));if(!source)return;const button=source.cloneNode(true);button.textContent=(i+1)+'. '+labels[i];button.setAttribute('aria-current',i===group?'step':'false');nav.append(button);});
+   const description=document.createElement('p');description.textContent='Uma seção por vez. Aplicar reúne a produção, a revisão e a conclusão da lição.';toolbar.prepend(description,nav);
+   if(group===5){const parts=document.createElement('nav');parts.className='lesson-substeps';parts.setAttribute('aria-label','Atividades de aplicação');for(const stage of ['speak','revise','master']){const source=original.find(button=>button.classList.contains('stage-'+stage));if(source)parts.append(source.cloneNode(true));}toolbar.append(parts);}
+  }
   if(screen.classList.contains('screen-speak'))planning(screen,location.hash.split('/').slice(0,2).join('/'));
  }
  function scan(root){if(root.id==='lessonBody')core(root);else if(root.id==='course-view')authored(root);else legacy(root);}
