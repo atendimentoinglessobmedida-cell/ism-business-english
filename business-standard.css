@@ -77,3 +77,12 @@ body[data-ism-page] .ism-editorial-card-copy>a{display:inline-flex;align-items:c
 body[data-ism-page] .practice-option:not(.primary-practice)>span{background:#edf4ff!important;color:#194f9e!important}
 .reference-new{margin:24px 0;padding:24px;border:1px solid #bdcfea;border-left:5px solid #f3c94b;border-radius:18px;background:#fff}.reference-new h2{margin:8px 0}.reference-support{margin-top:30px;padding:18px;border:1px solid #dce5ec;border-radius:14px;background:#f3f6fa}.reference-support summary{min-height:44px;color:#194f9e}.reference-support article{border-top:1px solid #dce5ec;padding-top:15px;margin-top:15px}.reference-support a{color:#194f9e;overflow-wrap:anywhere}.reference-support p{font-size:15px;line-height:1.6}
 @media(max-width:600px){.reference-new{padding:18px}.reference-new .actions a{width:100%}}
+
+/* Keep practice surfaces and their text in the same light palette. */
+body[data-ism-page="practice-more"]{--ui-surface:#fff;--ui-surface-soft:#edf4ff;--ui-text:#203445;--ui-muted:#536675;--ui-border:#dce5ec;--ui-accent:#205ec5}
+body[data-ism-page="practice-more"] .practice-item legend{color:#203445}
+body[data-ism-page="practice-more"] .feedback{background:#edf4ff;color:#203445;border-left-color:#205ec5}
+body[data-ism-page="practice-more"] .practice-nav a{color:#194f9e}
+body[data-ism-page="practice-more"] .chart-track{background:#dce5ec}
+body[data-ism-page="practice-more"] .chart-bar{background:#205ec5}
+body[data-ism-page="practice-more"] :is(input,textarea)::placeholder{color:#536675;opacity:1}
