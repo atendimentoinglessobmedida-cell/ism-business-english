@@ -86,3 +86,6 @@ body[data-ism-page="practice-more"] .practice-nav a{color:#194f9e}
 body[data-ism-page="practice-more"] .chart-track{background:#dce5ec}
 body[data-ism-page="practice-more"] .chart-bar{background:#205ec5}
 body[data-ism-page="practice-more"] :is(input,textarea)::placeholder{color:#536675;opacity:1}
+
+/* Coach explanations must remain readable on the light recommendation card. */
+body[data-ism-page] .ism-coach .coach-why{color:#203445!important}
