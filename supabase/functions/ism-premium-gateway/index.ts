@@ -24,6 +24,16 @@ Deno.serve(async req=>{
       const limits=await rest('rpc/ism_rate_limit_check',{p_key:fingerprint,p_limit:15,p_window_seconds:600});
       if(!Array.isArray(limits)||limits[0]?.allowed!==true)return json({ok:false,reason:'too_many_attempts'},429);
       const deny=async()=>{await rest('rpc/ism_rate_limit_fail',{p_key:fingerprint,p_window_seconds:600});return json({ok:false,reason:'access_denied'},403)};
+      if(typeof body.password==='string') {
+        if(email!=='atendimento.inglessobmedida@gmail.com'||body.password.length<8||body.password.length>256)return await deny();
+        const authResponse=await fetch(base+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:secret,'Content-Type':'application/json'},body:JSON.stringify({email,password:body.password})});
+        const identity=await authResponse.json();
+        if(!authResponse.ok||identity.user?.id!=='098054e9-39dd-40a7-9934-683ddad83e9e'||!identity.user?.email_confirmed_at)return await deny();
+        const row=await lookup('3fd92290-996a-4a1e-a3c3-baacc0a617d0');
+        let token;try{token=await issue(row,secret)}catch{return await deny()}
+        await rest('rpc/ism_rate_limit_clear',{p_key:fingerprint});
+        return json({ok:true,administrator:true,token,expiresAt:Date.now()+1800000,activeUntil:row.active_until});
+      }
       if(!email.includes('@')||email.length>254||code.replace(/[^A-Z0-9]/g,'').length<6||code.length>128)return await deny();
       const rows=await rest('student_access?select=id,email,status,active_until&or=(code_hash.eq.'+await hash(code)+',code_hash.eq.'+await hash(code.replace(/[^A-Z0-9]/g,''))+')');
       const row=rows[0];if(!row||String(row.email).trim().toLowerCase()!==email)return await deny();
