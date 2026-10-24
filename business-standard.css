@@ -89,3 +89,6 @@ body[data-ism-page="practice-more"] :is(input,textarea)::placeholder{color:#5366
 
 /* Coach explanations must remain readable on the light recommendation card. */
 body[data-ism-page] .ism-coach .coach-why{color:#203445!important}
+
+/* Classroom presentation preserves the shared Business palette. */
+body[data-ism-page=sala-de-aula] header .eyebrow{color:#b9edf1}body[data-ism-page=sala-de-aula] .panel{background:#fff}
