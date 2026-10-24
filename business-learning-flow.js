@@ -50,7 +50,7 @@
   const prev=button('← Etapa anterior',()=>select(stage-1,true)),next=button('Próxima etapa →',()=>select(stage+1,true));
   const allButton=button('Ver aula completa',()=>{all=!all;paint();});tools.append(allButton);translations(root,tools);footer.append(prev,next);
   function paint(){panels.forEach((panel,i)=>panel.hidden=!all&&i!==stage);navButtons.forEach((b,i)=>{b.setAttribute('aria-current',i===stage?'step':'false');b.classList.toggle('flow-current',i===stage);});label.textContent='Etapa '+(stage+1)+' de 6 · '+hints[stage];prev.disabled=stage===0;next.disabled=stage===5;allButton.textContent=all?'Voltar às etapas':'Ver aula completa';allButton.setAttribute('aria-pressed',String(all));}
-  function select(i,focus){if(i<0||i>5)return;touched=true;window.ISMAudio?.stop();stage=i;data=read(key(id));data.stage=stage;const ok=write(key(id),data);paint();if(!ok)label.textContent+=' A etapa não pôde ser salva.';if(focus){panels[stage].tabIndex=-1;panels[stage].focus({preventScroll:true});bar.scrollIntoView({block:'start'});}}
+  function select(i,focus){if(i<0||i>5)return;touched=true;window.ISMAudio?.stop();stage=i;data=read(key(id));data.stage=stage;const ok=write(key(id),data);paint();if(!ok)label.textContent+=' A etapa não pôde ser salva.';if(focus){panels[stage].tabIndex=-1;panels[stage].focus({preventScroll:true});requestAnimationFrame(()=>panels[stage].scrollIntoView({block:'start',behavior:'instant'}));}}
   // Move existing controls rather than recreate them: answers and handlers survive.
   root.append(bar,...panels,footer);paint();
   Promise.resolve(storage()?.dbGet?.(key(id))).then(back=>{if(!touched&&!Number.isInteger(data.stage)&&Number.isInteger(back?.stage)&&back.stage>=0&&back.stage<6){stage=back.stage;paint();}}).catch(()=>{});
