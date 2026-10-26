@@ -1,149 +1,18 @@
-name: ISM Staging CI
-
+name: ISM static recovery QA
 on:
-  push:
-    branches: [main]
   pull_request:
+  push:
+    branches: [feature/ism-comercial-pix-manual]
   workflow_dispatch:
-
+permissions:
+  contents: read
 jobs:
   static:
-    name: Static QA
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - name: Expand certified source bundle
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import base64, gzip, io, tarfile, zipfile
-          p=Path('.ci/ism-business-cert-source-v14.tar.gz')
-          data=p.read_bytes()
-          print('bundle bytes:', len(data), 'magic:', data[:4].hex())
-          # tolerate a base64-text transport layer if one is ever introduced
-          if not (data.startswith(b'\x1f\x8b') or data.startswith(b'PK')):
-              try:
-                  decoded=base64.b64decode(data, validate=True)
-                  if decoded.startswith((b'\x1f\x8b', b'PK')):
-                      data=decoded
-                      print('decoded base64 transport layer')
-              except Exception:
-                  pass
-          if data.startswith(b'PK'):
-              with zipfile.ZipFile(io.BytesIO(data)) as z:
-                  z.extractall('.')
-          elif data.startswith(b'\x1f\x8b'):
-              raw=gzip.decompress(data)
-              if raw.startswith(b'PK'):
-                  with zipfile.ZipFile(io.BytesIO(raw)) as z:
-                      z.extractall('.')
-              else:
-                  with tarfile.open(fileobj=io.BytesIO(data), mode='r:gz') as t:
-                      t.extractall('.')
-          else:
-              raise SystemExit('Unsupported source bundle format')
-          print('source bundle expanded')
-          PY
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - name: Verify source package is present
-        run: |
-          test -f package.json || { echo "Business English source package was not expanded"; exit 1; }
-      - name: Source-level release QA
-        run: npm run release:static-final
-      - name: Audio readiness
-        run: |
-          set +e
-          npm run audio:check
-          code=$?
-          if [ "$code" -eq 1 ]; then
-            echo "Audio structural QA failed."
-            exit 1
-          fi
-          if [ "$code" -eq 2 ]; then
-            echo "Audio production incomplete; staging may continue with browser fallback."
-            exit 0
-          fi
-
-  build:
-    name: Install, Typecheck & Build
-    needs: static
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
-      - uses: actions/checkout@v4
-      - name: Expand certified source bundle
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import base64, gzip, io, tarfile, zipfile
-          p=Path('.ci/ism-business-cert-source-v14.tar.gz')
-          data=p.read_bytes()
-          print('bundle bytes:', len(data), 'magic:', data[:4].hex())
-          if not (data.startswith(b'\x1f\x8b') or data.startswith(b'PK')):
-              try:
-                  decoded=base64.b64decode(data, validate=True)
-                  if decoded.startswith((b'\x1f\x8b', b'PK')):
-                      data=decoded
-                      print('decoded base64 transport layer')
-              except Exception:
-                  pass
-          if data.startswith(b'PK'):
-              with zipfile.ZipFile(io.BytesIO(data)) as z:
-                  z.extractall('.')
-          elif data.startswith(b'\x1f\x8b'):
-              raw=gzip.decompress(data)
-              if raw.startswith(b'PK'):
-                  with zipfile.ZipFile(io.BytesIO(raw)) as z:
-                      z.extractall('.')
-              else:
-                  with tarfile.open(fileobj=io.BytesIO(data), mode='r:gz') as t:
-                      t.extractall('.')
-          else:
-              raise SystemExit('Unsupported source bundle format')
-          print('source bundle expanded')
-          PY
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install dependencies and generate first lockfile
-        run: npm install --no-audit --no-fund
-      - name: Lockfile QA
-        run: npm run lockfile:qa
-      - name: Dependency freeze QA
-        run: npm run dependency:qa
-      - name: Script reference QA
-        run: npm run scripts:qa
-      - name: Repository bootstrap QA
-        run: npm run repo:qa
-      - name: Client boundary QA
-        run: npm run client-boundary:qa
-      - name: Prerender risk QA
-        run: npm run prerender:qa
-      - name: Supabase SSR compatibility QA
-        run: npm run supabase-ssr:qa
-      - name: Local module QA
-        run: npm run modules:qa
-      - name: TypeScript signal QA
-        run: npm run tsc:signal
-      - name: Prebuild QA
-        run: npm run prebuild:qa
-      - name: Next.js 16 compatibility QA
-        run: npm run next16:qa
-      - name: Full static release QA
-        run: npm run release:static-final
-      - name: Migration QA
-        run: npm run migration:check
-      - name: Dependency-aware typecheck
-        run: npm run typecheck
-      - name: Clean production build
-        run: npm run build:clean
-      - name: Upload generated lockfile
-        uses: actions/upload-artifact@v4
-        with:
-          name: ism-package-lock
-          path: package-lock.json
-          if-no-files-found: error
-          retention-days: 14
+          node-version: '22'
+      - run: node scripts/qa-static.mjs

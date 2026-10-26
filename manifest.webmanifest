@@ -1,0 +1,37 @@
+{
+  "name": "ISM Business English",
+  "short_name": "ISM Business English",
+  "description": "Treinamento de Business English orientado a objetivos profissionais, com jornadas rápidas e prática aplicada.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#062B3B",
+  "theme_color": "#062B3B",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "categories": [
+    "education",
+    "business"
+  ],
+  "icons": [
+    {
+      "src": "./assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./assets/app-icon-maskable.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "./"
+}

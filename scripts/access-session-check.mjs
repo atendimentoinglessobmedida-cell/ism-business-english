@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import { active, issue, verify } from '../supabase/functions/_shared/access-session.mjs';
+const now=Date.now(), secret='test-only-secret-01234567890123456789';
+const row={id:'test-student',status:'ACTIVE',active_until:new Date(now+60000).toISOString()};
+const token=await issue(row,secret,now), lookup=async()=>row;
+assert.equal((await verify(token,secret,lookup,now)).id,row.id);
+assert.equal(await verify(token,secret,lookup,now+60000),null);
+assert.equal(await verify(token,secret,async()=>({...row,status:'SUSPENDED'}),now),null);
+assert.equal(await verify(token,secret,async()=>null,now),null);
+assert.equal(await verify(token+'x',secret,lookup,now),null);
+assert.equal(await verify(token,secret+'x',lookup,now),null);
+assert.equal(await verify('bad.token',secret,lookup,now),null);
+assert.equal(active({...row,active_until:'invalid'},now),false);
+assert.equal(active({...row,status:'EXPIRED'},now),false);
+assert.equal(await verify(token,secret,async()=>{throw Error('DB offline')},now),null);
+console.log('Access session: signature, expiry boundary, suspension, deletion, tampering and fail-closed database checks passed.');

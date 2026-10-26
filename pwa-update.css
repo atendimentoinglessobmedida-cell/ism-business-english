@@ -1,0 +1,7 @@
+#app-update-notice{position:fixed;left:16px;right:16px;bottom:calc(86px + env(safe-area-inset-bottom));z-index:9000;max-width:540px;margin:0 auto;padding:16px;border:1px solid #4c8090;border-radius:16px;background:#062b3b;color:#fff;box-shadow:0 8px 32px #0006;font:14px/1.5 system-ui,sans-serif}
+#app-update-notice p{margin:0 0 12px;color:#fff}
+#app-update-notice div{display:flex;gap:10px;flex-wrap:wrap}
+#app-update-notice button{min-height:44px;padding:10px 16px;border:1px solid #74e5df;border-radius:10px;background:#74e5df;color:#062b3b;font:700 14px system-ui,sans-serif;cursor:pointer}
+#app-update-notice [data-later]{background:transparent;color:#fff}
+#app-update-notice button:focus-visible{outline:3px solid #ffcf83;outline-offset:3px}
+#app-update-notice button:disabled{opacity:.7;cursor:wait}

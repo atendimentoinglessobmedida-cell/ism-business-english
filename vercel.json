@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "node scripts/qa-static.mjs",
+  "outputDirectory": "dist",
+  "git": {
+    "deploymentEnabled": {
+      "feature/ism-comercial-pix-manual": false
+    }
+  }
+}

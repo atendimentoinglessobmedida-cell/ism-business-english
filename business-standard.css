@@ -1,0 +1,91 @@
+/* Final shared layer for all Business entry points, including legacy laboratories. */
+:root{color-scheme:light;--bg:#f3f6fa;--panel:#fff;--text:#203445;--muted:#536675;--line:#dce5ec;--accent:#205ec5;--cyan:#205ec5;--brand:#205ec5;--ink:#203445;--paper:#f3f6fa;--border:#dce5ec;--gold:#f3c94b;--ism-button-focus:#194f9e}
+body[data-ism-page]{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6;color:#203445;background:#f3f6fa;--brand:#205ec5;--accent:#205ec5}
+body[data-ism-page] :is(h1,h2,h3){color:#203445;line-height:1.25;overflow-wrap:anywhere}
+body[data-ism-page] h1{font-size:clamp(28px,3.6vw,42px)}
+body[data-ism-page] :is(.muted,.pt,.meaning,.note,.step-status,.studio-status,.counter){color:#536675}
+body[data-ism-page] :is(.ey,.eyebrow,.badge,.back,.text-link){color:#194f9e}
+body[data-ism-page] :is(button,input,textarea,select){font-family:inherit;font-size:inherit;line-height:1.5;max-width:100%;box-sizing:border-box}
+body[data-ism-page] :is(input:not([type=checkbox]):not([type=radio]),textarea,select){background:#fff!important;color:#203445!important;border:1px solid #9eb2c7!important;border-radius:10px;padding:12px;min-height:44px}
+body[data-ism-page] :is(input[type=checkbox],input[type=radio],progress){accent-color:#205ec5}
+body[data-ism-page] button{min-height:44px;border-radius:12px;overflow-wrap:anywhere}
+body[data-ism-page] :is(.btn,.button,.course-link.primary,button.primary){background:#205ec5!important;border:1px solid #205ec5!important;color:#fff!important;text-decoration:none;border-radius:12px;min-height:48px}
+body[data-ism-page] :is(.btn.soft,.btn.secondary,.button.secondary,.audio,.mini,.ghost){background:#edf4ff!important;color:#194f9e!important;border:1px solid #bdcfea!important}
+body[data-ism-page] :is(.tabs button,.modes button,.tab,.choice,.practice-option){background:#fff;color:#203445;border-color:#bdcfea}
+body[data-ism-page] :is(.tabs button[aria-pressed=true],.modes button[aria-pressed=true],.tab.on,.tab.active,.bottom .nav.on){background:#205ec5!important;color:#fff!important;border-color:#205ec5!important;box-shadow:inset 0 -3px #f3c94b}
+body[data-ism-page] :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #194f9e!important;outline-offset:3px;box-shadow:0 0 0 5px #fff!important}
+body[data-ism-page] :is(.option,.criterion):has(input:checked){background:#edf4ff;border-color:#205ec5}
+body[data-ism-page] :is(.model,.studio-example,.ev-feedback,.ism-followups,.listen-card,.idea-card,.idea-lesson section,.mbe-summary){background:#fff!important;color:#203445!important;border:1px solid #dce5ec;border-radius:16px;padding:20px}
+body[data-ism-page] :is(.model,.studio-example,.ev-feedback,.ism-followups){border-left:4px solid #205ec5}
+body[data-ism-page] :is(.ev-feedback,.ism-followups,.mbe-summary) :is(h3,p,li,small,.ism-followups-meta){color:#203445!important}
+body[data-ism-page] .mbe-metrics button{background:#edf4ff;color:#194f9e;border-color:#bdcfea}
+body[data-ism-page] .mbe-metrics b{color:#194f9e}
+body[data-ism-page] :is(.studio-grid>div,.bubble,.turn){background:#edf4ff;color:#203445;border-color:#bdcfea}
+body[data-ism-page] :is(.studio-grid strong,.studio-status){color:#194f9e}
+body[data-ism-page] :is(.bubble.alternate,.turn:nth-child(even)){background:#fff8de;border-color:#d4ad2e}
+body[data-ism-page] .wrap :is(header,section,aside){background:#fff!important;color:#203445;border-color:#dce5ec}
+body[data-ism-page] .wrap header{border-top:5px solid #205ec5}
+body[data-ism-page] .wrap aside{border-top:4px solid #f3c94b}
+body[data-ism-page] .wrap :is(header,section,aside) p{color:#536675}
+body[data-ism-page] .wrap .feedback{background:#edf4ff;color:#203445;border-left-color:#205ec5}
+body[data-ism-page=planos] :is(.availability,.summary,.closing,.package,.periods label){background:#fff;color:#203445;border-color:#dce5ec}
+body[data-ism-page=planos] .summary{border-top:4px solid #f3c94b}
+body[data-ism-page=planos] .periods label:has(input:checked){background:#edf4ff;border-color:#205ec5}
+body[data-ism-page=planos] :is(.package.featured,.package.selected){border-color:#205ec5}
+body[data-ism-page=student-start]>header,body[data-ism-page=conversation-lab]>header{background:#fff;color:#203445;border-top:5px solid #205ec5;border-bottom:1px solid #dce5ec}
+body[data-ism-page=student-start] header a{color:#194f9e}
+body[data-ism-page=student-start] nav a{background:#205ec5;color:#fff}
+body[data-ism-page=conversation-lab] .modes button[aria-pressed=true]{background:#205ec5;color:#fff}
+body[data-ism-page] .lesson-outline{max-height:80vh;overflow:auto;scrollbar-gutter:stable}
+body[data-ism-page] .business-standard-skip{position:absolute;top:-100px;left:16px;z-index:3000;background:#fff;color:#194f9e;padding:12px 18px;border:2px solid #205ec5;border-radius:10px}
+body[data-ism-page] .business-standard-skip:focus{top:12px}
+body[data-ism-page] :is(.top,.site-header,.course-top){position:static!important;border-top:5px solid #205ec5}
+body[data-ism-page] :is(.audio-settings,.business-flow,.panel,.intro){border-color:#dce5ec}
+body[data-ism-page] .business-flow{background:#fff;color:#203445}
+body[data-ism-page] footer{color:#536675}
+@media(max-width:600px){body[data-ism-page]{font-size:16px}body[data-ism-page] :is(.wrap,.listenlab,.ideas){padding:20px 14px}body[data-ism-page] :is(.model,.studio-example,.ev-feedback,.ism-followups){padding:16px}body[data-ism-page] :is(.tabs,.modes){gap:8px}body[data-ism-page] .modes button{flex:1 1 42%}}
+body[data-ism-page] #ism-review-page{--review-brand:#205ec5!important;background:#f3f6fa;color:#203445}
+body[data-ism-page] .review-head{border-top:5px solid #205ec5;padding-top:18px}
+body[data-ism-page] .review-card{border-color:#dce5ec}
+body[data-ism-page] .review-inner .review-primary{background:#205ec5;color:#fff;border-color:#205ec5}
+body[data-ism-page] .review-score{border-left:4px solid #f3c94b;padding-left:12px}
+/* Contrast fixes found in the cross-page audit. */
+body[data-ism-page]{--m:#536675;--bd:#dce5ec}
+body[data-ism-page] #app-update-notice p,body[data-ism-page] #ismAudioHelp{color:#536675!important}
+body[data-ism-page] .practice-option.primary-practice{background:#205ec5!important;border-color:#205ec5!important;color:#fff!important}
+body[data-ism-page] .practice-option.primary-practice :is(span,small,b,strong){color:#fff!important}
+body[data-ism-page] .rb-head p{color:#536675!important}
+body[data-ism-page=planos] .package li{color:#203445}
+body[data-ism-page=planos] .recommend-badge{background:#fff1b8;color:#493900;border-color:#d4ad2e}
+body[data-ism-page] .home-photo-copy>span,body[data-ism-page] .ev-mission-label{color:#194f9e!important}
+body[data-ism-page] .ev-mission-links a{background:#edf4ff!important;color:#194f9e!important;border-color:#bdcfea!important}
+body[data-ism-page] .ism-coach{background:#fff!important;color:#203445!important;border:1px solid #dce5ec;box-shadow:none}
+body[data-ism-page] .ism-coach :is(p,small,span,b,strong){color:#203445!important}
+body[data-ism-page] .ism-coach .coach-goal{background:#edf4ff;color:#194f9e;border-color:#bdcfea}
+body[data-ism-page] .ism-coach .coach-goal.on{background:#205ec5;color:#fff!important;border-color:#205ec5}
+body[data-ism-page] .ism-coach :is(.coach-time,.coach-why,.coach-skills>div){background:#edf4ff;border-color:#bdcfea}
+body[data-ism-page] .home-action-icon{background:#fff1b8!important;color:#493900!important}
+body[data-ism-page] .stars{color:#685000;background:#fff1b8}
+body[data-ism-page] .practice-option:not(.primary-practice) :is(span,small,b,strong){color:#203445!important}
+body[data-ism-page] .premiumTrack .badge{color:#194f9e!important;background:#edf4ff!important;border-color:#bdcfea!important}
+body[data-ism-page=photo-credits] p{color:#536675}
+body[data-ism-page] .mod{background:#fff!important;border:1px solid #dce5ec!important;color:#203445!important;border-radius:12px}
+body[data-ism-page] .mod b{color:#194f9e!important}
+body[data-ism-page] .mod small{color:#536675!important}
+body[data-ism-page] .visual-learning-heading p{color:#536675!important}
+body[data-ism-page] .ism-editorial-card-copy>a{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border-radius:12px;background:#205ec5!important;color:#fff!important;text-decoration:none}
+body[data-ism-page] .practice-option:not(.primary-practice)>span{background:#edf4ff!important;color:#194f9e!important}
+.reference-new{margin:24px 0;padding:24px;border:1px solid #bdcfea;border-left:5px solid #f3c94b;border-radius:18px;background:#fff}.reference-new h2{margin:8px 0}.reference-support{margin-top:30px;padding:18px;border:1px solid #dce5ec;border-radius:14px;background:#f3f6fa}.reference-support summary{min-height:44px;color:#194f9e}.reference-support article{border-top:1px solid #dce5ec;padding-top:15px;margin-top:15px}.reference-support a{color:#194f9e;overflow-wrap:anywhere}.reference-support p{font-size:15px;line-height:1.6}
+@media(max-width:600px){.reference-new{padding:18px}.reference-new .actions a{width:100%}}
+
+/* Keep practice surfaces and their text in the same light palette. */
+body[data-ism-page="practice-more"]{--ui-surface:#fff;--ui-surface-soft:#edf4ff;--ui-text:#203445;--ui-muted:#536675;--ui-border:#dce5ec;--ui-accent:#205ec5}
+body[data-ism-page="practice-more"] .practice-item legend{color:#203445}
+body[data-ism-page="practice-more"] .feedback{background:#edf4ff;color:#203445;border-left-color:#205ec5}
+body[data-ism-page="practice-more"] .practice-nav a{color:#194f9e}
+body[data-ism-page="practice-more"] .chart-track{background:#dce5ec}
+body[data-ism-page="practice-more"] .chart-bar{background:#205ec5}
+body[data-ism-page="practice-more"] :is(input,textarea)::placeholder{color:#536675;opacity:1}
+
+/* Coach explanations must remain readable on the light recommendation card. */
+body[data-ism-page] .ism-coach .coach-why{color:#203445!important}
