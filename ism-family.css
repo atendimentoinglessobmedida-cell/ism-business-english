@@ -1,0 +1,66 @@
+/* ISM family: the Young/Easy reading scale and card system, in Business colours. */
+:root{color-scheme:light;--n:#103b48;--d:#092c38;--t:#087b7d;--s:#e6f4f2;--b:#eef4f6;--x:#163542;--m:#526b78;--bd:#d4e2e6;--gold:#e8b84c;--bg:#eef4f6;--panel:#fff;--text:#163542;--ink:#163542;--muted:#526b78;--line:#d4e2e6;--accent:#087b7d;--surface:#fff;--surface-soft:#f3f8f9;--surface-text:#163542;--surface-muted:#526b78;--surface-border:#d4e2e6;--ev-navy:#103b48;--ev-coral:#e8b84c;--ev-teal:#087b7d;--ev-gold:#e8b84c}
+html{background:#eef4f6}
+body{--surface:#fff!important;--surface-soft:#f3f8f9!important;--surface-text:#163542!important;--surface-muted:#526b78!important;--surface-border:#d4e2e6!important;--ds-accent:#087b7d!important;--ds-accent-strong:#075f64!important;background:#eef4f6!important;color:#163542!important;font-family:system-ui,-apple-system,"Segoe UI",sans-serif!important;line-height:1.6}
+body .app{max-width:1360px;background:#eef4f6!important;box-shadow:none!important}
+body .main{padding:28px 24px 100px}
+body :is(h1,h2,h3,h4,legend){color:#163542}
+body :is(.card,.phase,.tool,.premiumTrack,.moduleBtn,.lessonBtn,.lessonRow,.step,.question,.model,.mode,.phrase,.vocabulary>div,.intent-step,.intent-complete,.ism-coach,.cta-footer){background:#fff!important;color:#163542!important;border:1px solid #d4e2e6!important;border-radius:16px;box-shadow:0 3px 12px #16354206}
+body :is(.muted,.pt,.status-note,.stage-status,.step-status,.teacher,.description){color:#526b78!important}
+body :is(.en,.tool>b,.lessonRow b,.lessonBtn b,.moduleBtn b,.stage-status b){color:#163542!important}
+body :is(.ey,.eyebrow,.intent-kicker){color:#08676b;opacity:1}
+body .top{position:static!important;background:#103b48!important;color:#fff!important;border:0;border-radius:0;padding:22px 24px;backdrop-filter:none}
+body .top :is(b,small,a,.brand){color:#fff!important}
+body .top .header-premium{color:#f6d17c!important}
+body .top .header-portrait{border-radius:12px;background:#092c38}
+body .stat{background:transparent!important;border-color:#ffffff35!important;box-shadow:none}
+body .stat b{color:#fff!important}
+body .stat small{color:#d7e9ee!important}
+body .progress-insight{background:#fff!important;color:#163542!important;border-color:#d4e2e6}
+body .progress-insight :is(b,small,p){color:#163542!important}
+body .utility-nav{background:#103b48!important;border:0;max-width:1360px}
+body nav.utility-nav>a{background:#1c4c59!important;border:1px solid #49707a!important;color:#fff!important;border-radius:10px;min-height:60px}
+body nav.utility-nav>a :is(span,i){color:inherit!important}
+body :is(.btn,.mini,.audio,.primary,.button){border-radius:10px!important;min-height:46px;font-family:inherit;font-size:15px;font-weight:700;letter-spacing:0;text-transform:none}
+body :is(.btn,.btn.gold,.primary,.button){background:#087b7d!important;color:#fff!important;border:1px solid #087b7d!important}
+body :is(.btn.soft,.secondary,.audio,.mini){background:#e6f4f2!important;color:#075f64!important;border:1px solid #b5d8d6!important}
+body :is(.btn,.mini,.audio,.primary,.secondary):hover:not(:disabled){filter:brightness(.96)}
+body :is(.tab,.mode button,.option,.choice){background:#fff;color:#163542;border:1px solid #c5d9df;border-radius:10px;min-height:44px}
+body :is(.tab.on,.tab.active,.mode button.active,.option.selected){background:#e6f4f2;color:#075f64;border-color:#087b7d}
+body :is(input:not([type=checkbox]):not([type=radio]),select,textarea,.search,input.builder){background:#fff!important;color:#163542!important;border:1px solid #b9ced6!important;border-radius:10px}
+body :is(input,textarea)::placeholder{color:#657c87;opacity:1}
+body :is(details,.audio-settings,.audio-controls){background:#f3f8f9;color:#163542;border-color:#d4e2e6;border-radius:12px}
+body summary{color:#163542}
+body :is(.audio-settings summary,.audio-status,.title>span,.cta-footer-copy small,.skills-note,.skill-card small,.mod small){color:#526b78!important}
+body .skill-card strong{color:#163542!important}
+body .journey-next{background:#103b48;color:#fff;border-radius:16px}
+body .journey-next :is(.ey,strong,small){color:#fff!important}
+body :is(.badge,.chip,.pill,.stage,.tag){background:#e6f4f2;color:#075f64;border-color:#c4dfdf;border-radius:8px}
+body :is(.hero,.premium,.ev-mission,.home-photo-cover,.brand-hero){background:#103b48!important;color:#fff!important;border-color:#103b48!important;border-radius:20px}
+body :is(.hero,.premium,.ev-mission,.home-photo-cover,.brand-hero) :is(h1,h2,h3,p,.muted,.ey,.eyebrow,.author-signature){color:#fff!important}
+body :is(.hero,.premium,.ev-mission,.home-photo-cover,.brand-hero) .btn{background:#e8b84c!important;color:#17313b!important;border-color:#e8b84c!important}
+body .intent-welcome,body .intent-focus{padding:28px;background:#fff;border:1px solid #d4e2e6;border-radius:20px}
+body :is(.intent-welcome,.intent-focus,.intent-path-head) h1{font-size:clamp(26px,3.5vw,38px);line-height:1.2;letter-spacing:-.02em}
+body :is(.intent-welcome,.intent-focus,.intent-path-head)>p{color:#526b78;opacity:1}
+body .intent-path-head{background:#e6f4f2;border-color:#c4dfdf}
+body .intent-card{background:#fff;color:#163542;border:1px solid #d4e2e6;border-radius:16px}
+body .intent-card:hover{border-color:#087b7d}
+body .intent-link{color:#075f64;opacity:1;text-decoration:none;font-weight:700;min-height:44px;border:1px solid #b5d8d6;border-radius:10px;background:#e6f4f2;margin:12px 0 0 8px}
+body .intent-progress span{background:#dce9ec}body .intent-progress i{background:#087b7d}
+body .intent-step{opacity:1}body .intent-step.active{border-color:#087b7d!important;box-shadow:0 0 0 1px #087b7d}
+body .family-feature{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:24px;align-items:stretch;margin-bottom:24px}
+body .family-feature>section{margin:0;min-width:0}
+body .family-feature>img{display:block;width:100%;height:100%;min-height:240px;max-height:420px;object-fit:cover;border-radius:20px}
+body .summary div{background:#fff;border:1px solid #d4e2e6;border-radius:14px;color:#163542}
+body .summary b{color:#087b7d}
+body .bottom{background:#fff!important;border-color:#d4e2e6!important;box-shadow:0 -3px 16px #16354208}
+body .bottom .nav{background:transparent!important;color:#526b78!important;border-radius:10px}
+body .bottom .nav.on{background:#e6f4f2!important;color:#075f64!important}
+body .brand-footer{color:#526b78;border-color:#d4e2e6}
+body .brand-footer small{color:#526b78}
+body a:not(.btn):not(.button):not(.primary):not(.secondary):not(.header-premium){color:#075f64}
+body .top a,body .utility-nav a{color:#fff!important}
+body :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #b27b16!important;outline-offset:3px!important}
+@media(min-width:800px){body #home.on{display:block}body .family-feature .intent-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:799px){body .main{padding:20px 16px 100px}body .top{padding:20px 16px}body .family-feature{grid-template-columns:1fr;gap:16px}body .family-feature>img{grid-row:1;height:auto;min-height:0;max-height:none;aspect-ratio:16/9}body .intent-welcome,body .intent-focus{padding:22px}body .intent-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){body .intent-card{transform:none!important}}

@@ -1,0 +1,9 @@
+# Prompt executado — fotografias reais gratuitas
+
+Substitua as quatro ilustrações de cenários do ISM Business English por fotografias de pessoas reais, gratuitas para uso comercial. Pesquise em bancos com licença pública clara, priorizando Pexels; Unsplash é alternativa, excluindo conteúdo pago/Unsplash+. Não gere pessoas artificiais. Selecione reuniões colaborativas, apresentações, negociação de propostas e conversas com clientes, com adultos, expressões naturais e ambientes profissionais acolhedores. Evite marcas identificáveis em destaque, marcas-d'água e cenas sensíveis. Não apresente modelos como alunos, professores ou pessoas que recomendam o produto.
+
+Verifique a página individual, fotógrafo e licença; registre origem, data e arquivo. Importe as imagens para assets locais, sem dependência de hotlink ou rastreamento de terceiros no app. Preserve a fotografia e identidade do professor. Mantenha a paleta azul-marinho/turquesa e rótulos em HTML abaixo das fotos. Use recortes responsivos que preservem os rostos, carregamento tardio, dimensões reservadas e navegação por teclado. Disponibilize créditos acessíveis.
+
+Aplique as fotos à Home, às figuras contextuais de lições/Business Mode e às sete miniaturas Premium. Preserve rotas, conteúdo, progresso e controle de acesso. Atualize o cache PWA porque os recursos offline mudaram. Execute QA estático/build, testes visuais em 320/390/768/1280 px, catálogo Premium e regressão PWA offline. Inspecione os recortes. Registre limites de validação e mantenha a proposta sem merge até concluir os critérios de publicação existentes.
+
+Critério de licença: permissão comercial gratuita do banco, sem sugerir endosso e sem revender as fotos isoladamente. Não declarar garantia jurídica absoluta ou autorizações individuais de modelo que não foram verificadas.

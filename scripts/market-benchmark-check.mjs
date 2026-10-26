@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+const read=f=>fs.readFileSync(f,'utf8');let fail=false;
+const check=(ok,msg)=>{console.log(`${ok?'PASS':'FAIL'}: ${msg}`);if(!ok)fail=true};
+const speaking=read('speaking-experience.js'),real=read('real-business.js'),css=read('real-business.css'),coach=read('adaptive-coach.js'),review=read('learner-features.js'),mine=read('my-business-english.js');
+check(/Orientação para ação/.test(speaking),'Speaking diagnostic includes professional action orientation');
+check(/Próxima melhoria/.test(speaking),'Speaking ends with a prioritized next improvement');
+check(/não inventa uma nota acústica/.test(speaking),'Speaking does not fabricate acoustic pronunciation scoring');
+check(/TENTAR NOVAMENTE/.test(speaking),'Speaking retains retry loop');
+check(/while\(keys\.length>40\)/.test(speaking),'Speaking evidence is bounded to protect local storage');
+for(const need of ['Reunião em 15 min','Apresentar resultados','Discordar com diplomacia','Responder pergunta difícil','Negociar um prazo','Clarificar um problema'])check(real.includes(need),`Need-it-now flow exists: ${need}`);
+check(/Ouça → entenda → perceba → reaja → fale/.test(real),'Authentic listening ladder is explicit');
+check(/Q&A/.test(real)&&/PROBLEM SOLVING/.test(real),'Professional scenario coverage expanded');
+check(/rb-needs/.test(css),'Need-it-now selector has responsive styling');
+check(/coach-why/.test(coach),'Coach keeps explainable recommendation layer');
+check(/SMART REVIEW 2\.0/.test(review)&&/reviewReason/.test(review),'Smart Review keeps evidence/reason contract');
+check(/speakingEvidence/.test(mine)&&/reviewHistory/.test(mine),'My Business English retains learning evidence portfolio inputs');
+if(fail)process.exit(1);console.log('\nMarket benchmark adaptation contracts ok');

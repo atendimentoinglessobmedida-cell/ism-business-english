@@ -1,51 +1,16 @@
-name: ISM Dependency Bootstrap
-
+name: ISM Dependency Bootstrap (read only)
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - package.json
-      - .npmrc
-      - .github/workflows/dependency-bootstrap.yml
-
 permissions:
-  contents: write
-
+  contents: read
 jobs:
   install:
-    name: Install frozen dependencies
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-      - name: Show toolchain
-        run: |
-          node --version
-          npm --version
-      - name: Install dependencies and generate lockfile
-        run: npm install --no-audit --no-fund
-      - name: Verify top-level dependency tree
-        run: npm ls --depth=0
-      - name: Verify lockfile exists
-        run: test -f package-lock.json
-      - name: Upload generated lockfile
-        uses: actions/upload-artifact@v4
-        with:
-          name: ism-package-lock
-          path: package-lock.json
-          if-no-files-found: error
-          retention-days: 14
-      - name: Commit generated lockfile
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package-lock.json
-          if git diff --cached --quiet; then
-            echo "package-lock.json already matches the frozen dependency set"
-          else
-            git commit -m "Lock Business English dependencies"
-            git push origin HEAD:main
-          fi
+          node-version: '22'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm ls --depth=0

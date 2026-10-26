@@ -1,0 +1,5 @@
+/* Lesson stage controls remain readable and wrap at narrow widths. */
+#lessonBody .stage{font:700 14px/1.4 system-ui;min-height:44px;padding:10px 13px;margin:3px;cursor:pointer;white-space:normal}
+#lessonBody>.card{scroll-margin-top:100px}
+#lessonBody .stage:focus-visible{outline:3px solid #22d5d5;outline-offset:3px}
+@media(max-width:480px){#lessonBody .stage{font-size:13px;padding:9px 11px}#lessonBody>.card{scroll-margin-top:110px}}
