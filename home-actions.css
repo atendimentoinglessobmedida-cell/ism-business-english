@@ -1,0 +1,5 @@
+/* Supplementary actions use the same touch targets as the primary course actions. */
+body[data-ism-page=index] .course-top a[data-debate-entry]{display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px 16px;border:1px solid #cbd9eb;border-radius:12px;background:#e8f0ff;color:#194f9e;font-weight:750;line-height:1.4;text-align:center;text-decoration:none}
+body[data-ism-page=index] .course-top a[data-debate-entry]:hover{background:#d9e7ff}
+body[data-ism-page=index] .bottom > a{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 14px;border:1px solid #cbd9eb;border-radius:12px;background:#e8f0ff;color:#194f9e;font-weight:700;line-height:1.4;text-align:center;text-decoration:none}
+@media(max-width:680px){body[data-ism-page=index] .bottom{display:flex;flex-wrap:wrap;gap:6px}body[data-ism-page=index] .bottom > button{flex:1 1 56px;min-width:0;padding-inline:5px}body[data-ism-page=index] .bottom > a{flex:1 1 100%;width:100%}body[data-ism-page=index] .study-card .btn{width:100%;min-height:48px}}
