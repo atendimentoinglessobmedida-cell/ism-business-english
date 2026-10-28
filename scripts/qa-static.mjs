@@ -32,4 +32,5 @@ run(['scripts/business-standard-check.cjs']);
 run(['scripts/business-reference-content-check.cjs']);
 run(['--test','scripts/business-podcast.test.cjs']);
 run(['--test','scripts/podcast-runtime.test.cjs']);
+run(['--test','scripts/debate.test.cjs']);
 console.log('All static QA checks passed.');
