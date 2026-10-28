@@ -46,7 +46,7 @@ function renderPath(p){let panel=document.getElementById('intentpath');if(!panel
 document.addEventListener('click',e=>{const b=e.target.closest('[data-study],[data-open],[data-change],[data-home],[data-action],[data-done],[data-resume]');if(!b)return;
  if(b.dataset.study){window.setNav?.(b.dataset.study);window.show?.(b.dataset.study);if(b.dataset.study==='toolkit')window.renderToolkit?.();document.querySelector('.panel.on')?.scrollIntoView({block:'start'});return;}
  if(b.dataset.resume!==undefined){window.continueLearning?.();return}if(b.dataset.open){openPath(b.dataset.open);return}if(b.dataset.change!==undefined){state.path='';save();document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));document.getElementById('home')?.classList.add('on');window.setNav?.('home');renderHome();return}
- if(b.dataset.home!==undefined){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));document.getElementById('home')?.classList.add('on');window.setNav?.('home');renderHome();return}
+ if(b.dataset.home!==undefined){window.setNav?.('home');window.show?.('home');renderHome();return}
  const p=currentPath();if(!p)return;if(b.dataset.done!==undefined){const i=+b.dataset.done;state.done[p.id]=[...new Set([...(state.done[p.id]||[]),i])];save();renderPath(p);return}
  if(b.dataset.action){go(b.dataset.action)}
 });
