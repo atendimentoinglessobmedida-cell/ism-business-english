@@ -32,12 +32,12 @@ function createDialoguePlayer(options) {
     });
     lastSettings=settings;if(!last.length)return;
     publish('loading');
-    const available=(await options.prepare()).filter(voice=>/^en(?:[-_]|$)/i.test(voice.lang));
+    const available=(await options.prepare()).filter(voice=>/^en-US$/i.test(voice.lang));
     if(token!==generation)return;
-    const a=available.find(voice=>voice.voiceURI===options.voiceA?.())||available.find(voice=>/^en-US$/i.test(voice.lang))||available[0];
+    const a=available.find(voice=>voice.voiceURI===options.voiceA?.())||available.find(voice=>voice.localService===false)||available[0];
     const b=available.find(voice=>voice.voiceURI===options.voiceB?.()&&voice!==a)||available.find(voice=>voice!==a)||a;
-    const requested=Number(settings.rate??options.rate?.()??.85);
-    const rate=Number.isFinite(requested)?Math.min(1.15,Math.max(.6,requested)):.85;
+    const requested=Number(settings.rate??options.rate?.()??1);
+    const rate=Number.isFinite(requested)?Math.min(1.1,Math.max(.9,requested)):1;
     const note=a===b?'Este aparelho oferece uma única voz em inglês; os personagens usam variações leves de ritmo e tom.':'Duas vozes em inglês, fixas por personagem.';
     let index=Number.isInteger(settings.from)?settings.from:0;
     const end=settings.single?index+1:last.length;
@@ -55,8 +55,8 @@ function createDialoguePlayer(options) {
         const voice=line.voiceSlot===1?b:a;
         if(!voice||!options.synthesis||!options.makeUtterance){publish('error',index,'Nenhuma voz em inglês disponível. Use a transcrição ou ative inglês no aparelho.');return;}
         const u=options.makeUtterance(line.text);utterance=u;
-        u.voice=voice;u.lang=voice.lang;u.rate=rate*(line.voiceSlot===1?.98:1);
-        u.pitch=(line.voiceSlot===1?1.06:.97)+(line.text.endsWith('?')?.025:0);u.volume=1;
+        u.voice=voice;u.lang=voice.lang;u.rate=rate;
+        u.pitch=1;u.volume=1;
         timer=setTimeout(()=>{if(token===generation){stop(true);publish('error',index,'A voz não iniciou. Confira o aparelho e tente novamente.');}},12000);
         u.onstart=()=>{if(token!==generation)return;clearTimeout(timer);publish('playing',index,note);};
         u.onend=complete;
@@ -86,10 +86,10 @@ function createDialoguePlayer(options) {
 
  const synth=window.speechSynthesis;
  const supported=!!synth&&typeof window.SpeechSynthesisUtterance==='function';
- let dialogue=null;let voices=[],selected='',current=null,run=0,timer=null,last=null;const playback={text:'',rate:.95,started:0};
+ let dialogue=null;let voices=[],selected='',current=null,run=0,timer=null,last=null;const playback={text:'',rate:1,started:0};
  try{selected=JSON.parse(localStorage.getItem('ismbe:audio:v1')||'{}').voice||'';}catch{}
  const panel=document.createElement('details');panel.className='audio-settings learner-support-setting';
- panel.innerHTML='<summary>Áudio · vozes, diálogo e teste</summary><div class="audio-controls"><label for="ismVoice">Voz em inglês</label><select id="ismVoice" aria-describedby="ismAudioHelp"></select><label for="ismVoiceB">Segunda voz do diálogo</label><select id="ismVoiceB"></select><label for="ismDialogueRate">Velocidade dos diálogos</label><select id="ismDialogueRate"><option value=".7">Lento</option><option value=".95" selected>Normal</option><option value="1">Original</option></select><div class="audio-buttons"><button type="button" id="ismTest" class="btn soft">TESTAR ÁUDIO</button><button type="button" id="ismRepeat" class="btn soft" disabled>REPETIR</button><button type="button" id="ismStop" class="btn soft" disabled>PARAR</button></div><p id="ismAudioHelp">No Android, use uma voz em inglês do aparelho. O áudio começa ao tocar em Ouvir. Se necessário, ative ou instale inglês nas configurações de texto para fala do Android.</p></div>';
+ panel.innerHTML='<summary>Áudio · vozes, diálogo e teste</summary><div class="audio-controls"><label for="ismVoice">Voz em inglês</label><select id="ismVoice" aria-describedby="ismAudioHelp"></select><label for="ismVoiceB">Segunda voz do diálogo</label><select id="ismVoiceB"></select><label for="ismDialogueRate">Velocidade dos diálogos</label><select id="ismDialogueRate"><option value=".9">Um pouco mais lento</option><option value="1" selected>Normal americano</option><option value="1.1">Um pouco mais rápido</option></select><div class="audio-buttons"><button type="button" id="ismTest" class="btn soft">TESTAR ÁUDIO</button><button type="button" id="ismRepeat" class="btn soft" disabled>REPETIR</button><button type="button" id="ismStop" class="btn soft" disabled>PARAR</button></div><p id="ismAudioHelp">No Android, use uma voz em inglês do aparelho. O áudio começa ao tocar em Ouvir. Se necessário, ative ou instale inglês nas configurações de texto para fala do Android.</p></div>';
  const status=document.createElement('p');status.id='ismAudioStatus';status.className='audio-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');
  const main=document.querySelector('main');main.prepend(status,panel);
  const select=panel.querySelector('select'),stopButton=panel.querySelector('#ismStop'),repeat=panel.querySelector('#ismRepeat');
