@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISM Business English | Advanced Skills Premium</title>
+<style>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#15354a;background:#f4f7fa}
+*{box-sizing:border-box}body{margin:0}header{background:#123e5a;color:white;padding:24px 18px}
+main{max-width:900px;margin:auto;padding:22px 16px}a{color:inherit}header a{color:#d9efff}
+.card{background:white;border:1px solid #dce6ec;border-radius:16px;padding:22px;margin:16px 0}
+h1{margin:12px 0;font-size:1.8rem}h2{font-size:1.22rem;margin:8px 0}
+.pill{display:inline-block;background:#e7eff8;color:#174e78;border-radius:999px;padding:5px 10px;font-weight:700;font-size:.8rem}
+.muted{color:#53697b}ul{padding-left:20px;line-height:1.6}
+button{font:inherit;padding:12px 16px;border-radius:10px;border:0;background:#17658d;color:white;min-height:44px;cursor:pointer}
+button:disabled{background:#8095a2;cursor:not-allowed}
+#status{padding:12px;border-left:3px solid #af8242;background:#fff8e9}
+</style></head><body>
+<header><a href="../index.html">← Voltar ao ISM Business English</a><h1>Advanced Skills <span class="pill">Premium</span></h1><p>Listening, reading, speaking e writing para comunicação profissional avançada.</p></header>
+<main><p id="status" role="status">Prévia do catálogo: atividades restritas. O acesso Premium deve ser validado pelo servidor.</p>
+<div id="lessons"></div>
+<section class="card"><h2>Como funcionará o acesso</h2>
+<p>O catálogo é informativo. Nenhuma atividade paga, mídia ou avaliação é liberada por esta página. A integração futura deverá consultar a assinatura autenticada no servidor antes de fornecer os conteúdos.</p>
+<p class="muted">Não há cobrança, ativação de assinatura nem avaliação de pronúncia nesta prévia.</p></section></main>
+<script src="advanced-premium.js"></script>
+<script>
+(function(){
+'use strict';
+const module=window.ISMAdvancedPremium;
+const root=document.getElementById('lessons');
+if(!module||!Array.isArray(module.lessons)){document.getElementById('status').textContent='Catálogo indisponível.';return;}
+for(const lesson of module.lessons){
+const section=document.createElement('section');section.className='card';
+const title=document.createElement('h2');title.textContent=lesson.title;section.appendChild(title);
+const meta=document.createElement('p');meta.className='muted';meta.textContent=lesson.level+' · '+lesson.skills.join(' · ');section.appendChild(meta);
+const label=document.createElement('strong');label.textContent='Objetivos da aula';section.appendChild(label);
+const list=document.createElement('ul');
+for(const objective of lesson.objectives){const li=document.createElement('li');li.textContent=objective;list.appendChild(li);}
+section.appendChild(list);
+const button=document.createElement('button');button.type='button';button.disabled=true;button.textContent='Bloqueado — validação Premium pendente';section.appendChild(button);
+root.appendChild(section);
+}
+})();
+</script></body></html>
