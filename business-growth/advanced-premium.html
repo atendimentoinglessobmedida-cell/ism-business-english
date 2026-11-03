@@ -15,16 +15,29 @@ button:disabled{background:#8095a2;cursor:not-allowed}
 </style></head><body>
 <header><a href="../index.html">← Voltar ao ISM Business English</a><h1>Advanced Skills <span class="pill">Premium</span></h1><p>Listening, reading, speaking e writing para comunicação profissional avançada.</p></header>
 <main><p id="status" role="status">Prévia do catálogo: atividades restritas. O acesso Premium deve ser validado pelo servidor.</p>
-<div id="lessons"></div>
+<section class="card"><h2>Verificar acesso</h2><p>Use seu login Premium existente. A verificação consulta o gateway e não concede acesso aos exercícios nesta prévia.</p><button id="verify" type="button">Entrar e verificar acesso</button><p id="verification" role="status" class="muted">Aguardando verificação.</p></section><div id="lessons"></div>
 <section class="card"><h2>Como funcionará o acesso</h2>
 <p>O catálogo é informativo. Nenhuma atividade paga, mídia ou avaliação é liberada por esta página. A integração futura deverá consultar a assinatura autenticada no servidor antes de fornecer os conteúdos.</p>
 <p class="muted">Não há cobrança, ativação de assinatura nem avaliação de pronúncia nesta prévia.</p></section></main>
+<script src="../premium-access.js"></script>
 <script src="advanced-premium.js"></script>
 <script>
 (function(){
 'use strict';
 const module=window.ISMAdvancedPremium;
 const root=document.getElementById('lessons');
+const verify=document.getElementById('verify');
+verify.addEventListener('click',async()=>{
+ const status=document.getElementById('verification');verify.disabled=true;status.textContent='Verificando sessão no gateway…';
+ try{
+   if(!window.ISMPremiumAccess)throw Error('Serviço de autenticação indisponível.');
+   await window.ISMPremiumAccess.login();
+   const response=await window.ISMPremiumAccess.request('status');
+   if(!response.ok)throw Error('O servidor não confirmou a sessão.');
+   status.textContent='Sessão confirmada pelo gateway. A autorização específica para o Advanced Skills ainda não foi implementada; as aulas permanecem bloqueadas.';
+ }catch(error){status.textContent='Não foi possível confirmar a sessão. Nenhuma aula foi liberada.';}
+ finally{verify.disabled=false;}
+});
 if(!module||!Array.isArray(module.lessons)){document.getElementById('status').textContent='Catálogo indisponível.';return;}
 for(const lesson of module.lessons){
 const section=document.createElement('section');section.className='card';
