@@ -27,3 +27,8 @@ GitHub Pages e Vercel publicam somente `dist`. A certificação física em `DEVI
 # Distribuição para alunos
 
 Use a versão atual em https://ism-business-english.vercel.app/ e a instalação em https://ism-business-english.vercel.app/install.html. O GitHub Pages pode conter uma versão anterior. Ao trocar de endereço, exporte o progresso local antes e importe no novo endereço. Consulte [STUDENT-READINESS.md](STUDENT-READINESS.md) para validações e limitações.
+
+
+## Padronização ISM em preview
+
+Mapa da camada comum, comandos, ambientes, contribuição, novas aulas e rollback: [Guia incremental](docs/ism/README.md). Execute `npm run verify`. Produção só pode ser promovida após aprovação explícita.
