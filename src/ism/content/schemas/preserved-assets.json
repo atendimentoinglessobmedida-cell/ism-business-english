@@ -1,0 +1,1130 @@
+{
+  "schemaVersion": 1,
+  "origin": "Original published source / private Travel v2; immutable teaching assets selected by documented filenames and media extensions",
+  "files": [
+    {
+      "path": "assets/app-icon-192.png",
+      "sha256": "c6c60d62516f83a1f7fba45e6ab038929359233013372208f95b4ffc69770534"
+    },
+    {
+      "path": "assets/app-icon-maskable.svg",
+      "sha256": "b485b64d1d96dc9cc901657adf867006f6d83d99c5ab64bb9897007dbebe6955"
+    },
+    {
+      "path": "assets/app-icon.svg",
+      "sha256": "3381c29aa9127fb7c8ae54700f5a6b52fafd9b2fe4b9dd384186ea3ffc14f6e6"
+    },
+    {
+      "path": "assets/course-cover.png",
+      "sha256": "6ba0e4f5abb11309bbe9437d645999b4ca69a333d1a2ce13f5795bc77fce3333"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-0.mp3",
+      "sha256": "860063cf6bfe2c120c4a61c92f96b1f295d7f6e20944547b007b4849d0eb5386"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-1.mp3",
+      "sha256": "7a2ad2b97dd3c794676cc9ae9c18f58e4df0be43330d1a6f07737dc24e3ccaf8"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-10.mp3",
+      "sha256": "60441560dfc593f31ca4fecde3cb738f9cecb2e724eb5c6e99a1256a66988492"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-11.mp3",
+      "sha256": "285e94b0c7821b6451d5f275c0f8d277195d2a1584dc02f20ac6e5d1b28f75a6"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-12.mp3",
+      "sha256": "0415d6fdf94b9bc3fb4b00260a1f0fdd56238ea3db1faf1025d257293d1c71fa"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-13.mp3",
+      "sha256": "b1fdd8f0b4afd8ccce87f65853305a939fa36ef60ed3f020f7ac30a48a2e1002"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-2.mp3",
+      "sha256": "9e2491b885aeb0a3e332e60134096b4531f2ee7111bf87b96a15d609ed027303"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-3.mp3",
+      "sha256": "00a45578702675f6ecc0a39c6370cbc51a1733522e8f4e441b7caf803c38f327"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-4.mp3",
+      "sha256": "77cde41e3081453a431b7adc2e8bfd53ad801e879d362d630011b1e93d29cf17"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-5.mp3",
+      "sha256": "3a27377d3af4949ef89578166dd1d5046c0c8a81d388664e9794ec8509d36ccb"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-6.mp3",
+      "sha256": "bb560c7269a3c7190cdec6f3f0761ea6ef8da0737cd5f1ef2271a88e46c288d2"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-7.mp3",
+      "sha256": "05f94571731c0f437b48fc34e99e49c7a8d734976d67a8fec1764ea336bd089e"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-8.mp3",
+      "sha256": "811c14b299358a3e71a700c0ada9161dd0595df290ea4732f27b688eddd36baa"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-turn-9.mp3",
+      "sha256": "a5ba8906188989fb06bf4bcf7e1a3cd2a0df224a04680f8632ac9640193a2539"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-0.mp3",
+      "sha256": "1ae67c10066e08112a40db3a5de3b8e37076aed0bac5b5051d4d92f5dad595fe"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-1.mp3",
+      "sha256": "b89a7119e5ce900fba7d534de9de9089c5e79451b29c6876052bbd90e5d6b786"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-2.mp3",
+      "sha256": "4dda7eebbccbb6bb975e18ec34f2c8e50e02427033ac009f7408bfdaab4e6d05"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-3.mp3",
+      "sha256": "fb8e55056380ae3bff595c6bca2948addf74c1da51cbc367f0d6b62b10f27fdf"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-4.mp3",
+      "sha256": "f9f75d1789128102d4c0bff522cbd6ccb92e54e29be9f472b4567e76ba9bb319"
+    },
+    {
+      "path": "assets/debate-audio/ethical-decisions-word-5.mp3",
+      "sha256": "2097326ede45be035eeeffd419837e84fcabf54dec77e2f3fdca463a6f4e2ee7"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-0.mp3",
+      "sha256": "20bf3b390efde07619bea9753dc7caa0bfd20bda57d95011c08e1647dba6ddb8"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-1.mp3",
+      "sha256": "bb8298d1b365d67031190fae10105a3ffb4b1ece26dfb8e23af0783e7b7da83b"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-10.mp3",
+      "sha256": "775563b27dbde981dca6776ecfc8674c25fdfa6c1ea0761d69730a31113f8f72"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-11.mp3",
+      "sha256": "3963b437e1dd16c34960022d30688c9ca87cf77a0ee04a9f96415ab06d783a7a"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-12.mp3",
+      "sha256": "3e7d6ebbee44ebd7fc8871210c6ae0f2b1b1906411489a79b6b96dbc72e70bcb"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-13.mp3",
+      "sha256": "3b119fce48017b8b3a2004a3a52b0d0581b352e41939ded3323bab9e1087b2d7"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-2.mp3",
+      "sha256": "65dd71ef92eb7ff8903dc8543affb55bb5d0820f666270dea856450bdcd6b32a"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-3.mp3",
+      "sha256": "0b4375000e0d408eaf9b7dd31b7df20396a93a88d8e5308a0541ff2f95be4f34"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-4.mp3",
+      "sha256": "0532374a23954c11e20ae8ce0010c8748cd5eb99f94bdf09238246f7deb410cd"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-5.mp3",
+      "sha256": "6ae92e016fc64d56584266938b5d96552d852692672259cc9dbf195f480dee31"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-6.mp3",
+      "sha256": "f496a2481b425bcdade8a89154b12804f60afbc6c08cfb7eb9ed6f651822c888"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-7.mp3",
+      "sha256": "1059c23151b1828f24a9f0b82ce891188f43c1d18e8378982b32eafa9008e327"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-8.mp3",
+      "sha256": "660a088a13ac280be358eb5655d5bba8b592bce21cffe57f6eb8f1ee54249126"
+    },
+    {
+      "path": "assets/debate-audio/feedback-turn-9.mp3",
+      "sha256": "7b74e835d245b55b721135b021919abf88adcaea7c15e0f48582c980752cc6a0"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-0.mp3",
+      "sha256": "dd1d9d85806d35b70f8e4ab523f1b0795a1cd274513d6030c402a67ed9b2ebb9"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-1.mp3",
+      "sha256": "744e8f7ba7865289ef96e10c9112db3c3dce4c8300644addd6ffb607b117a1ba"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-2.mp3",
+      "sha256": "b5a27fd81a48596b70568f1b3e0a566b0851fa4c193f8ea43d88ab0125e05159"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-3.mp3",
+      "sha256": "9f9400bd8c3d0c1d2626926955bde11e287e5adecfc840d7a109a413ef417237"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-4.mp3",
+      "sha256": "a89b09ee2171ef58df665613bd62979d4913023feb4b7f01e4889ea9c2d85b38"
+    },
+    {
+      "path": "assets/debate-audio/feedback-word-5.mp3",
+      "sha256": "f6cd9d9c044ed7e59459fc2719f3b4392414c08be00d13eb0d7ae23d62f60b1b"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-0.mp3",
+      "sha256": "3c7018030c038f560cfd4682788d504e86c241bd540f723f25394bee6a5448da"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-1.mp3",
+      "sha256": "ae49442b1f002b0c96b74ab387e567ef175f607ca56b22ff856178ea713f71ae"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-10.mp3",
+      "sha256": "65e67d73a8c9e5ab7587f008c9ac6dc38e3b8e317267b31b8550b34cdccbadb8"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-11.mp3",
+      "sha256": "b59ca3e49ee6d77f974d2ebd53bb96708ef1da0704815625e54868f959c4055a"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-12.mp3",
+      "sha256": "2bd85cf94ffc519f1217763414dd04241456aa0621301d3017a86ebd36c78bf7"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-13.mp3",
+      "sha256": "1fca43d413226c73af066140ae72ec2ea0c4e222734a2302d44055330f6020ae"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-2.mp3",
+      "sha256": "991d47ac3857b5c9df24f38e08017fcb7139f1dc5cfc12bd105da1b29ee4a2a9"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-3.mp3",
+      "sha256": "9f59fe11b5a3e2cd1bbaaed38f1e7d8511514444c6cb267bc1b46c8ec7cbf19b"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-4.mp3",
+      "sha256": "dfc76f6188fadcce89f5ba981d6c0147b5f13df802c456d49722fc44290171b7"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-5.mp3",
+      "sha256": "68d82d5fd42a8dc23aa2a4fc7697a20c3aff48872e013cfa9cc004d868f4725e"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-6.mp3",
+      "sha256": "7551df508ffc46464d7f8d0747e6873f5789a1a1be6b007e82c1a0163d1650f3"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-7.mp3",
+      "sha256": "90725e3912ea0b48f966b1f2523a4e6f5e78fd3ed7d67deae02532d11047437b"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-8.mp3",
+      "sha256": "9c468ce73270a67f1d45fa2ac45b50da3a9da41d2267477772c633b2121dcc52"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-turn-9.mp3",
+      "sha256": "dc63482e616d387f37033ffc117e62594282f01d7fff38bf1266c6d0e7e5e27b"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-0.mp3",
+      "sha256": "795700ed07fc367f1ffec69d33aca66b5bc0cea3571a39d6b11e49c4ff5ab404"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-1.mp3",
+      "sha256": "6fde4bc001474005cf464ed6e4b5e0c417a24ed915c2940c8f793c9ffd12b899"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-2.mp3",
+      "sha256": "fe0da26b535cddb43bb7b3a656c987cf931f5a0421f74f44b20356aa0aefaf4b"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-3.mp3",
+      "sha256": "85d37443cf8e2e03fed8cfd7c7fb59a689819e34493eb342b84c2321ddefe153"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-4.mp3",
+      "sha256": "1a7c02d7180b1c1a0122f4e01e699e17a5e073871243255af027bbf82042b355"
+    },
+    {
+      "path": "assets/debate-audio/hybrid-work-word-5.mp3",
+      "sha256": "4d8d1e46e0f556123bc99f314279ea1b4b0056096a714657f022ac689543e400"
+    },
+    {
+      "path": "assets/debate/cover-v1.webp",
+      "sha256": "19a428d40f3a7465d88e6e953a1e75c6ee80d9a94aa82dfac8b3cbfef21fa5ea"
+    },
+    {
+      "path": "assets/debate/ethical-decisions-v1.webp",
+      "sha256": "adf1a017e4417b148b3a6648bc2d86270f7de126fd4e130051c0c2ec3c2f08d0"
+    },
+    {
+      "path": "assets/debate/feedback-v1.webp",
+      "sha256": "46b2f416b2d5e3fc32c6314aace936b789ed0c1abfeabb625d9faf04d4503d3f"
+    },
+    {
+      "path": "assets/debate/hybrid-work-v1.webp",
+      "sha256": "35b1acae3b98e23d45f85562227850000faa6ef83f37f69bca6c2da96143a0c6"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-0.mp3",
+      "sha256": "3788f554958182393e8150a1840b2c7b6c2d4fca7e094fbebc9b749d911a8339"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-1.mp3",
+      "sha256": "41a53db6b8d637cb6e1403d52e9824ef70902d9aed81aae829892ecccbe33ad5"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-10.mp3",
+      "sha256": "13ab4151a9846e365e31737fde3e341dbbd812c35f2c3e3e16fbf40da3c614c6"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-11.mp3",
+      "sha256": "14bd0bfbf6e8fff51bd19ab7e43c71ebeba820e9252d4d8828100df33c8f49e9"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-2.mp3",
+      "sha256": "666cd0a239bd5f69147fdbec9d814e7f5f9b850e35c896483669e18dafa98d7f"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-3.mp3",
+      "sha256": "89a203fbfd8836b5beed23bda008d37c7cd8c5f2534e77c251d7354432053e37"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-4.mp3",
+      "sha256": "cb913747c76263987410d3ddfd807610a901d4c616e65d24a29d9d3a64740c07"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-5.mp3",
+      "sha256": "71d7de028c9acf7a6d3b78411eb4d2cc3d0f235be10fc9dd82335b1b06f6ab98"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-6.mp3",
+      "sha256": "f550f522377fdc713cf403f6cc326166afb9bfcb899b39e41f82d6758f675a35"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-7.mp3",
+      "sha256": "4262ad4ea047fc520beaa9abedff4f3edbd93ac159d495075c8d49ca7e13660d"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-8.mp3",
+      "sha256": "96cbcd1717589d18635dfeffbe5f0aeb7277432c114d7fea7f0668f2bbb3e0d4"
+    },
+    {
+      "path": "assets/dialogues/budget-and-workflow-turn-9.mp3",
+      "sha256": "44aba556cb713c8f5dcde6d6e846a7f829be97400796121b3db6e892180a9646"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-0.mp3",
+      "sha256": "05b343381a7638cb3895bac6d76c61603492fb845d635a3ddda0c84da0b0d77f"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-1.mp3",
+      "sha256": "7ddc5858290fb78f250618763fa2294a6081461b4362cbff3b216768ca5c2b70"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-10.mp3",
+      "sha256": "86662bb53c5d6ede7c60b127010ff3420d42d23b65c0ef73d9d8ed4086bdfbaf"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-11.mp3",
+      "sha256": "9dbc99d2875209e667a1501f0d12046bef98bc890d7e2821821e30666b90abf7"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-2.mp3",
+      "sha256": "56b7173346084d5171436bffc7c9b7f40c8ea4d5b0a507fd5bed5b96e07d792c"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-3.mp3",
+      "sha256": "a7d4413acb7b023381362ee0e8f693408690d41b7e2dd3c9126314b7362ebda8"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-4.mp3",
+      "sha256": "a97d9b9290e7fe2bcf82ecdea6e1b9652dddd85887cc0273b2cdb547bbe902d2"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-5.mp3",
+      "sha256": "949c3aace7629338a0b8e1c0ffa2e158b72ee0aa312a02ced414b57dc3ac5075"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-6.mp3",
+      "sha256": "1df5ac1699e268435cc89b5f2eebbe6aa30def6a707c0cd2ae1e7cd6e942afe3"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-7.mp3",
+      "sha256": "15e44fd6d9923352fa80c83e3cd788ae02714c550e5dd3c8d6137473ede12324"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-8.mp3",
+      "sha256": "43bdfb70ad0f7b6a274051a71f9703f8d33a5fdd885ec55263c638060de361a3"
+    },
+    {
+      "path": "assets/dialogues/clarify-and-confirm-turn-9.mp3",
+      "sha256": "b114fdcc4d6a5409ce67471459a3152ccc0115b88f67634c4325c9b15be0bb07"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-0.mp3",
+      "sha256": "1ade2654ff4b42c4f2f2e3cce94d136ec21ba881cc09cbfabbe48df936a7cd2a"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-1.mp3",
+      "sha256": "18feb1a95f4554284402c6a7cf1b47d8e596ee79c7a8c10662b623042fdc1e61"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-10.mp3",
+      "sha256": "edb2900ba92a6a38f8fd4b9057ada38f5b56368dd626b828c24499c7074fa24a"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-11.mp3",
+      "sha256": "6dd8da427a727835940262675e6bbf3839e1bb8d5b764ef6816e8d1fa6a1fa28"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-2.mp3",
+      "sha256": "0c44b4f02d5325427f0d002f60a8e7e87df8e749da9ccc7362ff747dee7cc619"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-3.mp3",
+      "sha256": "33462e84a7de7a19dfb7f73de751c0dc9c3de7e526162595418b38db39686fd8"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-4.mp3",
+      "sha256": "aa692776a9e97859691a606d177809126e69b072e342694d5516a721e92a80a5"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-5.mp3",
+      "sha256": "6c62818b15062d5b6b30a76efed35c0684b0fa2fd4c3d3923e8021b4f1bff5c1"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-6.mp3",
+      "sha256": "acf72c4d84cb24a754cbedac987d4baf2529e8ca9754cefbe58a9a843c9e74f6"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-7.mp3",
+      "sha256": "b88f3fb11be80121c181a8483ff86dd411feec0ec68b70a45977ddbf257fc616"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-8.mp3",
+      "sha256": "fdb67d2248d38f673b3ee7b1f01f17bdadc798cf08e6ff318595d6e66baf1135"
+    },
+    {
+      "path": "assets/dialogues/concise-project-update-turn-9.mp3",
+      "sha256": "9b2c455a951bc10b134831df556b212b820cb98510e1eeeaf6d599b5d7b0148f"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-0.mp3",
+      "sha256": "2cae9920f36e84c9bb0b48ce2e387f10fbafa50201c814ee2f9b915d5fb10497"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-1.mp3",
+      "sha256": "d3b9f22011a0ef4ff63b839a49b6f657533a58e2e8cdf3839266ce3103fa2934"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-10.mp3",
+      "sha256": "41e9bab8c46a20619a10336b221a26b617ea1e34b610da4479c370767c3cdc22"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-11.mp3",
+      "sha256": "3ea6b24c675787be04b664584e07f5b5a56208384fdf210452ee9a92ba8d4ebe"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-2.mp3",
+      "sha256": "fd0377ee151e217a56a2d9c36c4f42764c7fa7e7a58877f45adb4dbf6baf45b2"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-3.mp3",
+      "sha256": "0ab05a4fcaa35bd901c7088f9ca39a5498f568b2dd106ea648b27498671c4aa4"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-4.mp3",
+      "sha256": "5c14fe1a6a74c0fd35c0290a73bd8920bc2f9efedc499564293dc387b87fa8dd"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-5.mp3",
+      "sha256": "a7d30f6735766938a0dfe825246b8af4dafb8dc2cac9c25d2067e105963b0d23"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-6.mp3",
+      "sha256": "fd483c1601f07a1e8f2fa68d48635428a079492bef2a1ee063500b2c04c8f573"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-7.mp3",
+      "sha256": "a01dcb2f026900e44acd573d15ced52f4c13f417a19f1af9d3ea53a4bfffa703"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-8.mp3",
+      "sha256": "9e3092a9615e1b61415d8c8024a16edf96dddec230467fa9ad8512d9129a9365"
+    },
+    {
+      "path": "assets/dialogues/customer-recovery-turn-9.mp3",
+      "sha256": "85b54df47c9a34a2eb00edd25e7350d6183de3fe7c0572b8c833e6aa3b10b7fe"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-0.mp3",
+      "sha256": "161b1353c3b2ac34b4c1f575861e09c3be677fe052fafd5eb9708fbb3f7994e4"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-1.mp3",
+      "sha256": "a28cd96a35ab49f6eb0cdde2c0b8eff5145c4664ce112bca88561f4fae3ca0c1"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-10.mp3",
+      "sha256": "ac332634f82e7ffb23e6d97c8715f0e7c9de1e74b92ad1d0085bb8d32a92d874"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-11.mp3",
+      "sha256": "8f76ac28843907381833078db3d5a9105a99ea9dd1e6376c62944ae4b59b5f0d"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-2.mp3",
+      "sha256": "337a5cc4c5474e8bbcd8bee934fd34ede98933b260f68e2a4b6fab35018d71af"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-3.mp3",
+      "sha256": "f0d47f151e3b622451409fd1fb36a2d96ac25c88aa2698d90ab4d7bb31a00c37"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-4.mp3",
+      "sha256": "18c060b47aa6d9f0a327215814a18dc21061a46c08774b4dbfbdc2b1ac140d66"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-5.mp3",
+      "sha256": "9f2e02cc67dffd2c62a15b0137d9729f9c0d17877b5aeee6afcd1d847e3d125e"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-6.mp3",
+      "sha256": "51f69a80f0c0b82f15380e1b31379d4669b5dcb1a7a2d167bea196ebf6b917c6"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-7.mp3",
+      "sha256": "7f25d4fab778753f9078550be6a5965afb3cd890636a085838f0063357ec7617"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-8.mp3",
+      "sha256": "6c4c0a0a9958f0c7b3726041b6123fe08e8b4adcd4f24233b63ad2123e545b25"
+    },
+    {
+      "path": "assets/dialogues/deadline-negotiation-turn-9.mp3",
+      "sha256": "ec1dff1aa7368073c9c324c99b9d973b8e0b0e01f74eca385a064f8d9db3697c"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-0.mp3",
+      "sha256": "d3dd57e0f88966e5c80b25613af851cad0ecb7b4353797d6d8ebeb587f18876f"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-1.mp3",
+      "sha256": "85a0171981bf4567f270e0a1ab2725d391dc43b10abcefc91e06e36f40778ee3"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-10.mp3",
+      "sha256": "a104685be56c73d62593ecad6383ed3beb7d7f1f581ddfd990b989c7e3504400"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-11.mp3",
+      "sha256": "e095bdcb84a172595c2d1fe69eb7f24e8555bcfe434e28aa3acadbc6e0ba7212"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-2.mp3",
+      "sha256": "032d3a47b2a9b69ab4166e2e10703a47fa91e7141d0b326ef6c5384f7ec1516d"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-3.mp3",
+      "sha256": "c9d80a02e37ab8b856d1b9fca2e26ec624c60eb1f9eaa3559609ca05ec07d787"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-4.mp3",
+      "sha256": "802757e5953dd3ba1ff0361098d956f3eb20c956802e76cf1c20e495121098ea"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-5.mp3",
+      "sha256": "dc724a271377977b88b0ad3278e6ef289742064d758d057cec17afa1d19cbff3"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-6.mp3",
+      "sha256": "46517adc00e560b423cfc0110c14b8abbf9d417b3688eb53d5fa42f2b4ba97a2"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-7.mp3",
+      "sha256": "d0b3e6c3b7f03e82c5548b6bafe021e76fba59c5a9fb5876f8c3198c5798c94b"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-8.mp3",
+      "sha256": "e6d58d2cf0b025f55f634aa6e180984bc6fb88de13bb89facad87cf23527f56c"
+    },
+    {
+      "path": "assets/dialogues/email-request-turn-9.mp3",
+      "sha256": "740863ffc0057bb7ef54debfd8124012facc8287327f2c406f66a10d82674bb8"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-0.mp3",
+      "sha256": "922bfb6a6b98f7f35825c9fa9b7c10a904403f0a924bfbfb7dcdfdb814207cd2"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-1.mp3",
+      "sha256": "30559f2ac6abdd1f4076c26bcfe07bf7fadee742d909a37ce2a043bbeb5c2fd0"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-10.mp3",
+      "sha256": "3533f5e7c57e72a8d469566bca1f8c6d2b65fa8f93f6f9615d5fa8d679112b33"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-11.mp3",
+      "sha256": "d7b8242aeb2acd2fb6fe190511709c7e938ef4f0b9f6b784acdb66fda59221ae"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-2.mp3",
+      "sha256": "f94b0518cd6182e78006abb48ebeb43e320d8beb65ee9800e78677e1083b7829"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-3.mp3",
+      "sha256": "4609795846779443b4943d0f8fdc8b8dfd8ccfd3ea49c8655586adfbb0ad8980"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-4.mp3",
+      "sha256": "3d6f5622df32730e21c522c2870bbb2ab9041f89a58e14e950f6d3a7019c8325"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-5.mp3",
+      "sha256": "aa887b9fbc8622393361123ea4849aadb4747aaae486bc6c4bb65e39a1b24cc5"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-6.mp3",
+      "sha256": "ccda2d971dd8691657dbf2d9cf1b4da9afbe03659585a5cafe1b300162383d59"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-7.mp3",
+      "sha256": "a2279a7d2e088c7d6e2dc041950b35f3784861b4235e0b61bbac5c7f1c1c2f26"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-8.mp3",
+      "sha256": "3a301220228b442318ac5ccd47d811d8a4c07742dc90a7009b3a4fb31318c2d6"
+    },
+    {
+      "path": "assets/dialogues/handover-across-teams-turn-9.mp3",
+      "sha256": "18fa634378fbf7928d396e5f32f37e6d77e7ee1e6b33e1497dfc57c2b5cde455"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-0.mp3",
+      "sha256": "33fde3482e7d425b286f94a94ecdf395ec6fb8a17626ba599151549d5c2e009a"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-1.mp3",
+      "sha256": "b543db011e8f59e815e4a196c38579ed4652b4f67fc3b525674a4478b55a4a30"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-10.mp3",
+      "sha256": "a27351f18a50e65ac8b457b95ba5bb545716ade225bc43785f9ea297758131d6"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-11.mp3",
+      "sha256": "4893dd483fd05dd34c008c176a378e8cdd64d98010b0b8abbb8771d48a920c3f"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-2.mp3",
+      "sha256": "5f329513fdf820c5d1eff0bb8e4827dfa3cf27923292d579800027b39bcfe7ce"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-3.mp3",
+      "sha256": "1ecd8f6fed90607d34107d17c46518e397049c348dad13fe6eee14ad8cff3804"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-4.mp3",
+      "sha256": "fffe8a91e59eafe7e889f2e639d1bb445d3de56aabc2c3ff786ddf2c4908c7c1"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-5.mp3",
+      "sha256": "debadcfdffb79def0bf3511e169063d8dbf3deec0f32a1fec8b42b0a98a78ce0"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-6.mp3",
+      "sha256": "247f873ea96e901576edb08fb9179ff85918f973b389dafbafd717de0112f420"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-7.mp3",
+      "sha256": "7453bf4ae4bb30a2298575a01062705e7a8775e79343e17322b61ee1ec93c6d3"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-8.mp3",
+      "sha256": "0b71a9560449b226d92564c6028d48c650f7a52f045d4e633638a3b5d2e5164c"
+    },
+    {
+      "path": "assets/dialogues/idioms-to-clear-actions-turn-9.mp3",
+      "sha256": "e61b9bd42a3022e5f3ba948338bed8c0efebf6fb50a0cecc88f52ffd3c10014a"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-0.mp3",
+      "sha256": "6e28b961fef0d7781d4c50f293f223796da919362aebee60047447307b684488"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-1.mp3",
+      "sha256": "c0d6a4acfa9a50665d6a5cbb3198689856f18799b89738272d0b6f9a6aad1813"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-10.mp3",
+      "sha256": "8a7eee347ef7ce1f29e4ffd0072ab99c0cd9079b8e121d423cbd801b560de501"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-11.mp3",
+      "sha256": "50d160d7453fa2af5c1bbd723f53a9e81e18a745f6bba5cc7d619bac70f655e2"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-2.mp3",
+      "sha256": "460f60341bcc40fc5d69795970070e1e6ad849fbc2fa496e21eb962d0b8b77d3"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-3.mp3",
+      "sha256": "1452c8d0694c7b05b177c67d0d33ee1e72c605fef981d0ea854f6cab930942d1"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-4.mp3",
+      "sha256": "cbe7f177d0c2ded220ccbdf2d49610bf3e4da88353b0fe31a24a26966a5ad52a"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-5.mp3",
+      "sha256": "635ece5228c20c80a0f10e405c93d9cee7f8c28f5536b749dcb31b8224e4dae0"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-6.mp3",
+      "sha256": "a6bdc7587df0d69827ff7b986809103772a851218ff8ba24e8beaa3c714ed7da"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-7.mp3",
+      "sha256": "203c789024386ccb82d00d5e564cc932ed3cfd11bfb28d929851e90972ba46bc"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-8.mp3",
+      "sha256": "80fef5fed5bd47379eeb8cabb6cfdc450b1284aab030e52a6bc10f31644d6bb2"
+    },
+    {
+      "path": "assets/dialogues/interview-evidence-turn-9.mp3",
+      "sha256": "d04a9402b50faa98295b24168e31160a53637f72915e8138bc4e79b21de5ecd7"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-0.mp3",
+      "sha256": "0ef2e60b06e8e624b98ed93aa706be231a03e74ea4d12b9acf87cf99b6ebef17"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-1.mp3",
+      "sha256": "8eeb454899ddaebe236421325c1cad6133b527628bb2df316ddbd2662fd724f4"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-10.mp3",
+      "sha256": "fbfa794a1749198f5b413d0fffee360ce275cda92552d40e58b65f8f558d6b01"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-11.mp3",
+      "sha256": "9ee5f54bb90e7c0b1f54fb46efd25743fbcc063f0066ef29b56de7fd96b4f82e"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-2.mp3",
+      "sha256": "c7165cee5fd51ccfd8d068ecf626faeaecf3abf31be4cf7ca0708556c2ca750d"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-3.mp3",
+      "sha256": "cc1f34570e398074f38b408a47264941672cf80b21a7120d838744b4931cc3ef"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-4.mp3",
+      "sha256": "a9281f1f620a19336781994f7f1d4c313b17fcb9b41643aa6e942902f5aef238"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-5.mp3",
+      "sha256": "832ecfa61dd62363ca0efa1d10418cf93211269b0a71fca5e10f08b89e81e334"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-6.mp3",
+      "sha256": "10f1ec26c21c7a6e66ddaae5d1026993f0311434aebf58ad6afffdaf5e0110ff"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-7.mp3",
+      "sha256": "e9cb30fdb1956cbdad12c610072fc7ac06b8b71afb2d6ac21369e06cf874f176"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-8.mp3",
+      "sha256": "f3bcd6b10831a1d8ce5ffb5be74f20f59f95fae21be19e657e007d6e8831b016"
+    },
+    {
+      "path": "assets/dialogues/meeting-decisions-turn-9.mp3",
+      "sha256": "da81cd22ed77f6e3cff3afac846beb4c16ff26eac5aa81a67dd1591e3d834e27"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-0.mp3",
+      "sha256": "2a7cff289daebfc53a18b1d93c1ed5ad6a250fefb3fbaa1429f0303d36129745"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-1.mp3",
+      "sha256": "9dd3a8aaa10f1fbe2aa8840b0e8372a39e9af18eb38dd36afa6042b29012703c"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-10.mp3",
+      "sha256": "2fd0cb10357da796adba73dd2dc8598bbe42b02ac3943a4af296d652924d942c"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-11.mp3",
+      "sha256": "07415fe19bdd46ff2d09101b6e928080002cff5ba07f25c4f7ed8ca4a3d41252"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-2.mp3",
+      "sha256": "07b66e66c75726faaf638d58bbaf37d580c194e095953739853876881a2cf153"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-3.mp3",
+      "sha256": "dbb653965b61932ed4668ca01d3048bfe707aa17aa9b77689ef6aa8a1f6b0233"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-4.mp3",
+      "sha256": "c8bf639c6179867a8fce4c90da30f474064572831e5db50b64f84c1058b3fe27"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-5.mp3",
+      "sha256": "bf851769684acefc5ee7ead64e91f296629d0cd40f6a289876fd9892bd79d424"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-6.mp3",
+      "sha256": "68160d734084a6e87c2e29332861d25d1f7cbef59c83d3434213a0be9bcb1683"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-7.mp3",
+      "sha256": "96236594ffbdfde4ad4eba1b3f4c17716b2f2235d26ea132fa1ec97c1cee844d"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-8.mp3",
+      "sha256": "5ab133386fa31e5e086043031a1063b185199597cabc76705380d607e614fc97"
+    },
+    {
+      "path": "assets/dialogues/presenting-results-turn-9.mp3",
+      "sha256": "6fbfc7bcf785516b276604d65c5bc5a02648bd4c695ce7a041c9f9f165af3592"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-0.mp3",
+      "sha256": "dcaa66770e14af156b18cc94e1a57795ce78dd59b72e642402ebd793d66b88e6"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-1.mp3",
+      "sha256": "79dd4bb5a5afe604f6d802d76b09b04de55e8160391216719197e9079bb0afc1"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-10.mp3",
+      "sha256": "ea92c5ffa39ea4de3b817f784586cab5494bf3b29b2ce41dae6bc740a1633949"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-11.mp3",
+      "sha256": "5c16ea42a25794dc2a3188aec29e9327f26bf97690e295853e8000892dfaa415"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-2.mp3",
+      "sha256": "3860bb48eab4bd6d8037fdaf834304a68bc2c009f6093f62dd8f97f1b8990299"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-3.mp3",
+      "sha256": "705f518c264513d5e796287fc5ed06967221ee183f22a6859a38472d6e9e6867"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-4.mp3",
+      "sha256": "6d57464d8162e289c116d3bb295245b22b266d0db547ed73d7523168c70c78a2"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-5.mp3",
+      "sha256": "755a2942959a6d4c7578a88628a9e31058a25d0e7c1b34bd6590fd1da38c8426"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-6.mp3",
+      "sha256": "7393676dd0e31a6ba715834721ff8a9ccfd0e868c8cea67585c3424b2068048d"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-7.mp3",
+      "sha256": "440c2c3dc353449359ec861050361c1f4cf3965aa83bb33b10847f66198833af"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-8.mp3",
+      "sha256": "589feaa2e8cd401047c765883140f23cfedcb49a2187330fb72d11d269549ece"
+    },
+    {
+      "path": "assets/dialogues/scheduling-a-meeting-turn-9.mp3",
+      "sha256": "387a232817f6f03ef8eecb893a0b492bfcbb7f2d4b9732b90e02404dc2f590da"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-0.mp3",
+      "sha256": "fc49c1d3fb948cb39c6e134538fb956add0a13f60bfd553c60ef20a2dd89ffe3"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-1.mp3",
+      "sha256": "b7b5b7868fba27417f8eddb08b0d759d654f8a7dc07eab43dc1626b589b2796a"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-10.mp3",
+      "sha256": "e7451d773b284399c7b2b7cd29ed00610a45088f0aec71ff5e4e1daa72d2610f"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-11.mp3",
+      "sha256": "48204654d89197e4c69872ae4f9a2f231bac85d7d94bb6707af74d35df0d5b2f"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-2.mp3",
+      "sha256": "78f16650b7d9534d183c56fed94d7d64f37d4ea866cf3beac6dc482444da6afa"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-3.mp3",
+      "sha256": "de3efbe08699b411bc25cefd479693997b024f6b484d9e42bcb9745d0840b73c"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-4.mp3",
+      "sha256": "4e2814a02586bc2a63a7bb7a5b6f7022aae9e3c3a7c11dc8f0caf46fa4534eb2"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-5.mp3",
+      "sha256": "70b955510e5ffe5636bc21a7fd102a7010509fc02647f6d18e4e2f430200c08e"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-6.mp3",
+      "sha256": "c76078b413e82d51fadb08e764eecbb72b867e13281879cc86eeb6cd2dbd36c8"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-7.mp3",
+      "sha256": "5a843ec698a667bb50942e31618b5a5f44e6c3a51ded61dabad1a49853c6ce74"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-8.mp3",
+      "sha256": "61ecb74b3b7cebdd0255311585445a32ee61094b5c97770a355fb1352c748d9f"
+    },
+    {
+      "path": "assets/dialogues/supplier-delivery-agreement-turn-9.mp3",
+      "sha256": "a042337fe4f5c174d472775026d5d79359903d5038c10d75a020aaf100c07f0d"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-0.mp3",
+      "sha256": "1e94d4d78df9cbea51ce8ded4c4251e4abd1a5fe1f29a0fe925c890679ed86dd"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-1.mp3",
+      "sha256": "3e0e7af44fdbf697ecc13dc05f4158799f6842014f1d63e811c808a7be7752b1"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-10.mp3",
+      "sha256": "84be2c88d9faadb51dc6c76f039a2d16374c869000cd4c2a8e3f8bf54313d71b"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-11.mp3",
+      "sha256": "ab5ea0b190805a48425f568d6cd387c89ab91a17d91041fcc3cc8503a5d422fa"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-2.mp3",
+      "sha256": "1ce65b7e76f45db7c0e297299a68fc5541789c88189c169f5da1d6a92c88312d"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-3.mp3",
+      "sha256": "898ccc94de149f4252a35a03d88e665f443a1c496860ec3e5999ea66813f899e"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-4.mp3",
+      "sha256": "88e0be6ad05ec86bc656f2b7c71afc97b58549773776e10adc038655bc700a96"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-5.mp3",
+      "sha256": "6ea9f8d3cc3315f87e7b558cef9358c369ddc96b0ac0d81997742fd785971e07"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-6.mp3",
+      "sha256": "7984bba37fe1fc086293a67a167138e4cc765d6cf42972c6411bfafb3fbd8a39"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-7.mp3",
+      "sha256": "428a306243171535d5f7af5750c043d289a6e1707b2831926aa6eae02843bd51"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-8.mp3",
+      "sha256": "235a647bbe8ae7b556b1ed089bf933e57a8069da7437681e681529847cc38d5b"
+    },
+    {
+      "path": "assets/dialogues/taking-a-phone-message-turn-9.mp3",
+      "sha256": "a27add0f7bba80ee9b2fdf19d466345c0bd81ad124beee81d396996d5afad273"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-0.mp3",
+      "sha256": "7f907f68ecd89f4aa658fffba8e901c218a738d281cc399cd6c641b9814a5e42"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-1.mp3",
+      "sha256": "12f60fd3658acdcb3d4f4d74a0773569965153aa9c8dccfb296e2b2f67a9037c"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-10.mp3",
+      "sha256": "2e88cf592ded520547ecb28558d9d3ea42332e053a67170ba08900fc645491c5"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-11.mp3",
+      "sha256": "9de93130da1a240f8de7066c4ef4220c854fadd21c62d721da6ec2e2243b0340"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-2.mp3",
+      "sha256": "03382e189e823b0b026c4564044ff3a7f05d0fba93e714d87a4f583cae74951e"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-3.mp3",
+      "sha256": "74d7e01f9c15e3500c802035e257a23e81be0813d4c5baa94a62a65eed269c36"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-4.mp3",
+      "sha256": "94e14051cc558f159a5a81fbd953e4a60dac0de1b88c4c0c6d9a3dd909484d35"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-5.mp3",
+      "sha256": "2d5899e7c21fa59438f738c44199fe3b960b35e38fec7aa54099cb4d0d26a8a9"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-6.mp3",
+      "sha256": "dabc35712f8ea33c87ebbd65603a58d7cb677b03425fb6c3db1c4a807e07ab6e"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-7.mp3",
+      "sha256": "377c0810e0a1d7a77a8af1236e6009ca395bac6d1e1336bb3a765f2c048a14fd"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-8.mp3",
+      "sha256": "03668feb263ab49994d54c0929e4ff13388b7e9e031c61c5f964afe571e9965d"
+    },
+    {
+      "path": "assets/dialogues/workplace-introductions-turn-9.mp3",
+      "sha256": "1ea0d9912a4d8d13734dd4702156a8eff45c0901734e5b1aadbce572e2297322"
+    },
+    {
+      "path": "assets/header-portrait-v1.webp",
+      "sha256": "34cd84b8e62025240de981f00b6d3a1778a90a3af3fc5f6e3782808c6ad49317"
+    },
+    {
+      "path": "assets/photo-client-call.avif",
+      "sha256": "784307386de7a9f99142ebeb57bf94ad00ae004c926e42e3be4f9c4c1a377f50"
+    },
+    {
+      "path": "assets/photo-interview.avif",
+      "sha256": "1e4ba0828a54fcdf6bd646c08bef2b4c5ad1b1dc2cd7d3b4b46b0a8a00d80e1f"
+    },
+    {
+      "path": "assets/photo-meetings.avif",
+      "sha256": "76e7a986726fb864ddaaa4fa45d2d6a918f9abe1fc42f2fcc9bdaef08107b75c"
+    },
+    {
+      "path": "assets/photo-negotiation.avif",
+      "sha256": "153c825e6f0635d6f323035efbff245ca2e5d03a01840057fed384c5590f1f04"
+    },
+    {
+      "path": "assets/photo-networking.avif",
+      "sha256": "fe1470cf5730884c2aa1d131c1fd2a8b300ef3bfcb8aa10dd7c7ae1e44a61944"
+    },
+    {
+      "path": "assets/photo-presentations.avif",
+      "sha256": "71f7273df424056cfb960bf23c2d268bac88cbec8c145514e29fa12b5bbc5d55"
+    },
+    {
+      "path": "assets/photo-writing.avif",
+      "sha256": "b7036deee3ccbed3873f4831fef82a6c8164c20dc718a33ab518e65e4c454d63"
+    },
+    {
+      "path": "assets/podcasts/budget-and-workflow-en.mp3",
+      "sha256": "3cb5967158bda0d8988ba4048ab269ef950f6d2b8f988d50206ce0e25e8cffa6"
+    },
+    {
+      "path": "assets/podcasts/budget-and-workflow-pt.mp3",
+      "sha256": "8b0a2577919aea7b84685bf47a245ddb13484c61b8f82f40fedce38a967a3d7e"
+    },
+    {
+      "path": "assets/podcasts/idioms-to-clear-actions-en.mp3",
+      "sha256": "b0baf687459a2dd4913e7d52615566397efdd5c2b29ccd3c1cad559a2ab41dbd"
+    },
+    {
+      "path": "assets/podcasts/idioms-to-clear-actions-pt.mp3",
+      "sha256": "7cbaeb74234f40fdc39ba5b09c08cf420b1286ee5dfd9a166c5c6b39f82d1542"
+    },
+    {
+      "path": "assets/podcasts/supplier-delivery-agreement-en.mp3",
+      "sha256": "9b1bd7b2f623c943deabd2d2a50ebf84628f42e4c243052833b2f66cab982341"
+    },
+    {
+      "path": "assets/podcasts/supplier-delivery-agreement-pt.mp3",
+      "sha256": "6de730b6eb18e91bfa002ba3fcf1f3522689d2baabcfe8a5ed5174ba4b406a4f"
+    },
+    {
+      "path": "assets/practice-phone-message.svg",
+      "sha256": "7460e6908672c46c50c70f80abf12948e82f6742e59703d59d58e0d31f51cd08"
+    },
+    {
+      "path": "assets/practice-scheduling.svg",
+      "sha256": "8ed02f267e589538a2f46a2a02ad8141a2451d5190b8cfbcd648ccbc500b6e2a"
+    },
+    {
+      "path": "assets/premium-cover-v1.png",
+      "sha256": "9aa5ebd043a7d14d7d549a8a94054369feac30b278f128669760952f2224a259"
+    },
+    {
+      "path": "assets/reference-budget-workflow.svg",
+      "sha256": "f6924408cd4c9550c7cb4b775272d50ec4f5c156724c775dc8463f3be12ef732"
+    },
+    {
+      "path": "assets/reference-meeting-language.svg",
+      "sha256": "cce08f1ad795a46e12c03e3645143790491522844d39ae6a77773c0e95c0e24f"
+    },
+    {
+      "path": "assets/reference-supplier-delivery.svg",
+      "sha256": "d5d684120e8203de03e6bc2e396d1ce3da9bc4b4a15ccff29ec16b454b431729"
+    },
+    {
+      "path": "assets/visual-client-call.svg",
+      "sha256": "fef781a5158ea294b76a611f3c9a4e5dd0056313af39d036f387d25fe350d570"
+    },
+    {
+      "path": "assets/visual-meetings.svg",
+      "sha256": "713517ca549090ac5d31b72b18d5b30483210cc9d3943d18befecf7e4412b0b8"
+    },
+    {
+      "path": "assets/visual-negotiation.svg",
+      "sha256": "98b8250ca8dbb81ac9bbedab39d627cb997846d91c5eaacab3b533f9a8a422d7"
+    },
+    {
+      "path": "assets/visual-presentations.svg",
+      "sha256": "96ae3da639445ccde63d1421ac3527e404f8ffb9f44774c7260d324556cce062"
+    },
+    {
+      "path": "assets/workplace-clarify-and-confirm.svg",
+      "sha256": "06f6fc21cba7c162ba77ce13ea2338ee909ee6a31bcc00f27fafd806ba2946e2"
+    },
+    {
+      "path": "assets/workplace-concise-project-update.svg",
+      "sha256": "bf47f1e2bf90d671b3fbe9bd1df6ca32c5906caaa313b00e620c5e505a13bea2"
+    },
+    {
+      "path": "assets/workplace-handover-across-teams.svg",
+      "sha256": "d0b644398288345e4b8ab759ad338fe4d8d01a7a7c5c029b0e6e31def2d68898"
+    },
+    {
+      "path": "business-ideas-content.js",
+      "sha256": "f88a8ccf1666844392a480a248dd59c9556b623c79a0d17ea35306943f34517a"
+    },
+    {
+      "path": "business-practice-content.js",
+      "sha256": "f7e618f5c43fc75a724c69bd3b5c5cbb67787cd5bd03adc56eac4de1d2f56d31"
+    },
+    {
+      "path": "business-reference-content.js",
+      "sha256": "a44304f6db05ff0c51cf7f76e5a2acfeb133316f0f644d7eed0c0af1e0e43ebe"
+    },
+    {
+      "path": "practice-content.js",
+      "sha256": "031bbe4107fc932bf0816812968bc93e886df583c905cb9b7e68a7a171c59467"
+    },
+    {
+      "path": "premium-dialogues.js",
+      "sha256": "0298e82a749f7b68f6d67107b2988561589197969e71fa62df4f7f8da587ccc4"
+    },
+    {
+      "path": "scripts/debate/content.cjs",
+      "sha256": "5d4af21b9e64ee6e01aab6e81b8dccf43a53485b0d8a91094fda43b8bf323a1f"
+    }
+  ]
+}
