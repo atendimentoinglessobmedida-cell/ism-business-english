@@ -48,12 +48,19 @@ async function init(){
     showDashboard();
   }catch(error){$('view').innerHTML='<div class="card"><h3>Não foi possível carregar o Interview Lab.</h3><p class="muted">Seu progresso salvo continua neste navegador.</p><button class="btn" onclick="init()">TENTAR NOVAMENTE</button></div>';}
 }
+function languageShortcuts(){
+  return '<section class="card" aria-labelledby="interview-topics-heading">'+
+    '<h2 id="interview-topics-heading">Vocabulário e frases</h2>'+
+    '<div class="interview-topics">'+catalog.map(module=>
+      '<button type="button" onclick="openModule('+Number(module.id)+',true)">'+
+      esc(module.pt||module.title)+'</button>').join('')+'</div></section>';
+}
 function showDashboard(){
   activeSimulation=null;
   if(!pathway||!guided.length)return init();
   const completed=pathway.stages.filter(s=>stepDone(s.id)).length;
   const percent=Math.round(pathway.stages.reduce((sum,s)=>sum+stageProgress(s.id).percent,0)/pathway.stages.length);
-  $('view').innerHTML='<div class="hero"><span class="badge">👑 PREMIUM BONUS 01</span><h2 style="margin-top:10px">Job Interview Mastery Path</h2><p class="muted">Diagnose → Build → Learn → Practice → Simulate → Reflect → Repeat</p>'+progressBar(percent,'Progresso da jornada')+'<p><b>'+percent+'% da jornada • '+completed+'/10 etapas</b></p><p>'+lessonCount([13,14,15,16,17])+'/30 lições • '+storyCount()+'/5 STAR stories • '+guided.filter(simComplete).length+'/4 simulações</p><small class="muted">Média das 10 etapas. Progresso Premium salvo neste navegador.</small></div>'+(mastery()?'<div class="card"><h3>🏆 GLOBAL INTERVIEWER</h3><p class="muted">Jornada completa registrada.</p></div>':'')+pathway.stages.map(s=>{
+  $('view').innerHTML=languageShortcuts()+'<div class="hero"><span class="badge">👑 PREMIUM BONUS 01</span><h2 style="margin-top:10px">Job Interview Mastery Path</h2><p class="muted">Diagnose → Build → Learn → Practice → Simulate → Reflect → Repeat</p>'+progressBar(percent,'Progresso da jornada')+'<p><b>'+percent+'% da jornada • '+completed+'/10 etapas</b></p><p>'+lessonCount([13,14,15,16,17])+'/30 lições • '+storyCount()+'/5 STAR stories • '+guided.filter(simComplete).length+'/4 simulações</p><small class="muted">Média das 10 etapas. Progresso Premium salvo neste navegador.</small></div>'+(mastery()?'<div class="card"><h3>🏆 GLOBAL INTERVIEWER</h3><p class="muted">Jornada completa registrada.</p></div>':'')+pathway.stages.map(s=>{
     const p=stageProgress(s.id), done=stepDone(s.id), started=p.current>0||(s.id===8&&guided.some(sim=>answeredCount(sim)>0));
     return '<div class="card step '+(done?'done':started?'in-progress':'')+'"><div class="stepHead"><div class="num">'+(done?'✓':s.id)+'</div><div><div class="ey">ETAPA '+s.id+'</div><h3>'+esc(s.title)+'</h3><p class="muted">'+esc((s.outcomes||[]).slice(0,2).join(' • '))+'</p></div></div><div class="stage-status"><b>'+(done?'Concluída':started?'Em andamento':'Não iniciada')+'</b><span>'+p.current+'/'+p.total+' '+p.unit+'</span></div>'+progressBar(p.percent,s.title)+'<button class="btn '+(s.id===9?'gold':'soft')+' wide" onclick="openStage('+s.id+')">'+(done?'REVISAR':started?'CONTINUAR':'INICIAR')+' →</button></div>';
   }).join('');
