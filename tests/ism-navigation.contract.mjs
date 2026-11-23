@@ -253,6 +253,9 @@ test("entry has useful static content and visible loading copy before scripts", 
   const html = fs.readFileSync(path.join(root, web, "index.html"), "utf8");
   assert.match(html, /data-ism-loading role="status">Carregando suas aulas…/);
   assert.match(html, /data-ism-prepaint="true"/);
-  const entry = html.match(/<main[^>]*data-ism-prepaint="true"[^>]*>[\s\S]*?<\/main>/)?.[0] || "";
+  const entry =
+    html.match(
+      /<main[^>]*data-ism-prepaint="true"[^>]*>[\s\S]*?<\/main>/,
+    )?.[0] || "";
   assert.equal((entry.match(/class="ism-primary"/g) || []).length, 1);
 });
