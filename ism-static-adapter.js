@@ -91,7 +91,7 @@ const ui=globalThis.ISMStrings.adapter;
   ];
   props.profileGroups=[
    {id:'conta',label:ui.label019,resources:[link(ui.label062,'premium.html','perfil'),link(ui.label063,'planos.html','perfil')]},
-   {id:'preferencias',label:ui.label064,resources:[command(ui.label065,'support'),link(ui.label017,'sala-de-aula.html','perfil'),link(ui.label018,'caderno-do-aluno.html','perfil'),link(ui.label066,'level-pathways.html','perfil')]},
+   {id:'preferencias',label:ui.label064,resources:[command(ui.label065,'support'),link(ui.label017,'sala-de-aula.html','perfil'),link(ui.label018,'caderno-do-aluno.html','perfil'),link(ui.label066,'level-pathways.html','perfil')],widgets:['#resultMetricsSettings']},
    {id:'informacoes',label:ui.label024,resources:[link(ui.label067,'professor.html','perfil'),link(ui.label026,'student-start.html','perfil'),link(ui.label068,'photo-credits.html','perfil')]},
    {id:'instalar',label:ui.label028,resources:[link(ui.label029,'install.html','perfil')]}
   ];
