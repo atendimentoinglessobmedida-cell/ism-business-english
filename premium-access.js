@@ -31,7 +31,7 @@ window.ISMPremiumAccess=(()=>{
           if(!response.ok||!data.ok)throw Error(response.status===429?'Muitas tentativas. Aguarde alguns minutos.':'Acesso não autorizado. Confira o email, o código e a validade.');
           session={token:data.token,expiresAt:data.expiresAt};try{sessionStorage.setItem(key,JSON.stringify(session))}catch{}
           form.reset();dialog.close();dialog.remove();pending=null;arm();resolve(session);
-        }catch(error){status.textContent=!navigator.onLine?'Conecte-se à internet para acessar o Premium.':controller.signal.aborted?'A verificação demorou demais. Tente novamente.':error instanceof TypeError?'Não foi possível conectar ao serviço. Tente novamente.':error.message}finally{clearTimeout(timeout);button.disabled=false}
+        }catch(error){window.ISMResultMetrics?.loginError();status.textContent=!navigator.onLine?'Conecte-se à internet para acessar o Premium.':controller.signal.aborted?'A verificação demorou demais. Tente novamente.':error instanceof TypeError?'Não foi possível conectar ao serviço. Tente novamente.':error.message}finally{clearTimeout(timeout);button.disabled=false}
       });
       form.elements.email.focus();
     });

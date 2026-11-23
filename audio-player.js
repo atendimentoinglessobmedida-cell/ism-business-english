@@ -137,7 +137,7 @@ function createDialoguePlayer(options) {
      timer=setTimeout(()=>{if(token===run){stop(null);panel.open=true;tell('A voz não iniciou. Verifique o volume de mídia, a voz em inglês e a conexão; depois toque em TESTAR ÁUDIO.');}},12000);
      u.onstart=()=>{if(token!==run)return;clearTimeout(timer);tell('Reproduzindo '+(regional?regional.label+' · '+voice.name:'em inglês')+(speed<.85?' · lento':'')+' · trecho '+index+'/'+parts.length);};
      u.onend=()=>{if(token!==run)return;clearTimeout(timer);next();};
-     u.onerror=e=>{if(token!==run)return;stop(null);panel.open=true;const messages={'not-allowed':'Toque novamente em Ouvir para permitir a reprodução.','language-unavailable':'A voz em inglês não está instalada. Verifique as configurações de texto para fala do Android.','voice-unavailable':'Esta voz não está disponível. Selecione outra voz e teste novamente.','network':'A voz precisa de conexão. Verifique a internet ou escolha uma voz instalada no aparelho.','audio-busy':'O áudio está ocupado por outro aplicativo. Tente novamente.','audio-hardware':'Não foi possível acessar a saída de áudio. Verifique o aparelho e tente novamente.'};tell(messages[e.error]||'Não foi possível reproduzir. Verifique o volume de mídia e teste outra voz em inglês.');};
+     u.onerror=e=>{if(token!==run)return;window.ISMResultMetrics?.audioFailure();stop(null);panel.open=true;const messages={'not-allowed':'Toque novamente em Ouvir para permitir a reprodução.','language-unavailable':'A voz em inglês não está instalada. Verifique as configurações de texto para fala do Android.','voice-unavailable':'Esta voz não está disponível. Selecione outra voz e teste novamente.','network':'A voz precisa de conexão. Verifique a internet ou escolha uma voz instalada no aparelho.','audio-busy':'O áudio está ocupado por outro aplicativo. Tente novamente.','audio-hardware':'Não foi possível acessar a saída de áudio. Verifique o aparelho e tente novamente.'};tell(messages[e.error]||'Não foi possível reproduzir. Verifique o volume de mídia e teste outra voz em inglês.');};
      try{synth.speak(u);}catch{stop(null);panel.open=true;tell('Não foi possível iniciar a voz. Toque em TESTAR ÁUDIO para tentar novamente.');}
    }
    next();
@@ -146,6 +146,7 @@ function createDialoguePlayer(options) {
  repeat.onclick=()=>{if(last?.dialogue)void dialogue.play(last.dialogue,{rate:last.rate});else if(last)speak(last.text,last.rate,last.regional);};stopButton.onclick=()=>stop();
 
  function updateDialogue(event){
+  if(event.state==='error')window.ISMResultMetrics?.audioFailure();
   if(!event.segments.length){panel.querySelector("[data-dialogue]")?.remove();return;}
   let box=panel.querySelector('[data-dialogue]');
   if(!box){box=document.createElement('section');box.dataset.dialogue='';box.setAttribute('aria-label','Transcrição e falas do diálogo');panel.append(box);}
